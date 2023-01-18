@@ -103,20 +103,13 @@ nav ul li {
     line-height: 80px;
     margin: 0 5px;
 }
-<<<<<<< HEAD
 nav ul li a{
     color: #d9dfdb;
-=======
-
-nav ul li a {
-    color: white;
->>>>>>> ac7e72fc6aaf164a5b74addfbbb5fb95e44573d7
     font-size: 17px;
     padding: 7px 13px;
     border-radius: 3px;
     text-transform: uppercase;
 }
-<<<<<<< HEAD
 a.active,a:hover{
     background-color: #3E3A3A;
     transition: .5s;
@@ -176,11 +169,4 @@ section{
     background: url(images/building.png) no-repeat;
     background-size: cover;
     height: calc(100vh - 80px);
-  }
-=======
-
-a.active{
-    background-color: black;
-    transition: .5s;
 }
->>>>>>> ac7e72fc6aaf164a5b74addfbbb5fb95e44573d7
