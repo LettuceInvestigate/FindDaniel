@@ -1,44 +1,118 @@
-*{
+* { 
     padding: 0;
     margin: 0;
     text-decoration: none;
     list-style: none;
     box-sizing: border-box;   
 }
-body{
-    font-family: montserrat;
+
+@font-face {
+    font-family: bobby;
+    src: url(/fonts/bobby.otf);
 }
-nav{
-    background: #6B6766;
+
+#title {
+    font-family: bobby; 
+    font-size: 110px; 
+    color: #bc1823; 
+    white-space: nowrap;
+    position: relative; 
+    top: 30px; 
+    left: 380px; 
+}
+
+#subtitle {
+    font-family: bobby; 
+    color: #212932; 
+    position: relative; 
+    font-size: 40px; 
+    top: 20px; 
+    left: 360px; 
+}
+
+#building {
+    height: 1100px; 
+    width: 1300px; 
+    top: -350px; 
+    left: 175px; 
+    position: relative; 
+    z-index: -1; 
+}
+
+#person1 {
+    position: relative; 
+    top: -1100px; 
+    left: -150px; 
+    height: 300px; 
+    width: 600px; 
+}
+
+#person2 {
+    position: relative; 
+    height: 300px; 
+    width: 600px;
+    top: -900px;  
+    left: -675px; 
+}
+
+#person3 {
+    position: relative; 
+    height: 300px; 
+    width: 600px; 
+    top: -1500px; 
+    left: 950px; 
+}
+
+#person4 {
+    position: relative; 
+    height: 300px; 
+    width: 600px;
+    top: -1300px; 
+    left: 425px;  
+}
+
+#person5 {
+    position: relative; 
+    height: 300px; 
+    width: 600px; 
+    top: -1400px; 
+    left: 950px; 
+}
+
+nav {
+    background: #212932;
     height: 80px;
     width: 100%;
 }
-label.logo{
+
+label.logo {
     color: white;
     font-size: 35px;
     line-height: 80px;
     padding: 0 100px;
     font-weight: bold;
 }
-nav ul{
+
+nav ul {
     float: right;
     margin-right: 20px;
 }
-nav ul li{
+
+nav ul li {
     display: inline-block;
     line-height: 80px;
     margin: 0 5px;
 }
-nav ul li a{
+
+nav ul li a {
     color: white;
     font-size: 17px;
     padding: 7px 13px;
     border-radius: 3px;
     text-transform: uppercase;
 }
+
 a.active{
     background-color: black;
     transition: .5s;
-
-
 }
