@@ -1,0 +1,5 @@
+todo:
+when small change background to black
+lettuce hover change
+button functionallities
+bootstrap

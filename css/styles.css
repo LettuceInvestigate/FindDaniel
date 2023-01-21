@@ -1,0 +1,170 @@
+* { 
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;   
+}
+
+@font-face {
+    font-family: bobby;
+    src: url(/fonts/bobby.otf);
+}
+
+#title {
+    font-family: bobby; 
+    font-size: 275%; 
+    color: #bc1823; 
+    white-space: nowrap; 
+}
+
+.box {
+    background-color: lightblue; 
+    border: 1px solid blue; 
+    min-height: 100px; 
+    font-size: 2rem; 
+}
+
+#subtitle {
+    font-family: bobby; 
+    color: #212932; 
+    position: relative; 
+    font-size: 40px; 
+    top: 20px; 
+    left: 360px; 
+}
+
+#building {
+    height: 1100px; 
+    width: 1300px; 
+    top: -350px; 
+    left: 175px; 
+    position: relative; 
+    z-index: -1; 
+}
+
+#person1 {
+    position: relative; 
+    top: -1100px; 
+    left: -150px; 
+    height: 300px; 
+    width: 600px; 
+}
+
+#person2 {
+    position: relative; 
+    height: 300px; 
+    width: 600px;
+    top: -900px;  
+    left: -675px; 
+}
+
+#person3 {
+    position: relative; 
+    height: 300px; 
+    width: 600px; 
+    top: -1500px; 
+    left: 950px; 
+}
+
+#person4 {
+    position: relative; 
+    height: 300px; 
+    width: 600px;
+    top: -1300px; 
+    left: 425px;  
+}
+
+#person5 {
+    position: relative; 
+    height: 300px; 
+    width: 600px; 
+    top: -1400px; 
+    left: 950px; 
+}
+
+nav {
+    background: #212932;
+    height: 80px;
+    width: 100%;
+}
+
+nav ul {
+    float: right;
+    margin-right: 20px;
+}
+
+nav ul li {
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+nav ul li a{
+    color: #d9dfdb;
+    font-family: bobby; 
+    font-size: 26px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    text-decoration: none; 
+}
+a.active,a:hover{
+    color: #7b7b7b;
+    transition: .5s;
+}
+.checkbtn{
+    font-size: 30px;
+    color: white;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+#check{
+    display: none;
+}
+@media (max-width: 952px){
+    label.logo{
+        font-size: 30px;
+        padding-left: 50px;
+    }
+    nav ul li a{
+        font-size: 16px;
+    }
+}
+@media (max-width: 858px){
+    .checkbtn{
+        display: block;
+    }
+    ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: black;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+    nav ul li{
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+    nav ul li a{
+        font-size: 20px;
+    }
+    a:hover,a.active{
+        background: none;
+        color: #3E3A3A;
+    }
+    #check:checked ~ ul{
+        left: 0;
+    }
+}
+section{
+    background: url(images/building.png) no-repeat;
+    background-size: cover;
+    height: calc(100vh - 80px);
+}
