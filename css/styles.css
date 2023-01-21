@@ -13,12 +13,16 @@
 
 #title {
     font-family: bobby; 
-    font-size: 110px; 
+    font-size: 275%; 
     color: #bc1823; 
-    white-space: nowrap;
-    position: relative; 
-    top: 30px; 
-    left: 380px; 
+    white-space: nowrap; 
+}
+
+.box {
+    background-color: lightblue; 
+    border: 1px solid blue; 
+    min-height: 100px; 
+    font-size: 2rem; 
 }
 
 #subtitle {
@@ -101,17 +105,19 @@ nav ul {
 nav ul li {
     display: inline-block;
     line-height: 80px;
-    margin: 0 5px;
+    margin: 0 64px;
 }
 nav ul li a{
     color: #d9dfdb;
-    font-size: 17px;
+    font-family: bobby; 
+    font-size: 26px;
     padding: 7px 13px;
     border-radius: 3px;
     text-transform: uppercase;
+    text-decoration: none; 
 }
 a.active,a:hover{
-    background-color: #3E3A3A;
+    color: #7b7b7b;
     transition: .5s;
 }
 .checkbtn{
