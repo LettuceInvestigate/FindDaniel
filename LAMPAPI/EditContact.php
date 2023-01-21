@@ -3,13 +3,15 @@
 
 	$inData = getRequestInfo();
 
-	$ID = $inData["ID"];
-	$userId = $inData["userId"];
-	$Name = $inData["Name"];
-	$Phone = $inData["Phone"];
-	$Email = $inData["Email"];
-	$Alive = $inData["Alive"];
-	$Relationship = $inData["Relationship"];
+	$column = $inData
+	$cell = $inData[$column]
+	// $ID = $inData["ID"];
+	// $userId = $inData["userId"];
+	// $Name = $inData["Name"];
+	// $Phone = $inData["Phone"];
+	// $Email = $inData["Email"];
+	// $Alive = $inData["Alive"];
+	// $Relationship = $inData["Relationship"];
 
 	$conn = new mysqli("localhost", "TheBeast", "WeLoveCOP4331", "COP4331");
 	if( $conn->connect_error )
@@ -18,7 +20,8 @@
 	}
 	else
 	{
-		mysqli_query($conn,"DELETE FROM `Contacts` where ID = '".$ID."'");
+		// WHERE will either be pulled by HTML or provided by Query, after that just finish the line
+		mysqli_query($conn,"UPDATE `Contacts` SET ".$column." = '".$cell."' WHERE ");
 		$conn->close();
 		returnWithError("");
 	}
