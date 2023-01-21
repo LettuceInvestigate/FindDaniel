@@ -15,7 +15,6 @@ function doLogin()
 	let login = document.getElementById("loginName").value;
 	let password = document.getElementById("loginPassword").value;
 
-	readCookie();
 //	var hash = md5( password );
 	
 	document.getElementById("loginResult").innerHTML = "";
@@ -167,6 +166,7 @@ function doRegister()
 	{
 		document.getElementById("registerResult").innerHTML = err.message;
 	}
+	readCookie();
 }
 
 function createContact()
@@ -197,7 +197,7 @@ function addContact()
 		{
 			if (this.readyState == 4 && this.status == 200) 
 			{
-				document.getElementById("contactAddResult").innerHTML = "Contact has been added";
+				document.getElementById("contactAddResult").innerHTML = "Contact has been added!";
 			}
 		};
 		xhr.send(jsonPayload);
@@ -205,6 +205,36 @@ function addContact()
 	catch(err)
 	{
 		document.getElementById("contactAddResult").innerHTML = err.message;
+	}
+	
+}
+
+function deleteContact()
+{
+	let delContact = { ID: document.getElementById("contactID").value};
+	document.getElementById("contactDeleteResult").innerHTML = "";
+
+	let jsonPayload = JSON.stringify( delContact );
+
+	let url = urlBase + '/RemoveContact.' + extension;
+	
+	let xhr = new XMLHttpRequest();
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	try
+	{
+		xhr.onreadystatechange = function() 
+		{
+			if (this.readyState == 4 && this.status == 200) 
+			{
+				document.getElementById("contactDeleteResult").innerHTML = "Contact has been deleted!";
+			}
+		};
+		xhr.send(jsonPayload);
+	}
+	catch(err)
+	{
+		document.getElementById("contactDeleteResult").innerHTML = err.message;
 	}
 	
 }
