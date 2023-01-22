@@ -1,4 +1,4 @@
 TODO:
 
 - Hover works perfectly correct now, implement it through js
-
+- sizing adjestment needed between high-low: buttons overflow to next line (small error within 10px)
