@@ -1,0 +1,4 @@
+TODO:
+
+- Hover works perfectly correct now, implement it through js
+
