@@ -25,30 +25,13 @@ html, body {
 
 /* MEDIA QUERIES FOR RESPONSIVENESS/SIZING */ 
 
-/* X-Small devices (portrait phones, less than 576px) */ 
-@media (max-width: 576px) {
-
-    
-}
-
-/* Small devices (landscape phones, less than 768px) */ 
-@media (max-width: 768px) {
-
-}
-
-/* Medium devices (tablets, less than 992px) */ 
-@media (max-width: 992px) {
-
-}
-
-/* Large devices (desktops, less than 1200px) */ 
-@media (max-width: 1200px) {
+@media (min-width: 992px) {
     #title {
         font-family: fibre; 
-        font-size: 7.5rem; 
+        font-size: 6rem; 
         color: #bc1823; 
-        left: 20%; 
-        top: 10%; 
+        left: 22%; 
+        top: 14%; 
         position: absolute; 
         white-space: nowrap;
     }
@@ -57,9 +40,41 @@ html, body {
         font-family: bobby; 
         color: #212932; 
         position: relative; 
-        font-size: 2.5rem; 
-        left: 20%; 
-        top: 26%; 
+        font-size: 2.2rem; 
+        left: 19%; 
+        top: 27%; 
+        position: absolute; 
+        white-space: nowrap;
+    }
+    
+    #building {
+        height: 74vh; 
+        width: 74vw; 
+        z-index: -1; 
+        left: 14%; 
+        top: 28%; 
+        position: absolute; 
+    }
+}
+
+@media (min-width: 1200px) {
+    #title {
+        font-family: fibre; 
+        font-size: 6rem; 
+        color: #bc1823; 
+        left: 26%; 
+        top: 16%; 
+        position: absolute; 
+        white-space: nowrap;
+    }
+    
+    #subtitle {
+        font-family: bobby; 
+        color: #212932; 
+        position: relative; 
+        font-size: 2.2rem; 
+        left: 24%; 
+        top: 30%; 
         position: absolute; 
         white-space: nowrap;
     }
@@ -69,20 +84,19 @@ html, body {
         width: 72vw; 
         z-index: -1; 
         left: 14%; 
-        top: 30%; 
+        top: 28%; 
         position: absolute; 
     }
 }
 
 /* Macbook fits here */ 
-/* X-Large devices (large desktops, equal to or greater than 1400px) */ 
 @media (min-width: 1400px) {
     #title {
         font-family: fibre; 
         font-size: 7.5rem; 
         color: #bc1823; 
         left: 25%; 
-        top: 10%; 
+        top: 14%; 
         position: absolute; 
         white-space: nowrap;
     }
@@ -93,7 +107,7 @@ html, body {
         position: relative; 
         font-size: 2.7rem; 
         left: 23%; 
-        top: 26%; 
+        top: 30%; 
         position: absolute;
         white-space: nowrap;
     }
@@ -104,6 +118,38 @@ html, body {
         z-index: -1; 
         left: 14%;
         top: 30%;  
+        position: absolute; 
+    }
+}
+
+@media (min-width: 1800px) {
+    #title {
+        font-family: fibre; 
+        font-size: 8rem; 
+        color: #bc1823; 
+        left: 28%; 
+        top: 14%; 
+        position: absolute; 
+        white-space: nowrap;
+    }
+    
+    #subtitle {
+        font-family: bobby; 
+        color: #212932; 
+        position: relative; 
+        font-size: 3rem; 
+        left: 25%; 
+        top: 30%; 
+        position: absolute; 
+        white-space: nowrap;
+    }
+    
+    #building {
+        height: 72vh; 
+        width: 72vw; 
+        z-index: -1; 
+        left: 13%; 
+        top: 28%; 
         position: absolute; 
     }
 }
