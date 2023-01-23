@@ -1,3 +1,10 @@
-TODO:
+General To-Do: 
 - Hover works perfectly correct now, implement it through js
 - sizing adjestment needed between high-low: buttons overflow to next line (small error within 10px)
+
+Nav Bar: 
+- Make the logo bigger 
+
+Home Page: 
+- Add people images at some point (potentially with our faces)
+
