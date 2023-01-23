@@ -1,85 +1,111 @@
 * { 
-    margin: 0;
     padding: 0;
+    margin: 0;
     text-decoration: none;
-    box-sizing: border-box;
+    list-style: none;
+    box-sizing: border-box;   
 }
 
+/* Font for main titles on each page */ 
+@font-face {
+    font-family: fibre; 
+    src: url(/fonts/fibre.otf); 
+}
+
+/* Font for everything else */ 
 @font-face {
     font-family: bobby;
     src: url(/fonts/bobby.otf);
 }
 
-#title {
-    font-family: bobby; 
-    font-size: 275%; 
-    color: #bc1823; 
-    white-space: nowrap; 
+/* Prevents the page from overflowing/excessive scrolling left and right */ 
+html, body {
+    overflow-x: hidden; 
 }
 
-.box {
-    background-color: lightblue; 
-    border: 1px solid blue; 
-    min-height: 100px; 
-    font-size: 2rem; 
+/* MEDIA QUERIES FOR RESPONSIVENESS/SIZING */ 
+
+/* X-Small devices (portrait phones, less than 576px) */ 
+@media (max-width: 576px) {
+
+    
 }
 
-#subtitle {
-    font-family: bobby; 
-    color: #212932; 
-    position: relative; 
-    font-size: 40px; 
-    top: 20px; 
-    left: 360px; 
+/* Small devices (landscape phones, less than 768px) */ 
+@media (max-width: 768px) {
+
 }
 
-#building {
-    height: 1100px; 
-    width: 1300px; 
-    top: -350px; 
-    left: 175px; 
-    position: relative; 
-    z-index: -1; 
+/* Medium devices (tablets, less than 992px) */ 
+@media (max-width: 992px) {
+
 }
 
-#person1 {
-    position: relative; 
-    top: -1100px; 
-    left: -150px; 
-    height: 300px; 
-    width: 600px; 
+/* Large devices (desktops, less than 1200px) */ 
+@media (max-width: 1200px) {
+    #title {
+        font-family: fibre; 
+        font-size: 7.5rem; 
+        color: #bc1823; 
+        left: 20%; 
+        top: 10%; 
+        position: absolute; 
+        white-space: nowrap;
+    }
+    
+    #subtitle {
+        font-family: bobby; 
+        color: #212932; 
+        position: relative; 
+        font-size: 2.5rem; 
+        left: 20%; 
+        top: 26%; 
+        position: absolute; 
+        white-space: nowrap;
+    }
+    
+    #building {
+        height: 72vh; 
+        width: 72vw; 
+        z-index: -1; 
+        left: 14%; 
+        top: 30%; 
+        position: absolute; 
+    }
 }
 
-#person2 {
-    position: relative; 
-    height: 300px; 
-    width: 600px;
-    top: -900px;  
-    left: -675px; 
-}
-
-#person3 {
-    position: relative; 
-    height: 300px; 
-    width: 600px; 
-    top: -1500px; 
-    left: 950px; 
-}
-
-#person4 {
-    position: relative; 
-    height: 300px; 
-    width: 600px;
-    top: -1300px; 
-    left: 425px;  
-}
-
-#person5 {
-    position: relative; 
-    height: 300px; 
-    width: 600px; 
-    top: -1400px; 
-    left: 950px; 
+/* Macbook fits here */ 
+/* X-Large devices (large desktops, equal to or greater than 1400px) */ 
+@media (min-width: 1400px) {
+    #title {
+        font-family: fibre; 
+        font-size: 7.5rem; 
+        color: #bc1823; 
+        left: 25%; 
+        top: 10%; 
+        position: absolute; 
+        white-space: nowrap;
+    }
+    
+    #subtitle {
+        font-family: bobby; 
+        color: #212932; 
+        position: relative; 
+        font-size: 2.7rem; 
+        left: 23%; 
+        top: 26%; 
+        position: absolute;
+        white-space: nowrap;
+    }
+    
+    #building {
+        height: 70vh; 
+        width: 70vw; 
+        z-index: -1; 
+        left: 14%;
+        top: 30%;  
+        position: absolute; 
+    }
 }
 
 section{
