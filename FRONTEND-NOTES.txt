@@ -1,10 +1,13 @@
 General To-Do: 
-- Hover works perfectly correct now, implement it through js
 - sizing adjestment needed between high-low: buttons overflow to next line (small error within 10px)
 
 Nav Bar: 
 - Make the logo bigger 
+- Fix hover functionality
 
 Home Page: 
 - Add people images at some point (potentially with our faces)
+
+Our Tragedy:
+- Page minimized makes text appear below everything & doesn't resize image or middle gray box.
 
