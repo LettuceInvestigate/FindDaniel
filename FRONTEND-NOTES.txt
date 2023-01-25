@@ -12,6 +12,7 @@ Home Page:
 Our Tragedy:
 - normal page size: middle box does not extend to all of text
 - Page minimized makes text appear below everything & doesn't resize image or middle gray box.
+- using center makes VS-code color it in red, weird color :/
 
 Login:
 -form feild validation
