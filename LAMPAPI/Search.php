@@ -3,7 +3,7 @@
 
 $inData = getRequestInfo();
 
-$column = $inData
+$column = $inData["column"];
 // $ID = $inData["ID"];
 // $userId = $inData["userId"];
 // $Name = $inData["Name"];
@@ -20,16 +20,25 @@ if( $conn->connect_error )
 else
 {
     // Get tables from MySQL - Each line brings back only its respective columns
-    $result = $mysqli->query("SELECT ".$column." FROM Contacts");
-//  $result = $mysqli->query("SELECT ID, userId, Name, Phone, Email, Alive, Relationship FROM Contacts");
+    //$result = $mysqli->query("SELECT ID, userId, Name, Phone, Email, Alive, Relationship FROM Contacts");   
+    $result = $mysqli->query("SELECT $column FROM Contacts");
 
-    // Perform the search
-    for ($rowNum = $result->num_rows - 1; $rowNum >= 0; $rowNum--) {
-        $result -> data_seek($rowNum);
-        $row = $result->fetch_row();
-        // $row[$column] is the specific field value, maybe create a data structure to append $row array results to?
+    // Return number of rows if successful
+    if( $row = $result->fetch_assoc()  )
+    {
+        returnWithInfo( $row['firstName'], $row['lastName'], $row['ID'] );
     }
-    // Do etc idk
+    else
+    {
+        returnWithError("No Records Found");
+    }
+
+    // // Perform the search
+    // for ($rowNum = $result->num_rows - 1; $rowNum >= 0; $rowNum--) {
+    //     $result -> data_seek($rowNum);
+    //     $row = $result->fetch_row();
+    //     // $row[$column] is the specific field value, maybe create a data structure to append $row array results to?
+    // }
 
     $conn->close();
     returnWithError("");
