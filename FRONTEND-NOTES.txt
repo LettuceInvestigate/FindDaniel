@@ -3,11 +3,16 @@ General To-Do:
 
 Nav Bar: 
 - Make the logo bigger 
+- resize text
 - Fix hover functionality
 
 Home Page: 
 - Add people images at some point (potentially with our faces)
 
 Our Tragedy:
+- normal page size: middle box does not extend to all of text
 - Page minimized makes text appear below everything & doesn't resize image or middle gray box.
 
+Login:
+-form feild validation
+-- regex email validation??

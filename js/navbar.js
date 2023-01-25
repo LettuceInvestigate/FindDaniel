@@ -1,32 +1,41 @@
 function activeClass(fileName) {
     if (fileName == "index.html") {
-        document.getElementById("homeButton").className = "active";
-        document.getElementById("tragedyButton").className = "inactive";
-        document.getElementById("postersButton").className = "inactive";
-        document.getElementById("loginButton").className = "inactive";
         isIndex();
-
+        document.getElementById("homeButton").class = "active";
+        document.getElementById("tragedyButton").class = "active";
+        document.getElementById("postersButton").class = "active";
+        document.getElementById("loginButton").class = "active";
     }
     if (fileName == "ourtragedy.html") {
-        document.getElementById("homeButton").className = "inactive";
-        document.getElementById("tragedyButton").className = "active";
-        document.getElementById("postersButton").className = "inactive";
-        document.getElementById("loginButton").className = "inactive";
         notIndex();
+        document.getElementById("homeButton").class = "active";
+        document.getElementById("tragedyButton").class = "active";
+        document.getElementById("postersButton").class = "active";
+        document.getElementById("loginButton").class = "active";
     }
     if (fileName == "wantedposters.html") {
-        document.getElementById("homeButton").className = "inactive";
-        document.getElementById("tragedyButton").className = "inactive";
-        document.getElementById("postersButton").className = "active";
-        document.getElementById("loginButton").className = "inactive";
         notIndex();
+        document.getElementById("homeButton").class = "active";
+        document.getElementById("tragedyButton").class = "active";
+        document.getElementById("postersButton").class = "active";
+        document.getElementById("loginButton").class = "active";
     }
     if (fileName == "login.html") {
-        document.getElementById("homeButton").className = "inactive";
-        document.getElementById("tragedyButton").className = "inactive";
-        document.getElementById("postersButton").className = "inactive";
-        document.getElementById("loginButton").className = "active";
         notIndex();
+        document.getElementById("homeButton").class = "active";
+        document.getElementById("tragedyButton").class = "active";
+        document.getElementById("postersButton").class = "active";
+        document.getElementById("loginButton").class = "active";
+    }
+}
+
+function fixTravel(fileName){
+    if (fileName == "index.html") {
+        isIndex();
+    }else if(fileName == "ourtragedy.html" || fileName == "wantedposters.html" || fileName == "login.html" || fileName == "register.html"){
+        notIndex();
+    }else{
+        console.error("JS: FixTravel Function: NavBar: Reached Illegal Page!")
     }
 }
 
@@ -42,4 +51,13 @@ function notIndex(){
     document.getElementById("tragedyButton").href = "ourtragedy.html";
     document.getElementById("postersButton").href = "wantedposters.html"
     document.getElementById("loginButton").href = "login.html";
+}
+
+function hoverButton(currentElement){
+    if(currentElement = "homeButton"){
+        document.getElementById("homeButton").class = "active";
+        document.getElementById("tragedyButton").class = "inactive";
+        document.getElementById("postersButton").class = "inactive";
+        document.getElementById("loginButton").class = "inactive";
+    }
 }

@@ -4,22 +4,30 @@
 <html>
 
     <head>
+        <!-- HTML -->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        
+        <!-- CSS -->
         <link rel="stylesheet" href="/./css/navbar.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+        
+        <!--JavaScript-->
         <script type="text/javascript" src="/./js/navbar.js"></script>
     </head>
 
     <body>
         <!--JavaScript-->
         <script>
+            /* Current Directory Getter */
             var path = window.location.pathname;
             var page = path.split("/").pop();
+
+
         </script>
 
-        <!--Navbar-->
+        <!--HTML-->
         <nav class="navbar">
         <div class="max-width">
             <input type="checkbox" id="check">
@@ -30,10 +38,10 @@
                 alt="This is a lettuce which is the logo of the project"
                 title="A group of lettuce is called a carrabbage"></a></div>
             <ul class="menu" activeClass(page);>
-            <li><a id="homeButton" class="active" href="index.html" onclick="activeClass(page);">HOME</a></li>
+            <li><a id="homeButton" class="inactive" href="index.html" onclick="activeClass(page);">HOME</a></li>
             <li><a id="tragedyButton" class="inactive" href="ourtragedy.html" onclick="activeClass(page);">OUR TRAGEDY</a></li>
-            <li><a id="postersButton" class="inactive" href="wantedposters.html"onclick="activeClass(page);">WANTED POSTERS</a></li>
-            <li><a id="loginButton" class="inactive" href="login.html"onclick="activeClass(page);">LOGIN/REGISTER</a></li>
+            <li><a id="postersButton" class="inactive" href="wantedposters.html" onclick="activeClass(page);">WANTED POSTERS</a></li>
+            <li><a id="loginButton" class="inactive" href="login.html" onclick="activeClass(page);">LOGIN/REGISTER</a></li>
             </ul>
         </div>
         </nav>
