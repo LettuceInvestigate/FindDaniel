@@ -1,31 +1,31 @@
 function activeClass(fileName) {
     if (fileName == "index.html") {
         isIndex();
-        document.getElementById("homeButton").class = "active";
-        document.getElementById("tragedyButton").class = "active";
-        document.getElementById("postersButton").class = "active";
-        document.getElementById("loginButton").class = "active";
+        document.getElementById("homeButton").className = "active";
+        document.getElementById("tragedyButton").className = "active";
+        document.getElementById("postersButton").className = "active";
+        document.getElementById("loginButton").className = "active";
     }
     if (fileName == "ourtragedy.html") {
         notIndex();
-        document.getElementById("homeButton").class = "active";
-        document.getElementById("tragedyButton").class = "active";
-        document.getElementById("postersButton").class = "active";
-        document.getElementById("loginButton").class = "active";
+        document.getElementById("homeButton").className = "active";
+        document.getElementById("tragedyButton").className = "active";
+        document.getElementById("postersButton").className = "active";
+        document.getElementById("loginButton").className = "active";
     }
     if (fileName == "wantedposters.html") {
         notIndex();
-        document.getElementById("homeButton").class = "active";
-        document.getElementById("tragedyButton").class = "active";
-        document.getElementById("postersButton").class = "active";
-        document.getElementById("loginButton").class = "active";
+        document.getElementById("homeButton").className = "active";
+        document.getElementById("tragedyButton").className = "active";
+        document.getElementById("postersButton").className = "active";
+        document.getElementById("loginButton").className = "active";
     }
     if (fileName == "login.html") {
         notIndex();
-        document.getElementById("homeButton").class = "active";
-        document.getElementById("tragedyButton").class = "active";
-        document.getElementById("postersButton").class = "active";
-        document.getElementById("loginButton").class = "active";
+        document.getElementById("homeButton").className = "active";
+        document.getElementById("tragedyButton").className = "active";
+        document.getElementById("postersButton").className = "active";
+        document.getElementById("loginButton").className = "active";
     }
 }
 

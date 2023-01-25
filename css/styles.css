@@ -32,7 +32,7 @@ html, body {
         color: #bc1823; 
         left: 22%; 
         top: 14%; 
-        position: absolute; 
+        position: absolute;
         white-space: nowrap;
         animation: 2s slide-left;
     }
