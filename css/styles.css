@@ -21,144 +21,108 @@
 /* Prevents the page from overflowing/excessive scrolling left and right */ 
 html, body {
     overflow-x: hidden; 
+    height: 100%;
+    width: 100%;
+}
+
+#title{
+    font-family: fibre;
+    color: #bc1823; 
+    position: absolute;
+    white-space: nowrap;
+    animation: 2s slide-left;
+}
+#subtitle{
+    font-family: bobby; 
+    color: #212932; 
+    position: absolute; 
+    white-space: nowrap;
+    animation: 2s slide-right;
+}
+#building{
+    position: absolute; 
 }
 
 /* MEDIA QUERIES FOR RESPONSIVENESS AND SIZING */ 
 
 @media (min-width: 992px) {
     #title {
-        font-family: fibre; 
-        font-size: 6rem; 
-        color: #bc1823; 
+        font-size: 7rem; 
         left: 22%; 
         top: 14%; 
-        position: absolute;
-        white-space: nowrap;
-        animation: 2s slide-left;
     }
-    
-    #subtitle {
-        font-family: bobby; 
-        color: #212932; 
-        position: relative; 
+    #subtitle {        
         font-size: 2.2rem; 
         left: 19%; 
         top: 27%; 
-        position: absolute; 
-        white-space: nowrap;
-        animation: 2s slide-right;
-    }
-    
+    }    
     #building {
-        height: 74vh; 
-        width: 74vw; 
+        height: 74%; 
+        width: 74%; 
         z-index: -1; 
         left: 14%; 
         top: 28%; 
-        position: absolute; 
     }
 }
 
 @media (min-width: 1200px) {
     #title {
-        font-family: fibre; 
         font-size: 6rem; 
-        color: #bc1823; 
         left: 26%; 
         top: 16%; 
-        position: absolute; 
-        white-space: nowrap;
-        animation: 2s slide-left;
-    }
-    
+    }    
     #subtitle {
-        font-family: bobby; 
-        color: #212932; 
-        position: relative; 
         font-size: 2.2rem; 
         left: 24%; 
         top: 30%; 
-        position: absolute; 
-        white-space: nowrap;
-        animation: 2s slide-right;
-    }
-    
+    }    
     #building {
-        height: 72vh; 
-        width: 72vw; 
+        height: 72%; 
+        width: 72%; 
         z-index: -1; 
         left: 14%; 
         top: 28%; 
-        position: absolute; 
     }
 }
 
 /* Macbook fits here */ 
 @media (min-width: 1400px) {
     #title {
-        font-family: fibre; 
         font-size: 7.5rem; 
-        color: #bc1823; 
         left: 25%; 
         top: 14%; 
-        position: absolute; 
-        white-space: nowrap;
-        animation: 2s slide-left;
-    }
-    
+    }    
     #subtitle {
-        font-family: bobby; 
-        color: #212932; 
-        position: relative; 
         font-size: 2.7rem; 
         left: 23%; 
         top: 30%; 
-        position: absolute;
-        white-space: nowrap;
-        animation: 2s slide-right;
-    }
-    
+    }    
     #building {
-        height: 70vh; 
-        width: 70vw; 
+        height: 70%; 
+        width: 70%; 
         z-index: -1; 
         left: 14%;
         top: 30%;  
-        position: absolute; 
     }
 }
 
 @media (min-width: 1800px) {
     #title {
-        font-family: fibre; 
         font-size: 8rem; 
-        color: #bc1823; 
         left: 28%; 
         top: 14%; 
-        position: absolute; 
-        white-space: nowrap;
-        animation: 2s slide-left;
-    }
-    
+    }    
     #subtitle {
-        font-family: bobby; 
-        color: #212932; 
-        position: relative; 
         font-size: 3rem; 
         left: 25%; 
         top: 30%; 
-        position: absolute; 
-        white-space: nowrap;
-        animation: 2s slide-right;
-    }
-    
+    }    
     #building {
-        height: 72vh; 
-        width: 72vw; 
+        height: 72%; 
+        width: 72%; 
         z-index: -1; 
         left: 13%; 
         top: 28%; 
-        position: absolute; 
     }
 }
 
