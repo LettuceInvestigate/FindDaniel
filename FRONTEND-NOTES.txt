@@ -1,19 +1,22 @@
 General To-Do: 
-- sizing adjestment needed between high-low: buttons overflow to next line (small error within 10px)
+- Sizing adjestment needed between high-low: buttons overflow to next line (small error within 10px)
 
 Nav Bar: 
 - Make the logo bigger 
-- resize text
+- Resize text
 - Fix hover functionality
 
 Home Page: 
 - Add people images at some point (potentially with our faces)
 
 Our Tragedy:
-- normal page size: middle box does not extend to all of text
+- Normal page size: middle box does not extend to all of text
 - Page minimized makes text appear below everything & doesn't resize image or middle gray box.
-- using center makes VS-code color it in red, weird color :/
+- Using center makes VS-code color it in red, weird color :/
 
 Login:
--form feild validation
--- regex email validation??
+- Form field validation
+- Regex email validation??
+- What do we do when the user clicks on forgot password
+
+Register: 
