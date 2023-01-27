@@ -8,18 +8,6 @@
     src: url(/fonts/bobby.otf);
 }
 
-#index-title {
-  font-family: fibre;
-  color: #bc1823;
-  animation: 2s slide-left;
-}
-
-#index-subtitle {
-    font-family: bobby;
-    color: #212932;
-    animation: 2s slide-right;
-}
-
 #our-white {
   color: #d9dfdb
 }
@@ -28,27 +16,7 @@
   color: #bc1823;
 }
 
-/* Animation for Home Page */ 
-@keyframes slide-left {
-    from {
-      margin-left: 100%;
-    }
-    to {
-      margin-left: 0%;
-    }
-}
-
-/* Animation for Home Page */ 
-@keyframes slide-right {
-    from {
-      margin-left: -100%;
-    }
-    to {
-      margin-left: 0%;
-    }
-}
-
-/* Animation on Our Tragedy Page */ 
+/* Animation */ 
 @keyframes fadeIn {
     0% 
     { 
@@ -60,7 +28,6 @@
         opacity: 1; 
     }
 }
-
 
 /* DO NOT CHANGE */
 #dashboardTHeadTD{
