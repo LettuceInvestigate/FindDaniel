@@ -1,9 +1,6 @@
 General To-Do: 
-- Sizing adjestment needed between high-low: buttons overflow to next line (small error within 10px)
 
 Nav Bar: 
-- Make the logo bigger 
-- Resize text
 - Fix hover functionality
 
 Home Page: 
@@ -19,3 +16,4 @@ Login:
 - What do we do when the user clicks on forgot password
 
 Register: 
+- What do we do when the user clicks on register
