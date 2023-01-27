@@ -1,7 +1,8 @@
 General To-Do: 
 - bootstrap in every file.
-- merge branches: api + frontend = developer branch
 - push to where'sdaniel.io
+- add all colors to styles.css
+- call color by id in all HTML
 
 Nav Bar: 
 - NAVBAR IS SHY, HE DISAPEARS FROM TIME TO TIME
