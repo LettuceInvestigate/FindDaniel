@@ -4,9 +4,8 @@ General To-Do:
 - add all colors to styles.css
 - call color by id in all HTML
 
-Nav Bar: 
-- NAVBAR IS SHY, HE DISAPEARS FROM TIME TO TIME
-- Make the logo bigger 
+Nav Bar:
+- Make the logo smaller 
 - Resize text
 - Fix hover functionality
 
@@ -14,8 +13,7 @@ Home Page:
 - Add people images at some point (potentially with our faces)
 
 Our Tragedy:
-- Page minimized makes text appear below everything & doesn't resize image or middle gray box.
-- Using center makes VS-code color it in red, weird color :/
+- Using <center> makes VS-code color it in red, weird color :/
 
 Login:
 - Form field validation
