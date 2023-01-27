@@ -2,20 +2,24 @@
     font-family: fibre; 
     src: url(/fonts/fibre.otf);
 }
+
 @font-face {
     font-family: bobby;
     src: url(/fonts/bobby.otf);
 }
-#index-title{
+
+#index-title {
   font-family: fibre;
   color: #bc1823;
   animation: 2s slide-left;
 }
-#index-subtitle{
+
+#index-subtitle {
     font-family: bobby;
     color: #212932;
     animation: 2s slide-right;
 }
+
 #login-box {
     height: 85vh; 
     width: 90vw; 
@@ -23,6 +27,7 @@
     left: 7%; 
     z-index: 0; 
 }
+
 #login-title {
     font-family: fibre;
     font-size: 7rem; 
@@ -32,10 +37,11 @@
     top: 22%; 
     z-index: 1; 
 }
+
 #signin-button {
     font-family: bobby;
     font-size: 2rem;
-    color: white; 
+    color: #d9dfdb; 
     padding: 10px 20px;
     top: 63%; 
     left: 48.5%; 
@@ -48,6 +54,7 @@
     position: absolute; 
     z-index: 1; 
 }
+
 #forgotpw-button {
     font-family: bobby;
     font-size: 1.7rem;
@@ -63,10 +70,11 @@
     position: absolute; 
     z-index: 1;
 }
+
 #register-button {
     font-family: bobby;
     font-size: 1.7rem;
-    color: #bc1823; 
+    color: #d9dfdb; 
     padding: 10px 20px;
     top: 80%; 
     left: 39%; 
@@ -78,6 +86,7 @@
     position: absolute;
     z-index: 1;  
 }
+
 #register-box {
     height: 85vh; 
     width: 90vw; 
@@ -85,6 +94,7 @@
     left: 7%; 
     z-index: 0; 
 }
+
 #register-title {
     font-family: fibre;
     font-size: 7rem; 
@@ -94,10 +104,11 @@
     top: 20%; 
     z-index: 1; 
 }
+
 #signup-button {
     font-family: bobby;
     font-size: 2rem;
-    color: white; 
+    color: #d9dfdb; 
     padding: 10px 20px;
     top: 80%; 
     left: 46%; 
@@ -111,8 +122,11 @@
     z-index: 1; 
 }
 
+#our-white {
+    color: #d9dfdb
+}
 
-#our-red{
+#our-red {
   color: #bc1823;
 }
 
@@ -184,6 +198,7 @@ input[type=password] {
     position: absolute;
     z-index: 1; 
 }
+
 input[type=re-password] {
     font-family: bobby; 
     color: #212932;
@@ -206,6 +221,8 @@ input[type=re-password] {
     position: absolute;
     z-index: 1; 
 }
+
+/* Animation for Home Page */ 
 @keyframes slide-left {
     from {
       margin-left: 100%;
@@ -215,11 +232,25 @@ input[type=re-password] {
     }
 }
 
+/* Animation for Home Page */ 
 @keyframes slide-right {
     from {
       margin-left: -100%;
     }
     to {
       margin-left: 0%;
+    }
+}
+
+/* Animation on Our Tragedy */ 
+@keyframes fadeIn {
+    0% 
+    { 
+        opacity: 0; 
+    }
+
+    100% 
+    { 
+        opacity: 1; 
     }
 }
