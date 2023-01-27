@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <html>
-
 <head>
   <!--HTML-->
   <meta charset="UTF-8">
@@ -30,26 +29,50 @@
   <!--NavBar-->
   <div id="includeHtml"></div>
 
+  <!-- Page -->
   <div class='container-fluid vh-100 overflow-scroll'
     style='background-image: url("/images/field.png"); background-size: cover; padding-bottom: 70px; padding-top: 70px;'>
-    <div class='container rounded-5' style='background-color: #333941DE;'>
-      <!-- Field Boxes -->
-      <input id="suspect-name" type="text" placeholder="Suspect Name">
-      <input id="password" type="password" placeholder="Password">
+    <div class='container rounded-5' style='background-color: #212932; opacity: 90%; margin-top: -30px; width: 600px; height: 600px'>
+      <!-- Title -->
+      <div id= "our-red" style="font-size: 6rem; animation: fadeIn 4s; font-family: fibre; margin-left: 195px;">
+        Login
+      </div>
+
+      <!-- Suspect Name -->
+      <input id="suspect-name" type="username" 
+      style='font-family: bobby; text-align: center; font-size: 2.5rem; color: #212932; background-color: #d9dfdb; 
+      border-radius: 24px; margin-left: 40px; margin-bottom: 20px; border: 1px solid #d9dfdb;'
+      placeholder="Suspect Name">
+
+      <!-- Password -->
+      <input id="password" type="password"
+      style='font-family: bobby; text-align: center; font-size: 2.5rem; color: #212932; background-color: #d9dfdb; 
+      border-radius: 24px; margin-left: 40px; border: 1px solid #d9dfdb;'
+      placeholder="Password">
 
       <!-- Sign In Button -->
-      <button id="signin-button" onclick="window.location.href='wantedposters.html';">Sign In</button>
-
-      <!-- Extraneous Buttons -->
-      <button id="forgotpw-button" onclick="window.location.href='register.html';">
-        <span style="color: #d9dfdb">Forgot Password?</span> Click Here!
+      <button id="signin-button" 
+      style='font-family: bobby; font-size: 2rem; color: #d9dfdb; padding: 10px 20px; background-color: #bc1823;
+      border-radius: 24px; border: 1px solid #bc1823; cursor: pointer; transition-duration: 0.4s;
+      margin-top: 55px; margin-left: 225px;'
+      onclick="window.location.href='wantedposters.html';">Sign In
       </button>
 
-      <button id="register-button" onclick="window.location.href='register.html';">
-        <span style="color: #d9dfdb">Don't Have An Account?</span> Register Here!
+      <!-- Extraneous Buttons -->
+      <button id="forgotpw-button" 
+      style='font-family: bobby; font-size: 1.7rem; color: #d9dfdb; background: none; 
+      border: none; cursor: pointer; transition-duration: 0.4s; margin-left: 120px; margin-top: 40px;'
+      onclick="window.location.href='register.html';">Forgot Password? 
+      <span style="color: #bc1823"> Click Here!</span> 
+      </button>
+
+      <button id="register-button" 
+      style='font-family: bobby; font-size: 1.7rem; color: #d9dfdb; background: none; 
+      border: none; cursor: pointer; transition-duration: 0.4s; margin-left: 70px; margin-top: 10px;'
+      onclick="window.location.href='register.html';">Don't Have An Account? 
+      <span style="color: #bc1823"> Register Here!</span> 
       </button>
     </div>
   </div>
 </body>
-
 </html>
