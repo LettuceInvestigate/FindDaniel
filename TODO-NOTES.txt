@@ -9,12 +9,16 @@ Nav Bar:
 - Make the logo smaller 
 - Resize text
 - Fix hover functionality
+- signed in -> Wanted Posters points to dashbord.html
+- signed out -> Wanted Posters points to wantedposters.html
+ 
 
 Home Page: 
 - Add people images at some point (potentially with our faces)
 
 Our Tragedy:
 - Using <center> makes VS-code color it in red, weird color :/
+- 'about us' is too close to text, needs fixing
 
 Login:
 - Form field validation

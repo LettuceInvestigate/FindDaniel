@@ -27,6 +27,20 @@ function activeClass(fileName) {
         document.getElementById("postersButton").className = "active";
         document.getElementById("loginButton").className = "active";
     }
+    if (fileName == "register.html") {
+        notIndex();
+        document.getElementById("homeButton").className = "inactive";
+        document.getElementById("tragedyButton").className = "inactive";
+        document.getElementById("postersButton").className = "inactive";
+        document.getElementById("loginButton").className = "inactive";
+    }
+    if (fileName == "dashboard.html") {
+        notIndex();
+        document.getElementById("homeButton").className = "inactive";
+        document.getElementById("tragedyButton").className = "inactive";
+        document.getElementById("postersButton").className = "inactive";
+        document.getElementById("loginButton").className = "inactive";
+    }
 }
 
 function fixTravel(fileName){

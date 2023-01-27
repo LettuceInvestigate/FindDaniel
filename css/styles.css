@@ -21,7 +21,7 @@
 }
 
 #our-white {
-    color: #d9dfdb
+  color: #d9dfdb
 }
 
 #our-red {
@@ -60,3 +60,83 @@
         opacity: 1; 
     }
 }
+
+
+/* DO NOT CHANGE */
+#dashboardTHeadTD{
+  font-size: 15px;
+  text-transform: uppercase;
+  font-weight: 400;
+  background: #F9FAFB;
+  text-align: start;
+  padding: 15px;
+}
+#D-tr{
+  border-bottom: 1px solid #eef0f3;
+}
+#D-td-name{
+  padding: 10px 16px;
+  display:flex;
+  justify-content:
+  flex-start;
+  align-items: center;
+  text-align: start;
+}
+#D-td-name img{
+  width: 45px;
+  height: 45px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+#D-td-name h5{
+  margin-bottom: 0rem;
+  margin-top: 0.5rem;
+  font-weight: 700;
+  font-size: 14px;
+}
+#D-td-name p{
+  font-weight: 400;
+  font-size: 13px;
+  color: #787d8d;
+}
+#D-td-username{
+  padding: 10px 16px;
+}
+#D-td-username h5{
+  margin-bottom: 0rem;
+  margin-top: 0.5rem;
+  font-weight: 700;
+  font-size: 14px;
+}
+#D-td-username p{
+  font-weight: 400;
+  font-size: 13px;
+  color: #787d8d;
+}
+#D-td-num{
+  padding: 10px 16px;
+}
+#D-td-num p{
+  font-weight: 400;
+  font-size: 15px;
+  color: #000;
+}
+#D-td-role{
+  padding: 10px 16px;
+}
+#D-td-role p{
+  font-weight: 400;
+  font-size: 15px;
+  color: #000;
+}
+#D-td-edit{
+  padding: 10px 15px;
+}
+#D-td-edit a{
+  text-decoration: none;
+  font-size: 14;
+  color: #554CD1;
+  font-weight: 600;
+}
+
