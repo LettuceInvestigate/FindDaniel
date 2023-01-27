@@ -1,4 +1,7 @@
 General To-Do: 
+- bootstrap in every file.
+- merge branches: api + frontend = developer branch
+- push to where'sdaniel.io
 
 Nav Bar: 
 - Fix hover functionality
@@ -13,6 +16,7 @@ Our Tragedy:
 Login:
 - Form field validation
 - Regex email validation??
+- What do we do when the user clicks on sign in
 - What do we do when the user clicks on forgot password
 
 Register: 
