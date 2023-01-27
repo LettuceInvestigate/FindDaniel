@@ -3,6 +3,7 @@ General To-Do:
 - push to where'sdaniel.io
 - add all colors to styles.css
 - call color by id in all HTML
+- Logout button somewhere 
 
 Nav Bar: 
 - NAVBAR IS SHY, HE DISAPEARS FROM TIME TO TIME
