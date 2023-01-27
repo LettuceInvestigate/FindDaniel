@@ -4,6 +4,9 @@ General To-Do:
 - push to where'sdaniel.io
 
 Nav Bar: 
+- NAVBAR IS SHY, HE DISAPEARS FROM TIME TO TIME
+- Make the logo bigger 
+- Resize text
 - Fix hover functionality
 
 Home Page: 
