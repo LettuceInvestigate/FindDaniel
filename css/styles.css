@@ -101,6 +101,11 @@
   color: #bc1823; 
 }
 
+#lettuce-meet:hover {
+  cursor: pointer; 
+  color: #bc1823; 
+}
+
 /* DO NOT CHANGE */
 #dashboardTHeadTD{
   font-size: 15px;
