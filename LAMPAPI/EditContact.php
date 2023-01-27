@@ -3,9 +3,9 @@
 
 	$inData = getRequestInfo();
 
-	$column = $inData
-	$cell = $inData[$column]
-	// $ID = $inData["ID"];
+	$var = $inData["column"];
+	$cell = $inData[$var];
+	$ID = $inData["ID"];
 	// $userId = $inData["userId"];
 	// $Name = $inData["Name"];
 	// $Phone = $inData["Phone"];
@@ -20,8 +20,8 @@
 	}
 	else
 	{
-		// WHERE will either be pulled by HTML or provided by Query, after that just finish the line
-		mysqli_query($conn,"UPDATE `Contacts` SET ".$column." = '".$cell."' WHERE ");
+		// WHERE will either be pulled by HTML or provided by Query, fix once FrontEnd finishes design
+		mysqli_query($conn,"UPDATE `Contacts` SET $var = $cell WHERE ID = '".$ID."'");
 		$conn->close();
 		returnWithError("");
 	}
@@ -39,6 +39,7 @@
 
 	function returnWithError( $err )
 	{
+		//$retValue = '{"error": "'.$column.'" }';
 		$retValue = '{"error":"' . $err . '"}';
 		sendResultInfoAsJson( $retValue );
 	}

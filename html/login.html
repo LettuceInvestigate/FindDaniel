@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+    <head>
+        <!--HTML-->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">      
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Login</title>
+
+        <!--CSS-->
+        <link rel="stylesheet" href="/./css/login.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
+        <!--JavaScript-->
+        <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script>
+        $(function () {
+            $("#includeHtml").load("navbar.html");
+        });
+        </script>
+    </head>
+
+    <body style="background-color: #d9dfdb">
+        <noscript>You need to enable JavaScript to run this app.</noscript>
+
+        <!--NavBar-->
+        <div id="includeHtml"></div>
+    
+        <!-- Title -->
+        <h2 id="login-title">Login</h2>
+
+        <!-- Image that goes behind the input fields and buttons -->
+        <img id="login-box" src="/images/loginregisterbox.png">
+            
+        <!-- Login Input Fields --> 
+        <input id="suspect-name" type="text" placeholder="Suspect Name">
+        
+        <input id="password" type="password" placeholder="Password">
+
+        <!-- Sign In Button -->
+        <button id="signin-button" onclick="window.location.href='wantedposters.html';">
+            Sign In
+        </button>
+        
+        <!-- Forgot Password -->
+        <button id="forgotpw-button" onclick="window.location.href='register.html';">
+            <span style="color: #d9dfdb">Forgot Password?</span> Click Here!
+        </button>
+    
+        <!-- Registering An Account-->
+        <button id="register-button" onclick="window.location.href='register.html';">
+            <span style="color: #d9dfdb">Don't Have An Account?</span> Register Here!
+        </button>
+    </body>
+</html>

@@ -1,0 +1,166 @@
+* { 
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;   
+}
+
+/* Font for main titles on each page */ 
+@font-face {
+    font-family: fibre; 
+    src: url(/fonts/fibre.otf); 
+}
+
+/* Font for everything else */ 
+@font-face {
+    font-family: bobby;
+    src: url(/fonts/bobby.otf);
+}
+
+/* Prevents the page from overflowing/excessive scrolling left and right */ 
+/* Lettuce field background image */ 
+html {
+    height: 100%;
+}
+
+body{
+    overflow-x: hidden;
+    background-image: url("/images/field.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    margin: 0%;
+    padding: 0%;
+}
+
+.tragedy-container{
+    padding-left: 30%;
+    padding-right: 30%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.tragedy-container img{
+    position: absolute; 
+    width: 100%;
+    height: 100%;
+    left: 8%; 
+    top: 15%; 
+}
+
+.tragedy-container .tragedy-title{
+    font-family: fibre; 
+    color: #bc1823; 
+    animation: fadeIn 4s;
+    position: absolute;
+    align-items: center;
+    padding-left: 6vw;
+}
+.tragedy-container .tragedy-content{
+    font-family: bobby;
+    color: #d9dfdb; 
+    animation: fadeIn 4s;
+    position: absolute;
+    align-self: center;
+    padding-left: 7vw;
+}
+
+/* MEDIA QUERIES FOR RESPONSIVENESS AND SIZING */ 
+
+@media (min-width: 700px) {
+    .tragedy-container img{
+        height: 85vh; 
+        width: 85vw; 
+    }    
+    .tragedy-container .tragedy-title{
+        font-size: 5rem; 
+        top: 28%;
+        left: 30%; 
+    }
+    .tragedy-container .tragedy-content{
+        font-size: 0.9rem; 
+        top: 45%; 
+        left: 13%; 
+    }
+}
+@media (min-width: 992px) {
+    .tragedy-container img{
+        height: 85vh; 
+        width: 85vw; 
+    }    
+    .tragedy-container .tragedy-title{
+        font-size: 7rem; 
+        top: 28%; 
+        left: 30%; 
+    }
+    .tragedy-container .tragedy-content{
+        font-size: 1.8rem; 
+        top: 45%; 
+        left: 13%; 
+    }
+}
+
+@media (min-width: 1200px) {
+    .tragedy-container img{
+        height: 85vh; 
+        width: 87vw;
+    }    
+    .tragedy-container .tragedy-title{
+        font-size: 6rem; 
+        top: 26%; 
+        left: 37%; 
+    }    
+    .tragedy-container .tragedy-content{
+        font-size: 2.2rem;
+        top: 42%; 
+        left: 13%; 
+    }
+}
+
+@media (min-width: 1400px) {
+    .tragedy-container img{
+        height: 85vh; 
+        width: 87.5vw; 
+    }    
+    .tragedy-container .tragedy-title{
+        font-size: 7rem; 
+        top: 25%; 
+        left: 36%; 
+    }    
+    .tragedy-container .tragedy-content{
+        font-size: 2.6rem;
+        top: 40%; 
+        left: 13%; 
+    }
+}
+
+@media (min-width: 1800px) {
+    .tragedy-container img{
+        height: 85vh; 
+        width: 87.5vw;
+    }
+    .tragedy-container .tragedy-title{
+        font-size: 7rem; 
+        top: 25%; 
+        left: 36%; 
+    }    
+    .tragedy-container .tragedy-content{
+        font-size: 3rem;
+        top: 40%; 
+        left: 13%; 
+    }
+}
+
+/* Text animation inside of the box */ 
+@keyframes fadeIn {
+    0% 
+    { 
+        opacity: 0; 
+    }
+
+    100% 
+    { 
+        opacity: 1; 
+    }
+}
