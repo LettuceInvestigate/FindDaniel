@@ -1,10 +1,9 @@
 function activeClass(fileName) {
+    
+    document.getElementById("homeButton").changer = "active";
     if (fileName == "index.html") {
         isIndex();
-        document.getElementById("homeButton").className = "active";
-        document.getElementById("tragedyButton").className = "active";
-        document.getElementById("postersButton").className = "active";
-        document.getElementById("loginButton").className = "active";
+        
     }
     if (fileName == "ourtragedy.html") {
         notIndex();
@@ -22,7 +21,7 @@ function activeClass(fileName) {
     }
     if (fileName == "login.html") {
         notIndex();
-        document.getElementById("homeButton").className = "active";
+        document.getElementById("homeButton").class = "active";
         document.getElementById("tragedyButton").className = "active";
         document.getElementById("postersButton").className = "active";
         document.getElementById("loginButton").className = "active";
@@ -36,7 +35,7 @@ function activeClass(fileName) {
     }
     if (fileName == "dashboard.html") {
         notIndex();
-        document.getElementById("homeButton").className = "inactive";
+        document.getElementById("homeButton").class = "inactive";
         document.getElementById("tragedyButton").className = "inactive";
         document.getElementById("postersButton").className = "inactive";
         document.getElementById("loginButton").className = "inactive";
