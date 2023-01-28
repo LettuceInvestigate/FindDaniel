@@ -45,7 +45,8 @@ function activeClass(fileName) {
 function fixTravel(fileName){
     if (fileName == "index.html") {
         isIndex();
-    }else if(fileName == "ourtragedy.html" || fileName == "wantedposters.html" || fileName == "login.html" || fileName == "register.html"){
+    }else if(fileName == "ourtragedy.html" || fileName == "wantedposters.html"
+        || fileName == "login.html" || fileName == "register.html" || fileName == "dashboard.html"){
         notIndex();
     }else{
         console.error("JS: FixTravel Function: NavBar: Reached Illegal Page!")
