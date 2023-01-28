@@ -33,14 +33,15 @@
         alt="This is a lettuce which is the logo of the project" title="Daniel is not here"></a>
       </div>
       <ul class="menu" activeClass(page);>
-        <li><a id="homeButton" class="inactive" href="index.html" onclick="activeClass(page);">HOME</a></li>
-        <li><a id="tragedyButton" class="inactive" href="ourtragedy.html" onclick="activeClass(page);">OUR TRAGEDY</a></li>
-        <li><a id="postersButton" class="inactive" href="wantedposters.html" onclick="activeClass(page);">WANTED POSTERS</a></li>
-        <li><a id="loginButton" class="inactive" href="login.html" onclick="activeClass(page);">LOGIN/REGISTER</a></li>
+        <li><a id="homeButton" class="inactive" href="index.html" onclick="fixTravel(page);">HOME</a></li>
+        <li><a id="tragedyButton" class="inactive" href="ourtragedy.html" onclick="fixTravel(page);">OUR TRAGEDY</a></li>
+        <li><a id="postersButton" class="inactive" href="wantedposters.html" onclick="fixTravel(page);">WANTED POSTERS</a></li>
+        <li><a id="loginButton" class="inactive" href="login.html" onclick="fixTravel(page);">LOGIN/REGISTER</a></li>
       </ul>
+      <!--HERE-->
     </div>
   </nav>
-
+  <element onload="activeClass(page)"></element>
 </body>
 
 </html>
