@@ -1,18 +1,18 @@
-General To-Do: 
+General To-Do:
 - bootstrap in every file.
 - push to where'sdaniel.io
 - add all colors to styles.css
 - call color by id in all HTML
-- Logout button somewhere 
+- Logout button somewhere
 
 Nav Bar:
-- Make the logo smaller 
+- Make the logo smaller
 - Resize text
 - Fix hover functionality
 - signed in -> Wanted Posters points to dashbord.html
 - signed out -> Wanted Posters points to wantedposters.html
- 
-Home Page: 
+
+Home Page:
 - Add people images at some point (potentially with our faces)
 
 Our Tragedy:
@@ -24,5 +24,9 @@ Login:
 - What do we do when the user clicks on sign in
 - What do we do when the user clicks on forgot password
 
-Register: 
+Register:
 - What do we do when the user clicks on register
+
+API:
+- Get EditContact Working
+- Make a LoadContact Endpoint
