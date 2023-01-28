@@ -223,7 +223,7 @@ function addContact()
 
 function deleteContact()
 {
-	let delContact = { ID: document.getElementById("contactID").value};
+	let delContact = { Name: document.getElementById("contactName").value, UserID: userId};
 	document.getElementById("contactDeleteResult").innerHTML = "";
 
 	let jsonPayload = JSON.stringify( delContact );
@@ -251,14 +251,13 @@ function deleteContact()
 	
 }
 
-function searchColor()
+function searchContact()
 {
-	let srch = document.getElementById("searchText").value;
 	document.getElementById("colorSearchResult").innerHTML = "";
 	
-	let colorList = "";
+	let contactList = "";
 
-	let tmp = {search:srch,userId:userId};
+	let tmp = {Name:document.getElementById("searchText").value,UserID:userId};
 	let jsonPayload = JSON.stringify( tmp );
 
 	let url = urlBase + '/SearchColors.' + extension;
