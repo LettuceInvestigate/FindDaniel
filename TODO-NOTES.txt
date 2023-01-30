@@ -6,6 +6,7 @@ General To-Do:
 - Logout button somewhere
 - forgot password & sign up buttons should show a line under when hovering on them
 - some fas fa stuff do not load
+- lettucemeet link does not work on learnmore page
 
 Nav Bar:
 - Make the logo smaller
@@ -18,11 +19,9 @@ Home Page:
 - Add people images at some point (potentially with our faces)
 
 Our Tragedy:
-- retrive it to how it was before and add a learn more page
 
 Login:
-- Form field validation
-- Regex email validation??
+- Regex email validation
 - What do we do when the user clicks on sign in
 - What do we do when the user clicks on forgot password
 
