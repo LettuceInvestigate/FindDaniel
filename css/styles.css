@@ -102,6 +102,7 @@
 }
 
 #lettuce-meet:hover {
+  text-decoration: underline;
   cursor: pointer; 
   color: #bc1823; 
 }

@@ -4,6 +4,7 @@ General To-Do:
 - add all colors to styles.css
 - call color by id in all HTML
 - Logout button somewhere
+- forgot password & sign up buttons should show a line under when hovering on them
 
 Nav Bar:
 - Make the logo smaller
@@ -16,7 +17,7 @@ Home Page:
 - Add people images at some point (potentially with our faces)
 
 Our Tragedy:
-- Using <center> makes VS-code color it in red, weird color :/
+- retrive it to how it was before and add a learn more page
 
 Login:
 - Form field validation
