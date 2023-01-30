@@ -5,6 +5,7 @@ General To-Do:
 - call color by id in all HTML
 - Logout button somewhere
 - forgot password & sign up buttons should show a line under when hovering on them
+- some fas fa stuff do not load
 
 Nav Bar:
 - Make the logo smaller
