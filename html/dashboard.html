@@ -49,7 +49,7 @@
       margin-top: 20px; display: flex; align-items:center; transition: 0.8s;
       box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.4); justify-content: center; '>
       <input class="searchBar" type="text" placeholder="Search..">
-      <a href="">
+      <a href="#">
         <li class="fas fa-search"></li>
       </a>
     </div>
@@ -114,11 +114,17 @@
       <table width="100%" style='border-collapse: collapse;'>
         <thead>
           <tr style='border-bottom: 1px solid #eef0f3;'>
-            <td id="dashboardTHeadTD">Name</td>
-            <td id="dashboardTHeadTD">Username</td>
-            <td id="dashboardTHeadTD">Phone Number</td>
-            <td id="dashboardTHeadTD">Role</td>
-            <td id="dashboardTHeadTD"></td>
+            <td id="D-Tabel-Head">Name</td>
+            <td id="D-Tabel-Head">Username</td>
+            <td id="D-Tabel-Head">Phone Number</td>
+            <td id="D-Tabel-Head">Role</td>
+            <td id="D-Tabel-Add">
+              <a href="#">
+                <li class="fas fa-plus"></li>
+              </a>
+            </td>
+            
+            <!--<a href="#" class="fas fa-search></a>-->
           </tr>
         </thead>
 
@@ -147,7 +153,14 @@
             <td id="D-td-role">
               <p>Suspect</p>
             </td>
-            <td id="D-td-edit"><a href="#">Edit</a></td>
+            <td id="D-td-edit-delete">
+              <a class="editButton" href="#">
+                <li class="fas fa-user-edit"></li>
+              </a>
+              <a class="deleteButton" href="#">
+                <li class="fas fa-trash-alt"></li>
+              </a>
+            </td>
           </tr>
 
           <!--temp ex 2-->
@@ -172,7 +185,14 @@
             <td id="D-td-role">
               <p>Missing</p>
             </td>
-            <td id="D-td-edit"><a href="#">Edit</a></td>
+            <td id="D-td-edit-delete">
+              <a class="editButton" href="#">
+                <li class="fas fa-user-edit"></li>
+              </a>
+              <a class="deleteButton" href="#">
+                <li class="fas fa-trash-alt"></li>
+              </a>              
+            </td>
           </tr>
         </tbody>
       </table>

@@ -125,14 +125,24 @@
   font-size: 16px;
   transition: 0.8s;
 }
-
-#dashboardTHeadTD{
+#D-Tabel-Head{
   font-size: 15px;
   text-transform: uppercase;
   font-weight: 400;
   background: #F9FAFB;
   text-align: start;
   padding: 15px;
+}
+#D-Tabel-Add{
+  font-size: 15px;
+  text-transform: uppercase;
+  font-weight: 400;
+  background: #F9FAFB;
+  text-align: end;
+  text-decoration: none;
+  padding-right: 50px;
+  color: #554CD1;
+  font-weight: 600;
 }
 #D-tr{
   border-bottom: 1px solid #eef0f3;
@@ -193,13 +203,19 @@
   font-size: 15px;
   color: #000;
 }
-#D-td-edit{
-  padding: 10px 15px;
+#D-td-edit-delete{
+  text-align: end;
 }
-#D-td-edit a{
+#D-td-edit-delete a{
   text-decoration: none;
-  font-size: 14;
+  font-size: 15;
   color: #554CD1;
   font-weight: 600;
 }
-
+#D-tr #D-td-edit-delete .editButton{
+  padding-right: 15px;
+  
+}
+#D-tr #D-td-edit-delete .deleteButton{
+  padding-right: 30px;
+}
