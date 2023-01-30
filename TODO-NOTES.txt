@@ -5,8 +5,6 @@ General To-Do:
 - call color by id in all HTML
 - Logout button somewhere
 - forgot password & sign up buttons should show a line under when hovering on them
-- some fas fa stuff do not load
-- lettucemeet link does not work on learnmore page.
 - FIX HOME PAGE: DO NOT USE MARGIN OR PADDING WITH BOOTSTRAP THAT WAY!
 
 Nav Bar:
