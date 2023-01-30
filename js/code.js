@@ -3,6 +3,18 @@ const extension = 'php';
 
 let userId = 0;
 
+// Shows the password requirements to the user when password field is clicked on
+function showRequirements() 
+{
+	document.getElementById('password-requirements-title').style.display = "grid"; 
+	document.getElementById('password-requirements-content').style.display = "grid"; 
+}
+
+function hideRequirements() 
+{
+	document.getElementById('password-requirements-title').style.display = "none"; 
+	document.getElementById('password-requirements-content').style.display = "none"; 
+}
 
 function doLogin()
 {
@@ -98,20 +110,21 @@ function doLogout()
 
 function createUser()
 {
-	email = document.getElementById("registerUsername");
+	email = document.getElementById("#email");
+
 	if (!validateEmail(email))
 	{
-		document.getElementById("invalidEmail").innerHTML("INVALID EMAIL");
+		alert("I am an alert box!");
 	}
-	let username = document.getElementById("registerUsername");
-	let password1 = document.getElementById("registerPassword");
-	let password2 = document.getElementById("registerPasswordConfirmation");
-
+	let username = document.getElementById("#suspect-name");
+	let password1 = document.getElementById("#password");
+	let password2 = document.getElementById("retype-password");
 
 	if (checkPassword(password1, password2))
 	{
 		return newUser ={ Email: email, Username: username, Password: password1 };
 	}
+
 	return newUser ={ }
 }
 

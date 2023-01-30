@@ -21,6 +21,7 @@
             $("#includeHtml").load("navbar.html");
           });
         </script>
+        <script src="/js/code.js"></script>
     </head>
 
     <body style="background-color: #d9dfdb">
@@ -31,39 +32,55 @@
 
         <!-- Page -->
         <div class='container-fluid vh-100 overflow-scroll' style='background-image: url("/images/field.png"); background-size: cover; padding-bottom: 70px; padding-top: 70px;'>
-            <div class='container rounded-5' style='background-color: #212932; border-radius: 24px; opacity: 90%; margin-top: -30px; width: 600px; height: 600px;'>
+            <div class='container rounded-5' style='background-color: #212932; border-radius: 24px; opacity: 90%; margin-top: -30px; width: 600px; height: fit-content'>
                 <!-- Title -->
-                <div id= "our-red" style="font-size: 6rem; animation: fadeIn 4s; font-family: fibre; margin-left: 140px; padding-top: 10px;">
+                <div id= "our-red" style="font-size: 6rem; animation: fadeIn 4s; font-family: fibre; margin-left: 140px; padding-top: 0px;">
                 Register
                 </div>
 
                 <!-- Suspect Name -->
-                <input id="suspect-name" type="username" 
-                style='font-family: bobby; text-align: center; font-size: 2.5rem; color: #212932; background-color: #d9dfdb; 
-                border-radius: 24px; margin-left: 40px; margin-top: -10px; border: 1px solid #d9dfdb;'
-                placeholder="Suspect Name">
+                <input id="suspect-name" type="username" onclick="hideRequirements()"
+                style='font-family: bobby; text-align: center; font-size: 2.2rem; color: #212932; background-color: #d9dfdb; 
+                border-radius: 24px; margin-left: 100px; margin-top: -5px; border: 1px solid #d9dfdb;'
+                placeholder="SUSPECT NAME">
 
                 <!-- Email -->
-                <input id="email" type="email"
-                style='font-family: bobby; text-align: center; font-size: 2.5rem; color: #212932; background-color: #d9dfdb; 
-                border-radius: 24px; margin-left: 40px; margin-top: 25px; border: 1px solid #d9dfdb;'
-                placeholder="Email">
+                <input id="email" type="email" onclick="hideRequirements()"
+                style='font-family: bobby; text-align: center; font-size: 2.2rem; color: #212932; background-color: #d9dfdb; 
+                border-radius: 24px; margin-left: 100px; margin-top: 25px; border: 1px solid #d9dfdb;'
+                placeholder="EMAIL">
 
                 <!-- Password -->
-                <input id="password" type="password"
-                style='font-family: bobby; text-align: center; font-size: 2.5rem; color: #212932; background-color: #d9dfdb; 
-                border-radius: 24px; margin-left: 40px; margin-top: 25px; border: 1px solid #d9dfdb;'
-                placeholder="Password">
+                <input id="password1" type="password" onclick="showRequirements()"
+                style='font-family: bobby; text-align: center; font-size: 2.2rem; color: #212932; background-color: #d9dfdb; 
+                border-radius: 24px; margin-left: 100px; margin-top: 25px; border: 1px solid #d9dfdb;'
+                placeholder="PASSWORD">
 
                 <!-- Retype Password -->
-                <input id="retype-password" type="password"
-                style='font-family: bobby; text-align: center; font-size: 2.5rem; color: #212932; background-color: #d9dfdb; 
-                border-radius: 24px; margin-left: 40px; margin-top: 25px; border: 1px solid #d9dfdb;'
-                placeholder="Retype Password">
+                <input id="password2" type="password" onclick="hideRequirements()"
+                style='font-family: bobby; text-align: center; font-size: 2.2rem; color: #212932; background-color: #d9dfdb; 
+                border-radius: 24px; margin-left: 100px; margin-top: 25px; border: 1px solid #d9dfdb;'
+                placeholder="RETYPE PASSWORD">
 
                 <!-- Sign Up Button -->
-                <button id="signup-button" onclick="window.location.href='wantedposters.html';">Sign Up</button>
-            </div>
+                <button id="signup-button">SIGN UP</button>
+
+                <div><br><br><br></div>
+
+                <!-- Hide this when password field isn't clicked on -->
+                <div id="password-requirements-title" style="font-family: bobby; color: #bc1823; font-size: 1.5rem;
+                    margin-left: -2px; margin-top: -40px; padding-bottom: 20px; text-align: center; display: none;">
+                    Password Requires The Following:
+                </div>
+                <div id="password-requirements-content" style="font-family: bobby; color: #d9dfdb; font-size: 1.5rem;
+                margin-left: -2px; margin-top: -10px; padding-bottom: 20px; text-align: center; display: none;">
+                    8 to 20 characters<br>
+                    At least one lowercase letter<br>
+                    At least one uppercase letter<br>
+                    At least one number<br>
+                    At least one special character<br>
+                </div>
         </div>
     </body>
 </html>
+
