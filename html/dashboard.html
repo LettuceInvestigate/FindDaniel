@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <html>
+
 <head>
   <!--HTML-->
   <meta charset="UTF-8">
@@ -17,6 +18,7 @@
   <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
   <script type="text/javascript" src="/./js/userupdater.js"></script>
+  
   <script type="text/javascript">
     setNumUsers('0');
   </script>
@@ -49,9 +51,20 @@
       box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.4); justify-content: center; '>
       <input class="searchBar" type="text" placeholder="Search..">
       <a href="#">
-        <li class="fas fa-search"></li>
+        <li class="fas fa-search" id="searchButton"></li>
       </a>
     </div>
+
+    <script>
+      var input = document.getElementsByClassName("searchBar");
+      input.addEventListener("keypress", function(event) {
+        console.log("hi");
+        if (event.key == "Enter"){
+          event.preventDefault();
+          document.getElementById("searchButton").click();
+        }
+      });
+    </script>
 
     <!--Data Boxes-->
     <div class='container'
@@ -87,7 +100,7 @@
           height: 60px; line-height: 60px; border-radius: 50%; 
           text-align: center; color: #fff; background-color: #E45D99; margin-right: 15px;'></i>
         <div>
-          <h3 style='font-size: 18px; font-weight: 600; margin-bottom:0rem; '><span>450</span></h3>
+          <h3 style='font-size: 18px; font-weight: 600; margin-bottom:0rem; '><span>45</span></h3>
           <!--TEMP-->
           <span style='font-size: 15px; color: #828997;'>Something 2</span>
         </div>
@@ -106,6 +119,7 @@
       </div>
     </div>
 
+
     <!--Table-->
     <div class="board"
       style='width: 95%; margin: 30px 0 30px 50px; overflow: auto; background-color: #fff; border-radius: 8px;'>
@@ -121,8 +135,6 @@
                 <li class="fas fa-plus"></li>
               </a>
             </td>
-            
-            <!--<a href="#" class="fas fa-search></a>-->
           </tr>
         </thead>
 

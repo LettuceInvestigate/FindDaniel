@@ -3,19 +3,6 @@ const extension = 'php';
 
 let userId = 0;
 
-// Shows the password requirements to the user when password field is clicked on
-function showRequirements() 
-{
-	document.getElementById('password-requirements-title').style.display = "grid"; 
-	document.getElementById('password-requirements-content').style.display = "grid"; 
-}
-
-function hideRequirements() 
-{
-	document.getElementById('password-requirements-title').style.display = "none"; 
-	document.getElementById('password-requirements-content').style.display = "none"; 
-}
-
 function doLogin()
 {
 	userId = 0;
@@ -114,7 +101,7 @@ function createUser()
 
 	if (!validateEmail(email))
 	{
-		alert("I am an alert box!");
+		document.getElementById("invalidEmail").innerHTML("INVALID EMAIL");
 	}
 	let username = document.getElementById("#suspect-name");
 	let password1 = document.getElementById("#password");
@@ -124,7 +111,6 @@ function createUser()
 	{
 		return newUser ={ Email: email, Username: username, Password: password1 };
 	}
-
 	return newUser ={ }
 }
 
@@ -135,7 +121,6 @@ function checkPassword(input1, input2)
 	{
 		return false
 	}
-
 	return true;
 }
 
