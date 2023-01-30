@@ -43,6 +43,7 @@ Good job on the hard work you did, but some things should be pointed out:
 
 2.  it's bad practice to only show requirements for password when clicked! if someone is using a phone or touch screen
     they might never see the requirements. this also casuses a big mess with hideRequirements() showRequirements() functions. 
+    I recommend having something small under password that says what the issue is, but I'll leave that to you to work on!
 
 3.  Let's try to NOT have Frontend-updating-functions inside code.js we have other js files we can use for that.
     & make sure to import the js file next time or your js may not always work. 
