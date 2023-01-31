@@ -39,21 +39,28 @@
       </div>
 
       <!-- Suspect Name -->
-      <input id="suspect-name" type="username" style='font-family: bobby; text-align: center; font-size: 2.5rem; color: #212932; background-color: #d9dfdb; 
-      border-radius: 24px; margin-left: 40px; margin-bottom: 20px; border: 1px solid #d9dfdb;' placeholder="Suspect Name">
+      <input id="suspect-name" type="username" style='font-family: bobby; text-align: center; font-size: 2.3rem; color: #212932; background-color: #d9dfdb; 
+      border-radius: 24px; margin-left: 100px; margin-top: 20px; border: 1px solid #d9dfdb;' placeholder="SUSPECT NAME">
 
       <!-- Password -->
-      <input id="password" type="password" style='font-family: bobby; text-align: center; font-size: 2.5rem; color: #212932; background-color: #d9dfdb; 
-      border-radius: 24px; margin-left: 40px; border: 1px solid #d9dfdb;' placeholder="Password">
+      <input id="password" type="password" style='font-family: bobby; text-align: center; font-size: 2.3rem; color: #212932; background-color: #d9dfdb; 
+      border-radius: 24px; margin-top: 20px; margin-left: 100px; border: 1px solid #d9dfdb;' placeholder="PASSWORD">
 
       <!-- Sign-In Button -->
-      <button id="signin-button" onclick="window.location.href='dashboard.html';">Sign In</button>
+      <button id="signin-button" onclick="window.location.href='dashboard.html';">SIGN IN</button>
 
       <!-- Forgot Password Button -->
       <button id="forgotpw-button" onclick="window.location.href='register.html';">Forgot Password?</button>
 
       <!-- Register Button -->
       <button id="register-button" onclick="window.location.href='register.html';">Don't Have An Account?</button>
+
+      <!-- Hide this while the user is in the process of signing in -->
+      <!-- Suspect Name/Password Error Message -->
+      <div id="register-error" style='font-family: bobby; font-size: 1.5rem; color: #bc1823; 
+          margin-top: -450px; margin-left: 110px;'>
+          Incorrect Suspect Name or Password!</div>
+      </div>
     </div>
   </div>
 </body>

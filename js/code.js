@@ -3,7 +3,6 @@ const extension = 'php';
 
 let userId = 0;
 
-
 function doLogin()
 {
 	userId = 0;
@@ -98,15 +97,15 @@ function doLogout()
 
 function createUser()
 {
-	email = document.getElementById("registerUsername");
+	email = document.getElementById("#email");
+
 	if (!validateEmail(email))
 	{
 		document.getElementById("invalidEmail").innerHTML("INVALID EMAIL");
 	}
-	let username = document.getElementById("registerUsername");
-	let password1 = document.getElementById("registerPassword");
-	let password2 = document.getElementById("registerPasswordConfirmation");
-
+	let username = document.getElementById("#suspect-name");
+	let password1 = document.getElementById("#password");
+	let password2 = document.getElementById("retype-password");
 
 	if (checkPassword(password1, password2))
 	{
@@ -122,7 +121,6 @@ function checkPassword(input1, input2)
 	{
 		return false
 	}
-
 	return true;
 }
 

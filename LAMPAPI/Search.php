@@ -3,15 +3,6 @@
 
 $inData = getRequestInfo();
 
-$column = $inData["column"];
-// $ID = $inData["ID"];
-// $userId = $inData["userId"];
-// $Name = $inData["Name"];
-// $Phone = $inData["Phone"];
-// $Email = $inData["Email"];
-// $Alive = $inData["Alive"];
-// $Relationship = $inData["Relationship"];
-
 $conn = new mysqli("localhost", "TheBeast", "WeLoveCOP4331", "COP4331");
 if( $conn->connect_error )
 {
@@ -19,29 +10,22 @@ if( $conn->connect_error )
 }
 else
 {
-    // Get tables from MySQL - Each line brings back only its respective columns
-    //$result = $mysqli->query("SELECT ID, userId, Name, Phone, Email, Alive, Relationship FROM Contacts");   
-    $result = $mysqli->query("SELECT $column FROM Contacts");
+    $stmt = $conn->prepare("SELECT Images,Name,Email,Phone,Relation,Alive,ID FROM Contacts WHERE UserID = ? AND Name = ?");
+    $stmt->bind_param("ss", $inData["UserID"], $inData["Name"]);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-    // Return number of rows if successful
     if( $row = $result->fetch_assoc()  )
     {
-        returnWithInfo( $row['firstName'], $row['lastName'], $row['ID'] );
+      returnWithInfo($row['Images'],$row['Name'],$row['Email'],$row['Phone'],$row['Relation'],$row['Alive'],$row['ID']);
     }
     else
     {
-        returnWithError("No Records Found");
+      returnWithError("No Records Found");
     }
 
-    // // Perform the search
-    // for ($rowNum = $result->num_rows - 1; $rowNum >= 0; $rowNum--) {
-    //     $result -> data_seek($rowNum);
-    //     $row = $result->fetch_row();
-    //     // $row[$column] is the specific field value, maybe create a data structure to append $row array results to?
-    // }
-
+    $stmt->close();
     $conn->close();
-    returnWithError("");
 }
 
 function getRequestInfo()
@@ -53,6 +37,11 @@ function sendResultInfoAsJson( $obj )
 {
     header('Content-type: application/json');
     echo $obj;
+}
+function returnWithInfo( $images, $name, $email, $phone, $relation, $alive, $id)
+{
+  $retValue = '{"Image":' . $images . ',"Name":' . $name . ',"Email": ' . $email . ',"Phone":' . $phone . ',"Relation":' . $relation . ',"Alive":' . $alive . ',"ID":' . $id . ',"error":""}';
+  sendResultInfoAsJson( $retValue );
 }
 
 function returnWithError( $err )

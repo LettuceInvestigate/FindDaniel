@@ -3,8 +3,6 @@
 
 	$inData = getRequestInfo();
 
-	$ID = $inData["ID"];
-
 	$conn = new mysqli("localhost", "TheBeast", "WeLoveCOP4331", "COP4331");
 	if( $conn->connect_error )
 	{
@@ -12,8 +10,11 @@
 	}
 	else
 	{
-		mysqli_query($conn,"DELETE FROM `Contacts` where ID = '".$ID."'");
-		$conn->close();
+		$stmt = $conn->prepare("DELETE FROM `Contacts` WHERE ID = ?");
+    $stmt->bind_param("s", $inData["ID"]);
+    $stmt->execute();
+    $stmt->close();
+    $conn->close();
 		returnWithError("");
 	}
 

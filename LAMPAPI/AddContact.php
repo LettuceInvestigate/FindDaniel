@@ -3,12 +3,13 @@
 
 	$inData = getRequestInfo();
 
-	$userId = $inData["userId"];
+	$Images = $inData["Images"];
 	$Name = $inData["Name"];
+	$Alive = $inData["Alive"];
 	$Phone = $inData["Phone"];
 	$Email = $inData["Email"];
-	$Alive = $inData["Alive"];
-	$Relationship = $inData["Relationship"];
+	$Relation = $inData["Relation"];
+	$UserID = $inData["UserID"];
 
 	$conn = new mysqli("localhost", "TheBeast", "WeLoveCOP4331", "COP4331");
 	if( $conn->connect_error )
@@ -17,8 +18,8 @@
 	}
 	else
 	{
-		$stmt = $conn->prepare("INSERT into Contacts (Name,Phone,Email,Alive,Relationship,UserID) VALUES(?,?,?,?,?,?)");
-		$stmt->bind_param("ssssss", $Name, $Phone, $Email, $Alive, $Relationship, $userId);
+		$stmt = $conn->prepare("INSERT into Contacts (Images,Name,Alive,Phone,Email,Relation,UserID) VALUES(?,?,?,?,?,?,?)");
+		$stmt->bind_param("sssssss",$Images, $Name, $Alive, $Phone, $Email, $Relation, $UserID);
 		$stmt->execute();
 		$stmt->close();
 		$conn->close();

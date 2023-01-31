@@ -5,8 +5,9 @@
 
 @font-face {
     font-family: bobby;
-    src: url(/fonts/bobby.otf);
+    src: url(/fonts/dosis.otf);
 }
+
 
 #our-white {
   color: #d9dfdb
@@ -31,7 +32,7 @@
 
 #signin-button {
   font-family: bobby; 
-  font-size: 2rem; 
+  font-size: 1.7rem; 
   color: #d9dfdb; 
   padding: 10px 20px; 
   background-color: #bc1823;
@@ -39,7 +40,7 @@
   border-radius: 24px; 
   transition-duration: 0.4s;
   margin-top: 55px; 
-  margin-left: 225px;
+  margin-left: 235px;
   cursor: pointer;
 }
 
@@ -51,15 +52,15 @@
 
 #signup-button {
   font-family: bobby; 
-  font-size: 2rem; 
+  font-size: 1.7rem; 
   color: #d9dfdb; 
   padding: 10px 20px; 
   background-color: #bc1823;
   border-radius: 24px; 
   border: 4px solid #bc1823; 
   transition-duration: 0.4s;
-  margin-top: 30px; 
-  margin-left: 220px;
+  margin-top: 45px; 
+  margin-left: 215px;
   cursor: pointer;
 }
 
@@ -93,7 +94,7 @@
   border: none; 
   cursor: pointer; 
   transition-duration: 0.4s; 
-  margin-left: 182px; 
+  margin-left: 186px; 
   margin-top: 40px;
 }
 
@@ -102,18 +103,46 @@
 }
 
 #lettuce-meet:hover {
+  text-decoration: underline;
   cursor: pointer; 
   color: #bc1823; 
 }
 
 /* DO NOT CHANGE */
-#dashboardTHeadTD{
+#box{
+  width: fit-content;
+}
+#box input:not(:placeholder-shown), #box:hover input{
+  width: 400px;
+  cursor: pointer;
+}
+#box input{
+  background: transparent;
+  border: none;
+  outline: none;
+  width: 0px;
+  font-weight: 600;
+  font-size: 16px;
+  transition: 0.8s;
+}
+#D-Tabel-Head{
   font-size: 15px;
   text-transform: uppercase;
   font-weight: 400;
   background: #F9FAFB;
   text-align: start;
   padding: 15px;
+}
+#D-Tabel-Add{
+  font-size: 15px;
+  text-transform: uppercase;
+  font-weight: 400;
+  background: #F9FAFB;
+  text-align: end;
+  text-decoration: none;
+  padding-right: 50px;
+  color: #554CD1;
+  font-weight: 600;
 }
 #D-tr{
   border-bottom: 1px solid #eef0f3;
@@ -174,13 +203,19 @@
   font-size: 15px;
   color: #000;
 }
-#D-td-edit{
-  padding: 10px 15px;
+#D-td-edit-delete{
+  text-align: end;
 }
-#D-td-edit a{
+#D-td-edit-delete a{
   text-decoration: none;
-  font-size: 14;
+  font-size: 15;
   color: #554CD1;
   font-weight: 600;
 }
-
+#D-tr #D-td-edit-delete .editButton{
+  padding-right: 15px;
+  
+}
+#D-tr #D-td-edit-delete .deleteButton{
+  padding-right: 30px;
+}

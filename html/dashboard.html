@@ -18,6 +18,7 @@
   <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
   <script type="text/javascript" src="/./js/userupdater.js"></script>
+  
   <script type="text/javascript">
     setNumUsers('0');
   </script>
@@ -38,43 +39,66 @@
   <!-- Page -->
   <div class='container-fluid vh-100 overflow-scroll'
     style='background-color: lightgrey; padding-top: 10px; padding-bottom: 10px;'>
+
     <!--Welcome Back Massage-->
     <center class="DashboardInterfaceName" style=' object-fit: cover; 
-                border-radius: 50%; color: 444a53; opacity: 90%; font-size: 42px; font-weight: 700;
-                padding-top: 15px; align-items: center;'>WANTED: <span>User_Name</span>!</center>
-    <!--Header Data Boxes-->
+      border-radius: 50%; color: 444a53; opacity: 90%; font-size: 42px; font-weight: 700;
+      padding-top: 15px; align-items: center;'>WANTED: <span>User_Name</span>!</center>
+    
+    <!--Search Bar-->
+    <div class="container rounded-5" id="box" style='background: #fff; height: 40px; border-radius: 30px; 
+      margin-top: 20px; display: flex; align-items:center; transition: 0.8s;
+      box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.4); justify-content: center; '>
+      <input class="searchBar" type="text" placeholder="Search..">
+      <a href="#">
+        <li class="fas fa-search" id="searchButton"></li>
+      </a>
+    </div>
+
+    <script>
+      var input = document.getElementsByClassName("searchBar");
+      input.addEventListener("keypress", function(event) {
+        console.log("hi");
+        if (event.key == "Enter"){
+          event.preventDefault();
+          document.getElementById("searchButton").click();
+        }
+      });
+    </script>
+
+    <!--Data Boxes-->
     <div class='container'
       style='display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; max-width: 975px;'>
       <div class='container rounded-3' style='background-color: #fff; opacity: 90%;
-                    margin-top: 20px; width: 220px; padding: 16px 20px; border-radius: 5px;
-                    display: flex; justify-content: flex-start; align-items: center;'>
+        margin-top: 20px; width: 220px; padding: 16px 20px; border-radius: 5px;
+        display: flex; justify-content: flex-start; align-items: center;'>
         <i class="fas fa-users" style='font-size:25px; width: 60px;
-                        height: 60px; line-height: 60px; border-radius: 50%; 
-                        text-align: center; color: #fff; background-color: #7B74EC; margin-right: 15px;'></i>
+          height: 60px; line-height: 60px; border-radius: 50%; 
+          text-align: center; color: #fff; background-color: #7B74EC; margin-right: 15px;'></i>
         <div>
-          <h3 style='font-size: 18px; font-weight: 600; margin-bottom:0rem; '><span>812</span></h3>
+          <h3 style='font-size: 18px; font-weight: 600; margin-bottom:0rem; '><span>8,512</span></h3>
           <!--TEMP-->
           <span style='font-size: 15px; color: #828997;'>Users</span>
         </div>
       </div>
       <div class='container rounded-3' style='background-color: #fff; opacity: 90%;
-                    margin-top: 20px; width: 220px; padding: 16px 20px; border-radius: 5px;
-                    display: flex; justify-content: flex-start; align-items: center;'>
-        <i class="fas fa-shopping-cart" style='font-size:25px; width: 60px;
-                        height: 60px; line-height: 60px; border-radius: 50%; 
-                        text-align: center; color: #fff; background-color: #5C8AF0; margin-right: 15px;'></i>
+        margin-top: 20px; width: 220px; padding: 16px 20px; border-radius: 5px;
+        display: flex; justify-content: flex-start; align-items: center;'>
+        <i class="fas fa-user-secret" style='font-size:25px; width: 60px;
+          height: 60px; line-height: 60px; border-radius: 50%; 
+          text-align: center; color: #fff; background-color: #5C8AF0; margin-right: 15px;'></i>
         <div>
-          <h3 style='font-size: 18px; font-weight: 600; margin-bottom:0rem; '><span>200,521</span></h3>
+          <h3 style='font-size: 18px; font-weight: 600; margin-bottom:0rem; '><span>21</span></h3>
           <!--TEMP-->
           <span style='font-size: 15px; color: #828997;'>Something</span>
         </div>
       </div>
       <div class='container rounded-3' style='background-color: #fff; opacity: 90%;
-                    margin-top: 20px; width: 220px; padding: 16px 20px; border-radius: 5px;
-                    display: flex; justify-content: flex-start; align-items: center;'>
-        <i class="fas fa-acorn" style='font-size:25px; width: 60px;
-                        height: 60px; line-height: 60px; border-radius: 50%; 
-                        text-align: center; color: #fff; background-color: #E45D99; margin-right: 15px;'></i>
+          margin-top: 20px; width: 220px; padding: 16px 20px; border-radius: 5px;
+          display: flex; justify-content: flex-start; align-items: center;'>
+        <i class="fas fa-user-graduate" style='font-size:25px; width: 60px;
+          height: 60px; line-height: 60px; border-radius: 50%; 
+          text-align: center; color: #fff; background-color: #E45D99; margin-right: 15px;'></i>
         <div>
           <h3 style='font-size: 18px; font-weight: 600; margin-bottom:0rem; '><span>45</span></h3>
           <!--TEMP-->
@@ -82,25 +106,19 @@
         </div>
       </div>
       <div class='container rounded-3' style='background-color: #fff; opacity: 90%;
-                    margin-top: 20px; width: 220px; padding: 16px 20px; border-radius: 5px;
-                    display: flex; justify-content: flex-start; align-items: center;'>
-        <i class="fas fa-dollar-sign" style='font-size:25px; width: 60px;
-                        height: 60px; line-height: 60px; border-radius: 50%; 
-                        text-align: center; color: #fff; background-color: #74DAEC; margin-right: 15px;'></i>
+          margin-top: 20px; width: 220px; padding: 16px 20px; border-radius: 5px;
+          display: flex; justify-content: flex-start; align-items: center;'>
+        <i class="fas fa-dizzy" style='font-size:25px; width: 60px;
+          height: 60px; line-height: 60px; border-radius: 50%; 
+          text-align: center; color: #fff; background-color: #74DAEC; margin-right: 15px;'></i>
         <div>
-          <h3 style='font-size: 18px; font-weight: 600; margin-bottom:0rem; '><span>677,489</span></h3>
+          <h3 style='font-size: 18px; font-weight: 600; margin-bottom:0rem; '><span>6</span></h3>
           <!--TEMP-->
           <span style='font-size: 15px; color: #828997;'>Something 3</span>
         </div>
       </div>
     </div>
-    <!--Search Bar-->
-    <div class="box" style='justify-content: center; align-items: center;'>
-        <input type="text" placeholder="Search..">
-        <a href="#">
-            <i class="fas fa-search"></i>
-        </a>
-    </div>
+
 
     <!--Table-->
     <div class="board"
@@ -108,11 +126,15 @@
       <table width="100%" style='border-collapse: collapse;'>
         <thead>
           <tr style='border-bottom: 1px solid #eef0f3;'>
-            <td id="dashboardTHeadTD">Name</td>
-            <td id="dashboardTHeadTD">Username</td>
-            <td id="dashboardTHeadTD">Phone Number</td>
-            <td id="dashboardTHeadTD">Role</td>
-            <td id="dashboardTHeadTD"></td>
+            <td id="D-Tabel-Head">Name</td>
+            <td id="D-Tabel-Head">Username</td>
+            <td id="D-Tabel-Head">Phone Number</td>
+            <td id="D-Tabel-Head">Role</td>
+            <td id="D-Tabel-Add">
+              <a href="#">
+                <li class="fas fa-plus"></li>
+              </a>
+            </td>
           </tr>
         </thead>
 
@@ -141,7 +163,14 @@
             <td id="D-td-role">
               <p>Suspect</p>
             </td>
-            <td id="D-td-edit"><a href="#">Edit</a></td>
+            <td id="D-td-edit-delete">
+              <a class="editButton" href="#">
+                <li class="fas fa-user-edit"></li>
+              </a>
+              <a class="deleteButton" href="#">
+                <li class="fas fa-trash-alt"></li>
+              </a>
+            </td>
           </tr>
 
           <!--temp ex 2-->
@@ -166,7 +195,14 @@
             <td id="D-td-role">
               <p>Missing</p>
             </td>
-            <td id="D-td-edit"><a href="#">Edit</a></td>
+            <td id="D-td-edit-delete">
+              <a class="editButton" href="#">
+                <li class="fas fa-user-edit"></li>
+              </a>
+              <a class="deleteButton" href="#">
+                <li class="fas fa-trash-alt"></li>
+              </a>              
+            </td>
           </tr>
         </tbody>
       </table>
