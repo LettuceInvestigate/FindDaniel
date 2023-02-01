@@ -20,7 +20,11 @@
   <script type="text/javascript" src="/./js/userupdater.js"></script>
   
   <script type="text/javascript">
-    setNumUsers('0');
+    console.log(readCookie());
+    if(readCookie() < 1){
+      console.log("hi");
+      window.location.href = "login.html";
+    }
   </script>
   <script>
     $(function () {

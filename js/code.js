@@ -75,14 +75,13 @@ function readCookie()
 			userId = parseInt( tokens[1].trim() );
 		}
 	}
-	
 	if( userId < 0 )
 	{
-		window.location.href = "index.html";
+		return 0;
 	}
 	else
 	{
-		document.getElementById("userName").innerHTML = "Logged in as " + firstName + " " + lastName;
+		return 10;
 	}
 }
 
