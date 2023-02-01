@@ -94,7 +94,7 @@ function doLogout()
 
 function createUser()
 {
-	email = document.getElementById("registerEmail").value;
+	let email = document.getElementById("registerEmail").value;
 
 	if (!validateEmail(email))
 	{
