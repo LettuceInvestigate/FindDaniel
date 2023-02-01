@@ -136,7 +136,6 @@ function validateEmail(input)
 function doRegister()
 {
 	let newUser = createUser();
-	document.getElementById("registerResult").innerHTML = "";
 
 	let jsonPayload = JSON.stringify( newUser );
 	
