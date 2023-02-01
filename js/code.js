@@ -10,11 +10,11 @@ function doLogin()
 	let login = document.getElementById("loginName").value;
 	let password = document.getElementById("loginPassword").value;
 
-	var hash = md5( password );
+	//var hash = md5( password );
 	
-	document.getElementById("loginResult").innerHTML = "";
+	//document.getElementById("loginResult").className = "";
 
-	var tmp = {Username:login,Password:hash};
+	var tmp = {Username:login,Password:password};
 	let jsonPayload = JSON.stringify( tmp );
 	
 	let url = urlBase + '/Login.' + extension;

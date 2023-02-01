@@ -217,3 +217,12 @@
 #D-tr #D-td-edit-delete .deleteButton{
   padding-right: 30px;
 }
+
+.inactive #register-error{
+  user-select: none;
+
+}
+
+.active #register-error{
+
+}
