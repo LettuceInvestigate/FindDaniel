@@ -136,7 +136,10 @@ function validateEmail(input)
 function doRegister()
 {
 	let newUser = createUser();
+<<<<<<< HEAD
 //	document.getElementById("registerResult").innerHTML = "";
+=======
+>>>>>>> 4c18a88f249d23493e9d597f2d71f1a530f9b201
 
 	let jsonPayload = JSON.stringify( newUser );
 	
