@@ -15,6 +15,14 @@
   <!--JavaScript-->
   <script src="/./js/navbar.js"></script>
   <script src="/./js/code.js"></script>
+
+  <script type="text/javascript">
+    if(readCookie() < 1){
+      //not signed int
+    }else{
+      //signed in
+    }
+  </script>
 </head>
 
 <body>
@@ -22,6 +30,9 @@
   <script>
     var path = window.location.pathname;
     var page = path.split("/").pop();
+    if(page = ""){
+      window.location.href = "index.html";
+    }
   </script>
 
   <!--Navbar-->
