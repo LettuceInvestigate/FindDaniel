@@ -59,6 +59,8 @@ function isIndex(){
     document.getElementById("tragedyButton").href = "/html/ourtragedy.html";
     document.getElementById("postersButton").href = "/html/wantedposters.html"
     document.getElementById("loginButton").href = "/html/login.html";
+    
+    document.getElementById("logoutButton").href = "/html/login.html"
 }
 
 function notIndex(){
@@ -66,6 +68,8 @@ function notIndex(){
     document.getElementById("tragedyButton").href = "ourtragedy.html";
     document.getElementById("postersButton").href = "wantedposters.html"
     document.getElementById("loginButton").href = "login.html";
+    
+    document.getElementById("logoutButton").href = "login.html"
 }
 
 function hoverButton(currentElement){
