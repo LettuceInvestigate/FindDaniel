@@ -94,14 +94,13 @@ function doLogout()
 
 function createUser()
 {
-	email = document.getElementById("#email");
+	email = document.getElementById("registerEmail").value;
 
 	if (!validateEmail(email))
 	{
 		document.getElementById("invalidEmail").innerHTML("INVALID EMAIL");
 	}
 	let username = document.getElementById("register-suspect-name").value;
-	let email = document.getElementById("registerEmail").value;
 	let password1 = document.getElementById("registerPassword1").value;
 	let password2 = document.getElementById("registerPassword2").value;
 
