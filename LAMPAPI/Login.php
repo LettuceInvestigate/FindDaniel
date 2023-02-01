@@ -49,7 +49,7 @@
 
 	function returnWithInfo( $id, $Username, $Email)
 	{
-		$retValue = '{"id":' . $id . ',"Username":' . $Username . ',"Email": ' . $Email . ',"error":""}';
+		$retValue = '{"id":"' . $id . '","Username":"' . $Username . '","Email": "' . $Email . '","error":""}';
 		sendResultInfoAsJson( $retValue );
 	}
 
