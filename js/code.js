@@ -124,13 +124,14 @@ function checkPassword(input1, input2)
 
 function validateEmail(input)
 {
-	let email = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-	if( input.value.match(email) )
+	let email = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+	if( input.toLowerCase().match(email) )
 	{
 		return true;
 	}
 	return false;
 }
+
 
 function doRegister()
 {
