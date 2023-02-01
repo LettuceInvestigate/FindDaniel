@@ -1,4 +1,4 @@
-const urlBase = 'http://whersedaneil.io/LAMPAPI';
+const urlBase = 'http://wheresdaniel.io/LAMPAPI';
 const extension = 'php';
 
 let userId = 0;
@@ -14,7 +14,7 @@ function doLogin()
 	
 	document.getElementById("loginResult").innerHTML = "";
 
-	var tmp = {Username:login,password:hash};
+	var tmp = {Username:login,Password:hash};
 	let jsonPayload = JSON.stringify( tmp );
 	
 	let url = urlBase + '/Login.' + extension;
