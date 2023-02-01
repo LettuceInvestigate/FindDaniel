@@ -68,7 +68,7 @@ function notIndex(){
     document.getElementById("tragedyButton").href = "ourtragedy.html";
     document.getElementById("postersButton").href = "wantedposters.html"
     document.getElementById("loginButton").href = "login.html";
-    
+        
     document.getElementById("logoutButton").href = "login.html"
 }
 
