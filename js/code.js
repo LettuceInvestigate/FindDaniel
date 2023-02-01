@@ -36,8 +36,8 @@ function doLogin()
 					return;
 				}
 		
-				firstName = jsonObject.firstName;
-				lastName = jsonObject.lastName;
+				username = jsonObject.Username;
+				email = jsonObject.Email;
 
 				saveCookie();
 	
@@ -158,9 +158,6 @@ function doRegister()
 					document.getElementById("registerResult").innerHTML = "Invalid Credientials";
 					return;
 				}
-		
-				firstName = jsonObject.firstName;
-				lastName = jsonObject.lastName;
 
 				saveCookie();
 	
