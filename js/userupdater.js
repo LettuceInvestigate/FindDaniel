@@ -17,7 +17,7 @@ function decNumUser(){
 function numOfUsers(){
     return numUsers;
 }
-document.getElementById("numOfUsers").innerHTML = numOfUsers();
+// document.getElementById("numOfUsers").innerHTML( numOfUsers() );
 
 
 

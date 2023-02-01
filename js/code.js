@@ -108,6 +108,7 @@ function createUser()
 	{
 		return newUser ={ Email: email, Username: username, Password: password1 };
 	}
+	document.getElementById("invalidPassword").innerHTML("Password Mismatch");
 	return newUser ={ }
 }
 
