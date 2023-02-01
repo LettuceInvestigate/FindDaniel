@@ -219,10 +219,15 @@
 }
 
 .inactive #register-error{
-  user-select: none;
-
+  font-family: bobby;
+  font-size: 0rem;
+  color: #bc1823;
 }
 
 .active #register-error{
-
+  margin-top: -15px;
+  margin-bottom: 20px;
+  font-family: bobby;
+  font-size: 1.5rem;
+  color: #bc1823;
 }

@@ -11,8 +11,6 @@ function doLogin()
 	let password = document.getElementById("loginPassword").value;
 
 	//var hash = md5( password );
-	
-	//document.getElementById("loginResult").className = "";
 
 	var tmp = {Username:login,Password:password};
 	let jsonPayload = JSON.stringify( tmp );
@@ -34,7 +32,7 @@ function doLogin()
 				if( userId < 1 )
 				{		
 					// ** FIX THIS WHEN FIND OUT HOW TO CHANGE **
-					document.getElementById("loginResult").className = "active";
+					document.getElementById("register-error").className = "active";
 					return;
 				}
 		
@@ -50,7 +48,7 @@ function doLogin()
 	}
 	catch(err)
 	{
-		document.getElementById("loginResult").innerHTML = err.message;
+		document.getElementById("register-error").className = "active";
 	}
 
 }
