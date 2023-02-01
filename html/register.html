@@ -4,21 +4,26 @@
     <head>
         <!--HTML-->
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Register</title>
-
+      
         <!--CSS-->
-        <link rel="stylesheet" href="/./css/register.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/./css/styles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+      
         <!--JavaScript-->
         <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script type="text/javascript" src="/./js/userupdater.js"></script>
+        <script type="text/javascript" src="/./js/code.js"></script>
         <script>
-        $(function () {
+          $(function () {
             $("#includeHtml").load("navbar.html");
-        });
+          });
         </script>
+        <script src="/js/code.js"></script>
     </head>
 
     <body style="background-color: #d9dfdb">
@@ -27,24 +32,57 @@
         <!--NavBar-->
         <div id="includeHtml"></div>
 
-        <!-- Title -->
-        <h2 id="register-title">Register</h2>
+        <!-- Page -->
+        <div class='container-fluid vh-100 overflow-scroll' style='background-image: url("/images/field.png"); background-size: cover; padding-bottom: 70px; padding-top: 70px;'>
+            <div class='container rounded-5' style='background-color: #212932; border-radius: 24px; opacity: 90%; margin-top: -30px; width: 600px; height: fit-content'>
+                <!-- Title -->
+                <div id= "our-red" style='font-size: 6rem; animation: fadeIn 4s; font-family: fibre;'>
+                <center>Register</center>
+                </div>
 
-        <!-- Image that goes behind the input fields and buttons -->
-        <img id="register-box" src="/images/loginregisterbox.png">
-            
-        <!-- Register Input Fields --> 
-        <input id="suspectname" type="username" placeholder="Suspect Name">
-        
-        <input id="email" type="email" placeholder="Email">
+                <!-- Suspect Name -->
+                <center><input id="register-suspect-name" type="username" onclick="hideRequirements()"
+                style='font-family: bobby; text-align: center; font-size: 2.2rem; color: #212932; background-color: #d9dfdb; 
+                border-radius: 24px; margin-top: 15px; border: 1px solid #d9dfdb;'
+                placeholder="SUSPECT NAME"></center>
 
-        <input id="password" type="password" placeholder="Password">
+                <!-- Email -->
+                <center><input id="registerEmail" type="email" onclick="hideRequirements()"
+                style='font-family: bobby; text-align: center; font-size: 2.2rem; color: #212932; background-color: #d9dfdb; 
+                border-radius: 24px; margin-top: 12px; border: 1px solid #d9dfdb;'
+                placeholder="EMAIL"></center>
 
-        <input id="retype-password" type="re-password" placeholder="Retype Password">
+                <!-- Password -->
+                <center><input id="registerPassword1" type="password" onclick="showRequirements()"
+                style='font-family: bobby; text-align: center; font-size: 2.2rem; color: #212932; background-color: #d9dfdb; 
+                border-radius: 24px; margin-top: 12px; border: 1px solid #d9dfdb;'
+                placeholder="PASSWORD"></center>
 
-        <!-- Sign Up Button -->
-        <button id="signup-button" onclick="window.location.href='wantedposters.html';">
-            Sign Up
-        </button>
+                <!-- Retype Password -->
+                <center><input id="registerPassword2" type="password" onclick="hideRequirements()"
+                style='font-family: bobby; text-align: center; font-size: 2.2rem; color: #212932; background-color: #d9dfdb; 
+                border-radius: 24px; margin-top: 12px; margin-bottom: 25px; border: 1px solid #d9dfdb;'
+                placeholder="RETYPE PASSWORD"></center>
+
+                <!-- Sign Up Button -->
+                <center><button id="signup-button" onclick="doRegister()">SIGN UP</button></center>
+
+                <div><br><br><br></div>
+
+                <!-- Hide this when password field isn't clicked on -->
+                <div id="password-requirements-title" style="font-family: bobby; color: #bc1823; font-size: 1.5rem;
+                    margin-left: -2px; margin-top: -40px; padding-bottom: 20px; text-align: center; display: none;">
+                    Password Requires The Following:
+                </div>
+                <div id="password-requirements-content" style="font-family: bobby; color: #d9dfdb; font-size: 1.5rem;
+                margin-left: -2px; margin-top: -10px; padding-bottom: 2px; text-align: center; display: none;">
+                    8 to 20 characters<br>
+                    At least one lowercase letter<br>
+                    At least one uppercase letter<br>
+                    At least one number<br>
+                    At least one special character<br>
+                </div>
+        </div>
     </body>
 </html>
+

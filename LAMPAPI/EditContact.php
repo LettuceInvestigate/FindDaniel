@@ -1,17 +1,15 @@
 
 <?php
-
+// This will work by modifiying the entire row
 	$inData = getRequestInfo();
 
-	$var = $inData["column"];
-	$cell = $inData[$var];
+	$Images = $inData["Images"];
+	$Name = $inData["Name"];
+	$Phone = $inData["Phone"];
+	$Email = $inData["Email"];
+	$Alive = $inData["Alive"];
+	$Relation = $inData["Relation"];
 	$ID = $inData["ID"];
-	// $userId = $inData["userId"];
-	// $Name = $inData["Name"];
-	// $Phone = $inData["Phone"];
-	// $Email = $inData["Email"];
-	// $Alive = $inData["Alive"];
-	// $Relationship = $inData["Relationship"];
 
 	$conn = new mysqli("localhost", "TheBeast", "WeLoveCOP4331", "COP4331");
 	if( $conn->connect_error )
@@ -21,7 +19,7 @@
 	else
 	{
 		// WHERE will either be pulled by HTML or provided by Query, fix once FrontEnd finishes design
-		mysqli_query($conn,"UPDATE `Contacts` SET $var = $cell WHERE ID = '".$ID."'");
+		mysqli_query($conn,"UPDATE `Contacts` SET Images = $Images, Name = $Name, Phone = $Phone, Email = $Email, Alive = $Alive, Relation = $Relation WHERE ID = $ID");
 		$conn->close();
 		returnWithError("");
 	}

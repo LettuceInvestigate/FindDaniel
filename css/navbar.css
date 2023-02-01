@@ -1,6 +1,6 @@
 @font-face {
   font-family: bobby;
-  src: url(/fonts/bobby.otf);
+  src: url(/fonts/dosis.otf);
 }
 
 *{
@@ -35,7 +35,7 @@
 }
 .navbar .menu {
   float: right;
-  margin-right: 20px;
+  margin-right: 10px;
 }
 .navbar .menu li{
   list-style: none;
@@ -43,12 +43,13 @@
 }
 .navbar .menu li a{
   color: #d9dfdb;
-  font-size: 26px;
+  font-size: 24px;
   font-weight: 600;
   margin: 25px;
   padding: 7px 13px;
   border-radius: 5px;
   text-transform: uppercase;
+  text-decoration: none;
 }
 
 .navbar .menu li a.active,.navbar .menu li a:hover{

@@ -1,152 +1,233 @@
-* { 
-    padding: 0;
-    margin: 0;
-    text-decoration: none;
-    list-style: none;
-    box-sizing: border-box;   
-}
-
-/* Font for main titles on each page */ 
 @font-face {
     font-family: fibre; 
-    src: url(/fonts/fibre.otf); 
+    src: url(/fonts/fibre.otf);
 }
 
-/* Font for everything else */ 
 @font-face {
     font-family: bobby;
-    src: url(/fonts/bobby.otf);
+    src: url(/fonts/dosis.otf);
 }
 
-/* Prevents the page from overflowing/excessive scrolling left and right */ 
-html, body {
-    overflow-x: hidden; 
-    height: 100%;
-    width: 100%;
+
+#our-white {
+  color: #d9dfdb
 }
 
-#title{
-    font-family: fibre;
-    color: #bc1823; 
-    position: absolute;
-    white-space: nowrap;
-    animation: 2s slide-left;
-}
-#subtitle{
-    font-family: bobby; 
-    color: #212932; 
-    position: absolute; 
-    white-space: nowrap;
-    animation: 2s slide-right;
-}
-#building{
-    position: absolute; 
+#our-red {
+  color: #bc1823;
 }
 
-/* MEDIA QUERIES FOR RESPONSIVENESS AND SIZING */ 
-
-@media (min-width: 992px) {
-    #title {
-        font-size: 7rem; 
-        left: 22%; 
-        top: 14%; 
+/* Animation */ 
+@keyframes fadeIn {
+    0% 
+    { 
+        opacity: 0; 
     }
-    #subtitle {        
-        font-size: 2.2rem; 
-        left: 19%; 
-        top: 27%; 
-    }    
-    #building {
-        height: 74%; 
-        width: 74%; 
-        z-index: -1; 
-        left: 14%; 
-        top: 28%; 
+
+    100% 
+    { 
+        opacity: 1; 
     }
 }
 
-@media (min-width: 1200px) {
-    #title {
-        font-size: 6rem; 
-        left: 26%; 
-        top: 16%; 
-    }    
-    #subtitle {
-        font-size: 2.2rem; 
-        left: 24%; 
-        top: 30%; 
-    }    
-    #building {
-        height: 72%; 
-        width: 72%; 
-        z-index: -1; 
-        left: 14%; 
-        top: 28%; 
-    }
+#signin-button {
+  font-family: bobby; 
+  font-size: 1.7rem; 
+  color: #d9dfdb; 
+  padding: 10px 20px; 
+  background-color: #bc1823;
+  border: 4px solid #bc1823; 
+  border-radius: 24px; 
+  transition-duration: 0.4s;
+  max-width: fit-content;
+  max-height: fit-content;
+  margin: auto;
+  cursor: pointer;
 }
 
-/* Macbook fits here */ 
-@media (min-width: 1400px) {
-    #title {
-        font-size: 7.5rem; 
-        left: 25%; 
-        top: 14%; 
-    }    
-    #subtitle {
-        font-size: 2.7rem; 
-        left: 23%; 
-        top: 30%; 
-    }    
-    #building {
-        height: 70%; 
-        width: 70%; 
-        z-index: -1; 
-        left: 14%;
-        top: 30%;  
-    }
+#signin-button:hover {
+  background-color: #d9dfdb;
+  color: #bc1823; 
+  border: 4px solid #bc1823; 
 }
 
-@media (min-width: 1800px) {
-    #title {
-        font-size: 8rem; 
-        left: 28%; 
-        top: 14%; 
-    }    
-    #subtitle {
-        font-size: 3rem; 
-        left: 25%; 
-        top: 30%; 
-    }    
-    #building {
-        height: 72%; 
-        width: 72%; 
-        z-index: -1; 
-        left: 13%; 
-        top: 28%; 
-    }
+#signup-button {
+  font-family: bobby; 
+  font-size: 1.7rem; 
+  color: #d9dfdb; 
+  padding: 10px 20px; 
+  background-color: #bc1823;
+  border: 4px solid #bc1823; 
+  border-radius: 24px; 
+  transition-duration: 0.4s;
+  cursor: pointer;
+  margin-bottom: 50px;
 }
 
-/* Title and subtitle animations */ 
-@keyframes slide-left {
-    from {
-      margin-left: 100%;
-    }
-    to {
-      margin-left: 0%;
-    }
+#signup-button:hover {
+  background-color: #d9dfdb; 
+  color: #bc1823; 
+  border: 4px solid #bc1823; 
 }
 
-@keyframes slide-right {
-    from {
-      margin-left: -100%;
-    }
-    to {
-      margin-left: 0%;
-    }
+#register-button {
+  font-family: bobby; 
+  font-size: 1.8rem; 
+  color: #d9dfdb; 
+  background: none; 
+  border: none; 
+  cursor: pointer; 
+  transition-duration: 0.4s;
+  margin-bottom: 25px;
 }
 
-section {
-    background: url(images/building.png) no-repeat;
-    background-size: cover;
-    height: calc(100vh - 80px);
+#register-button:hover {
+  color: #bc1823;
+}
+
+#forgotpw-button {
+  font-family: bobby; 
+  font-size: 1.8rem; 
+  color: #d9dfdb; 
+  background: none; 
+  border: none; 
+  cursor: pointer; 
+  transition-duration: 0.4s;
+  padding-top: 25px;
+}
+
+#forgotpw-button:hover {
+  color: #bc1823; 
+}
+
+#lettuce-meet:hover {
+  text-decoration: underline;
+  cursor: pointer; 
+  color: #bc1823; 
+}
+
+/* DO NOT CHANGE */
+#box{
+  width: fit-content;
+}
+#box input:not(:placeholder-shown), #box:hover input{
+  width: 400px;
+  cursor: pointer;
+}
+#box input{
+  background: transparent;
+  border: none;
+  outline: none;
+  width: 0px;
+  font-weight: 600;
+  font-size: 16px;
+  transition: 0.8s;
+}
+#D-Tabel-Head{
+  font-size: 15px;
+  text-transform: uppercase;
+  font-weight: 400;
+  background: #F9FAFB;
+  text-align: start;
+  padding: 15px;
+}
+#D-Tabel-Add{
+  font-size: 15px;
+  text-transform: uppercase;
+  font-weight: 400;
+  background: #F9FAFB;
+  text-align: end;
+  text-decoration: none;
+  padding-right: 50px;
+  color: #554CD1;
+  font-weight: 600;
+}
+#D-tr{
+  border-bottom: 1px solid #eef0f3;
+}
+#D-td-name{
+  padding: 10px 16px;
+  display:flex;
+  justify-content:
+  flex-start;
+  align-items: center;
+  text-align: start;
+}
+#D-td-name img{
+  width: 45px;
+  height: 45px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+#D-td-name h5{
+  margin-bottom: 0rem;
+  margin-top: 0.5rem;
+  font-weight: 700;
+  font-size: 14px;
+}
+#D-td-name p{
+  font-weight: 400;
+  font-size: 13px;
+  color: #787d8d;
+}
+#D-td-username{
+  padding: 10px 16px;
+}
+#D-td-username h5{
+  margin-bottom: 0rem;
+  margin-top: 0.5rem;
+  font-weight: 700;
+  font-size: 14px;
+}
+#D-td-username p{
+  font-weight: 400;
+  font-size: 13px;
+  color: #787d8d;
+}
+#D-td-num{
+  padding: 10px 16px;
+}
+#D-td-num p{
+  font-weight: 400;
+  font-size: 15px;
+  color: #000;
+}
+#D-td-role{
+  padding: 10px 16px;
+}
+#D-td-role p{
+  font-weight: 400;
+  font-size: 15px;
+  color: #000;
+}
+#D-td-edit-delete{
+  text-align: end;
+}
+#D-td-edit-delete a{
+  text-decoration: none;
+  font-size: 15;
+  color: #554CD1;
+  font-weight: 600;
+}
+#D-tr #D-td-edit-delete .editButton{
+  padding-right: 15px;
+  
+}
+#D-tr #D-td-edit-delete .deleteButton{
+  padding-right: 30px;
+}
+
+.inactive #register-error{
+  font-family: bobby;
+  font-size: 0rem;
+  color: #bc1823;
+}
+
+.active #register-error{
+  margin-top: -15px;
+  margin-bottom: 20px;
+  font-family: bobby;
+  font-size: 1.5rem;
+  color: #bc1823;
 }

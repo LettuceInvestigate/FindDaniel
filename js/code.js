@@ -1,26 +1,18 @@
-const urlBase = 'http://COP4331-5.com/LAMPAPI';
+const urlBase = 'http://wheresdaniel.io/LAMPAPI';
 const extension = 'php';
 
 let userId = 0;
-let firstName = "";
-let lastName = "";
-
 
 function doLogin()
 {
 	userId = 0;
-	firstName = "";
-	lastName = "";
 	
 	let login = document.getElementById("loginName").value;
 	let password = document.getElementById("loginPassword").value;
 
-//	var hash = md5( password );
-	
-	document.getElementById("loginResult").innerHTML = "";
+	//var hash = md5( password );
 
-	let tmp = {login:login,password:password};
-//	var tmp = {login:login,password:hash};
+	var tmp = {Username:login,Password:password};
 	let jsonPayload = JSON.stringify( tmp );
 	
 	let url = urlBase + '/Login.' + extension;
@@ -39,23 +31,24 @@ function doLogin()
 		
 				if( userId < 1 )
 				{		
-					document.getElementById("loginResult").innerHTML = "User/Password combination incorrect";
+					// ** FIX THIS WHEN FIND OUT HOW TO CHANGE **
+					document.getElementById("register-error").className = "active";
 					return;
 				}
 		
-				firstName = jsonObject.firstName;
-				lastName = jsonObject.lastName;
+				username = jsonObject.Username;
+				email = jsonObject.Email;
 
 				saveCookie();
 	
-				window.location.href = "contacts.html";
+				window.location.href = "dashboard.html";
 			}
 		};
 		xhr.send(jsonPayload);
 	}
 	catch(err)
 	{
-		document.getElementById("loginResult").innerHTML = err.message;
+		document.getElementById("register-error").className = "active";
 	}
 
 }
@@ -65,7 +58,7 @@ function saveCookie()
 	let minutes = 20;
 	let date = new Date();
 	date.setTime(date.getTime()+(minutes*60*1000));	
-	document.cookie = "firstName=" + firstName + ",lastName=" + lastName + ",userId=" + userId + ";expires=" + date.toGMTString();
+	document.cookie = "userId=" + userId + ";expires=" + date.toGMTString();
 }
 
 function readCookie()
@@ -77,59 +70,73 @@ function readCookie()
 	{
 		let thisOne = splits[i].trim();
 		let tokens = thisOne.split("=");
-		if( tokens[0] == "firstName" )
-		{
-			firstName = tokens[1];
-		}
-		else if( tokens[0] == "lastName" )
-		{
-			lastName = tokens[1];
-		}
-		else if( tokens[0] == "userId" )
+		if( tokens[0] == "userId" )
 		{
 			userId = parseInt( tokens[1].trim() );
 		}
 	}
-	
-	if( userId < 0 )
+	if( userId <= 0 )
 	{
-		window.location.href = "index.html";
+		return 0;
 	}
 	else
 	{
-		document.getElementById("userName").innerHTML = "Logged in as " + firstName + " " + lastName;
+		return 10;
 	}
 }
 
 function doLogout()
 {
 	userId = 0;
-	firstName = "";
-	lastName = "";
-	document.cookie = "firstName= ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
-	window.location.href = "index.html";
+	// COOKIE DOES NOT DELETE
+	document.cookie = "userId=0";
+	window.location.href = "/../index.html";
 }
 
 function createUser()
 {
-	firstName = document.getElementById("regFirstName");
-	lastName = document.getElementById("regLastName");
-	let login = document.getElementById("regLogin");
-	let password1 = document.getElementById("regPassword1");
-	let password2 = document.getElementById("regPassword2");
+	let email = document.getElementById("registerEmail").value;
 
-	if ( password1 == password2 )
+	if (!validateEmail(email))
 	{
-		return newUser ={ Login: login, Password: password, FirstName: firstName, LastName: lastName };
+		document.getElementById("invalidEmail").innerHTML("INVALID EMAIL");
 	}
-	return newUser ={ Login: login }
+	let username = document.getElementById("register-suspect-name").value;
+	let password1 = document.getElementById("registerPassword1").value;
+	let password2 = document.getElementById("registerPassword2").value;
+
+	if (checkPassword(password1, password2))
+	{
+		return newUser ={ Email: email, Username: username, Password: password1 };
+	}
+	document.getElementById("invalidPassword").innerHTML("Password Mismatch");
+	return newUser ={ }
 }
+
+function checkPassword(input1, input2) 
+{ 
+	var password = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
+	if ((input1 != input2) && !input.value.match(password))
+	{
+		return false
+	}
+	return true;
+}
+
+function validateEmail(input)
+{
+	let email = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+	if( input.toLowerCase().match(email) )
+	{
+		return true;
+	}
+	return false;
+}
+
 
 function doRegister()
 {
 	let newUser = createUser();
-	document.getElementById("regResult").innerHTML = "";
-
 	let jsonPayload = JSON.stringify( newUser );
 	
 	let url = urlBase + '/Register.' + extension;
@@ -148,16 +155,13 @@ function doRegister()
 		
 				if( userId < 1 )
 				{		
-					document.getElementById("registerResult").innerHTML = "Password Does Not Match";
+					document.getElementById("registerResult").innerHTML = "Invalid Credientials";
 					return;
 				}
-		
-				firstName = jsonObject.firstName;
-				lastName = jsonObject.lastName;
 
 				saveCookie();
 	
-				window.location.href = "contacts.html";
+				window.location.href = "dashboard.html";
 			}
 		};
 		xhr.send(jsonPayload);
@@ -176,7 +180,8 @@ function createContact()
 	let email = document.getElementById("contactEmail").value;
 	let alive = document.getElementById("contactAlive").value;
 	let relation = document.getElementById("contactRelation").value;
-	return newContact ={ Name: name, Phone: phone, Email: email, Alive: alive, Relationship: relation, userId: userId };
+	let image = "/images/person.png";
+	return newContact ={ Images: image, Name: name, Phone: phone, Email: email, Alive: alive, Relation: relation, userId: userId };
 }
 
 function addContact()
