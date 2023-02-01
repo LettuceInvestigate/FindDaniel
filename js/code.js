@@ -100,9 +100,10 @@ function createUser()
 	{
 		document.getElementById("invalidEmail").innerHTML("INVALID EMAIL");
 	}
-	let username = document.getElementById("#suspect-name");
-	let password1 = document.getElementById("#password");
-	let password2 = document.getElementById("retype-password");
+	let username = document.getElementById("register-suspect-name").value;
+	let email = document.getElementById("registerEmail").value;
+	let password1 = document.getElementById("registerPassword1").value;
+	let password2 = document.getElementById("registerPassword2").value;
 
 	if (checkPassword(password1, password2))
 	{
