@@ -2,6 +2,7 @@ const urlBase = 'http://wheresdaniel.io/LAMPAPI';
 const extension = 'php';
 
 let userId = 0;
+let frontendUsername;
 
 function doLogin()
 {
@@ -39,6 +40,7 @@ function doLogin()
 				username = jsonObject.Username;
 				email = jsonObject.Email;
 
+				frontendUsername = username;
 				saveCookie();
 	
 				window.location.href = "dashboard.html";

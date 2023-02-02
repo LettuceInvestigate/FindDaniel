@@ -2,7 +2,6 @@ Functionality:
 
 - EditContact API might not be Working
 
-- Wantedposters.html
 - Password validation
 - Password requirements in register
 - Login error notification class fix
@@ -17,8 +16,8 @@ Functionality:
 - Connect Dashboard searchbar to search API
 
 Additional:
-- Forgot Password button and Sign up button should be colorblind accurate
 - Fix navbar size
 - Make logo smaller
+- Add people images to homepage
 - Email validation
 - Hover functionality fix
