@@ -88,8 +88,9 @@ function readCookie()
 function doLogout()
 {
 	userId = 0;
-	// COOKIE DOES NOT DELETE
+	//COOKIE DOES NOT DELETE
 	document.cookie = "userId=0";
+	fixTravel(page);
 	window.location.href = "/../index.html";
 }
 

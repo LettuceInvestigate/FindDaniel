@@ -22,7 +22,7 @@
   
   <script type="text/javascript">
     if(readCookie() < 1){
-      window.location.href = "login.html";
+      window.location.href = "warning.html";
     }
   </script>
   <script>
@@ -130,9 +130,9 @@
         <thead>
           <tr style='border-bottom: 1px solid #eef0f3;'>
             <td id="D-Tabel-Head">Name</td>
-            <td id="D-Tabel-Head">Username</td>
             <td id="D-Tabel-Head">Phone Number</td>
-            <td id="D-Tabel-Head">Role</td>
+            <td id="D-Tabel-Head">Relation</td>
+            <td id="D-Tabel-Head">Status</td>
             <td id="D-Tabel-Add">
               <a href="#">
                 <li class="fas fa-plus"></li>
@@ -156,15 +156,17 @@
                 <p>John1324@gmail.com</p>
               </div>
             </td>
-            <td id="D-td-username">
-              <h5>Jsmith22</h5>
-              <p>User</p>
-            </td>
             <td id="D-td-num">
               <p>000-000-0000</p>
             </td>
-            <td id="D-td-role">
-              <p>Suspect</p>
+
+
+            <td id="D-td-relation-status">
+              <p>Brother</p>
+            </td>
+            
+            <td id="D-td-relation-status">
+              <p>Missing</p>
             </td>
             <td id="D-td-edit-delete">
               <a class="editButton" href="#">
@@ -188,15 +190,14 @@
                 <p>Sam18J@gmail.com</p>
               </div>
             </td>
-            <td id="D-td-username">
-              <h5>Sammm8</h5>
-              <p>Admin</p>
-            </td>
             <td id="D-td-num">
               <p>333-222-1111</p>
             </td>
-            <td id="D-td-role">
-              <p>Missing</p>
+            <td id="D-td-relation-status">
+              <p>Unknown</p>
+            </td>
+            <td id="D-td-relation-status">
+              <p>Suspect</p>
             </td>
             <td id="D-td-edit-delete">
               <a class="editButton" href="#">

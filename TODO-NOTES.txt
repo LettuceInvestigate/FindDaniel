@@ -2,7 +2,6 @@ Functionality:
 
 - EditContact API might not be Working
 
-- Switch logout button with login upon sign on
 - Wantedposters.html
 - Password validation
 - Password requirements in register
@@ -16,11 +15,8 @@ Functionality:
 - Dashboard delete button functionality
 - Dashboard delete button API
 - Connect Dashboard searchbar to search API
-- Navbar switches wantedposter button to direct to dashboard when signed in
-
 
 Additional:
-- Bootstrap in Navbar
 - Forgot Password button and Sign up button should be colorblind accurate
 - Fix navbar size
 - Make logo smaller

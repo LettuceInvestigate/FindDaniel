@@ -82,6 +82,7 @@
 
 #register-button:hover {
   color: #bc1823;
+  text-decoration: underline; 
 }
 
 #forgotpw-button {
@@ -97,6 +98,7 @@
 
 #forgotpw-button:hover {
   color: #bc1823; 
+  text-decoration: underline; 
 }
 
 #lettuce-meet:hover {
@@ -170,6 +172,16 @@
   font-size: 13px;
   color: #787d8d;
 }
+#D-td-num{
+  padding: 10px 16px;
+}
+#D-td-num p{
+  font-weight: 400;
+  font-size: 15px;
+  color: #000;
+}
+
+
 #D-td-username{
   padding: 10px 16px;
 }
@@ -184,18 +196,11 @@
   font-size: 13px;
   color: #787d8d;
 }
-#D-td-num{
+
+#D-td-relation-status{
   padding: 10px 16px;
 }
-#D-td-num p{
-  font-weight: 400;
-  font-size: 15px;
-  color: #000;
-}
-#D-td-role{
-  padding: 10px 16px;
-}
-#D-td-role p{
+#D-td-relation-status p{
   font-weight: 400;
   font-size: 15px;
   color: #000;
