@@ -33,3 +33,4 @@ function hideRequirements()
 	document.getElementById('password-requirements-title').style.display = "none"; 
 	document.getElementById('password-requirements-content').style.display = "none"; 
 }
+

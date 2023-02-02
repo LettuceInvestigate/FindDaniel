@@ -24,6 +24,5 @@ Additional:
 - Forgot Password button and Sign up button should be colorblind accurate
 - Fix navbar size
 - Make logo smaller
-- Add people images to homepage
 - Email validation
 - Hover functionality fix
