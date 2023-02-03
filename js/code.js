@@ -1,7 +1,8 @@
-const urlBase = 'http://whersedaneil.io/LAMPAPI';
+const urlBase = 'http://wheresdaniel.io/LAMPAPI';
 const extension = 'php';
 
 let userId = 0;
+let frontendUsername;
 
 function doLogin()
 {
@@ -10,11 +11,9 @@ function doLogin()
 	let login = document.getElementById("loginName").value;
 	let password = document.getElementById("loginPassword").value;
 
-	var hash = md5( password );
-	
-	document.getElementById("loginResult").innerHTML = "";
+	//var hash = md5( password );
 
-	var tmp = {Username:login,password:hash};
+	var tmp = {Username:login,Password:password};
 	let jsonPayload = JSON.stringify( tmp );
 	
 	let url = urlBase + '/Login.' + extension;
@@ -34,13 +33,14 @@ function doLogin()
 				if( userId < 1 )
 				{		
 					// ** FIX THIS WHEN FIND OUT HOW TO CHANGE **
-					document.getElementById("loginResult").className = "active";
+					document.getElementById("register-error").className = "active";
 					return;
 				}
 		
-				firstName = jsonObject.firstName;
-				lastName = jsonObject.lastName;
+				username = jsonObject.Username;
+				email = jsonObject.Email;
 
+				frontendUsername = username;
 				saveCookie();
 	
 				window.location.href = "dashboard.html";
@@ -50,7 +50,7 @@ function doLogin()
 	}
 	catch(err)
 	{
-		document.getElementById("loginResult").innerHTML = err.message;
+		document.getElementById("register-error").className = "active";
 	}
 
 }
@@ -77,40 +77,42 @@ function readCookie()
 			userId = parseInt( tokens[1].trim() );
 		}
 	}
-	
-	if( userId < 0 )
+	if( userId <= 0 )
 	{
-		window.location.href = "index.html";
+		return 0;
 	}
 	else
 	{
-		document.getElementById("userName").innerHTML = "Logged in as " + firstName + " " + lastName;
+		return 10;
 	}
 }
 
 function doLogout()
 {
 	userId = 0;
-	document.cookie = "firstName= ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
-	window.location.href = "index.html";
+	//COOKIE DOES NOT DELETE
+	document.cookie = "userId=0";
+	fixTravel(page);
+	window.location.href = "/../index.html";
 }
 
 function createUser()
 {
-	email = document.getElementById("#email");
+	let email = document.getElementById("registerEmail").value;
 
 	if (!validateEmail(email))
 	{
 		document.getElementById("invalidEmail").innerHTML("INVALID EMAIL");
 	}
-	let username = document.getElementById("#suspect-name");
-	let password1 = document.getElementById("#password");
-	let password2 = document.getElementById("retype-password");
+	let username = document.getElementById("register-suspect-name").value;
+	let password1 = document.getElementById("registerPassword1").value;
+	let password2 = document.getElementById("registerPassword2").value;
 
 	if (checkPassword(password1, password2))
 	{
 		return newUser ={ Email: email, Username: username, Password: password1 };
 	}
+	document.getElementById("invalidPassword").innerHTML("Password Mismatch");
 	return newUser ={ }
 }
 
@@ -126,19 +128,18 @@ function checkPassword(input1, input2)
 
 function validateEmail(input)
 {
-	let email = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-	if( input.value.match(email) )
+	let email = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+	if( input.toLowerCase().match(email) )
 	{
 		return true;
 	}
 	return false;
 }
 
+
 function doRegister()
 {
 	let newUser = createUser();
-	document.getElementById("registerResult").innerHTML = "";
-
 	let jsonPayload = JSON.stringify( newUser );
 	
 	let url = urlBase + '/Register.' + extension;
@@ -160,9 +161,6 @@ function doRegister()
 					document.getElementById("registerResult").innerHTML = "Invalid Credientials";
 					return;
 				}
-		
-				firstName = jsonObject.firstName;
-				lastName = jsonObject.lastName;
 
 				saveCookie();
 	

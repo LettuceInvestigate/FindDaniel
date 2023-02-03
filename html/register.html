@@ -16,7 +16,7 @@
         <!--JavaScript-->
         <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <script type="text/javascript" src="/./js/userupdater.js"></script>
+        <script type="text/javascript" src="/./js/code.js"></script>
         <script>
           $(function () {
             $("#includeHtml").load("navbar.html");
@@ -35,53 +35,53 @@
         <div class='container-fluid vh-100 overflow-scroll' style='background-image: url("/images/field.png"); background-size: cover; padding-bottom: 70px; padding-top: 70px;'>
             <div class='container rounded-5' style='background-color: #212932; border-radius: 24px; opacity: 90%; margin-top: -30px; width: 600px; height: fit-content'>
                 <!-- Title -->
-                <div id= "our-red" style="font-size: 6rem; animation: fadeIn 4s; font-family: fibre; margin-left: 140px; padding-top: 0px;">
-                Register
+                <div id= "our-red" style='font-size: 6rem; animation: fadeIn 4s; font-family: fibre;'>
+                <center>Register</center>
                 </div>
 
                 <!-- Suspect Name -->
-                <input id="suspect-name" type="username" onclick="hideRequirements()"
+                <center><input id="register-suspect-name" type="username" onclick="hideRequirements()"
                 style='font-family: bobby; text-align: center; font-size: 2.2rem; color: #212932; background-color: #d9dfdb; 
-                border-radius: 24px; margin-left: 100px; margin-top: -5px; border: 1px solid #d9dfdb;'
-                placeholder="SUSPECT NAME">
+                border-radius: 24px; margin-top: 15px; border: 1px solid #d9dfdb;'
+                placeholder="SUSPECT NAME"></center>
 
                 <!-- Email -->
-                <input id="email" type="email" onclick="hideRequirements()"
+                <center><input id="registerEmail" type="email" onclick="hideRequirements()"
                 style='font-family: bobby; text-align: center; font-size: 2.2rem; color: #212932; background-color: #d9dfdb; 
-                border-radius: 24px; margin-left: 100px; margin-top: 25px; border: 1px solid #d9dfdb;'
-                placeholder="EMAIL">
+                border-radius: 24px; margin-top: 12px; border: 1px solid #d9dfdb;'
+                placeholder="EMAIL"></center>
 
                 <!-- Password -->
-                <input id="password1" type="password" onclick="showRequirements()"
+                <center><input id="registerPassword1" type="password" onclick= "showRequirements()" onkeyup="showRequirements()" oninput="checkRequirements()"
                 style='font-family: bobby; text-align: center; font-size: 2.2rem; color: #212932; background-color: #d9dfdb; 
-                border-radius: 24px; margin-left: 100px; margin-top: 25px; border: 1px solid #d9dfdb;'
-                placeholder="PASSWORD">
-
-                <!-- Retype Password -->
-                <input id="password2" type="password" onclick="hideRequirements()"
-                style='font-family: bobby; text-align: center; font-size: 2.2rem; color: #212932; background-color: #d9dfdb; 
-                border-radius: 24px; margin-left: 100px; margin-top: 25px; border: 1px solid #d9dfdb;'
-                placeholder="RETYPE PASSWORD">
-
-                <!-- Sign Up Button -->
-                <button id="signup-button">SIGN UP</button>
-
-                <div><br><br><br></div>
+                border-radius: 24px; margin-top: 12px; border: 1px solid #d9dfdb;'
+                placeholder="PASSWORD"></center>
 
                 <!-- Hide this when password field isn't clicked on -->
-                <div id="password-requirements-title" style="font-family: bobby; color: #bc1823; font-size: 1.5rem;
-                    margin-left: -2px; margin-top: -40px; padding-bottom: 20px; text-align: center; display: none;">
-                    Password Requires The Following:
-                </div>
-                <div id="password-requirements-content" style="font-family: bobby; color: #d9dfdb; font-size: 1.5rem;
-                margin-left: -2px; margin-top: -10px; padding-bottom: 20px; text-align: center; display: none;">
-                    8 to 20 characters<br>
-                    At least one lowercase letter<br>
-                    At least one uppercase letter<br>
-                    At least one number<br>
-                    At least one special character<br>
-                </div>
+                <center>
+                    <div id="password-requirements-title"
+                        style="font-family: bobby; width: fit-content; height: fit-content; padding: 10px; color: #d9dfdb; font-size: 1.2rem;
+                        text-align: center; display: none; margin-top: 10px;">
+                        PASSWORD REQUIRES THE FOLLOWING:
+                        <span id="num-characters" style="color: #bc1823">✗ 8 to 20 characters<br></span>
+                        <span id="num-lowercase" style="color: #bc1823">✗ At least one lowercase letter<br></span>
+                        <span id="num-uppercase" style="color: #bc1823">✗ At least one uppercase letter<br></span>
+                        <span id="num-digits" style="color: #bc1823">✗ At least one number<br></span>
+                        <span id="num-special" style="color: #bc1823">✗ At least one special character<br></span>
+                    </div>
+                </center>
+
+                <!-- Retype Password -->
+                <center><input id="registerPassword2" type="password" onclick="hideRequirements()" onkeyup="hideRequirements()"
+                style='font-family: bobby; text-align: center; font-size: 2.2rem; color: #212932; background-color: #d9dfdb; 
+                border-radius: 24px; margin-top: 12px; margin-bottom: 25px; border: 1px solid #d9dfdb;'
+                placeholder="RETYPE PASSWORD"></center>
+
+                <!-- Sign Up Button -->
+                <center><button id="signup-button" onclick="doRegister()">SIGN UP</button></center>
         </div>
+
+        <script src="/./js/userupdater.js"></script>
     </body>
 </html>
 

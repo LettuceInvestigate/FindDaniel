@@ -8,7 +8,7 @@
 	$Phone = $inData["Phone"];
 	$Email = $inData["Email"];
 	$Alive = $inData["Alive"];
-	$Relationship = $inData["Relationship"];
+	$Relation = $inData["Relation"];
 	$ID = $inData["ID"];
 
 	$conn = new mysqli("localhost", "TheBeast", "WeLoveCOP4331", "COP4331");

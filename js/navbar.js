@@ -1,53 +1,10 @@
-function activeClass(fileName) {
-    
-    document.getElementById("homeButton").changer = "active";
-    if (fileName == "index.html") {
-        isIndex();
-        
-    }
-    if (fileName == "ourtragedy.html") {
-        notIndex();
-        document.getElementById("homeButton").className = "active";
-        document.getElementById("tragedyButton").className = "active";
-        document.getElementById("postersButton").className = "active";
-        document.getElementById("loginButton").className = "active";
-    }
-    if (fileName == "wantedposters.html") {
-        notIndex();
-        document.getElementById("homeButton").className = "active";
-        document.getElementById("tragedyButton").className = "active";
-        document.getElementById("postersButton").className = "active";
-        document.getElementById("loginButton").className = "active";
-    }
-    if (fileName == "login.html") {
-        notIndex();
-        document.getElementById("homeButton").class = "active";
-        document.getElementById("tragedyButton").className = "active";
-        document.getElementById("postersButton").className = "active";
-        document.getElementById("loginButton").className = "active";
-    }
-    if (fileName == "register.html") {
-        notIndex();
-        document.getElementById("homeButton").className = "inactive";
-        document.getElementById("tragedyButton").className = "inactive";
-        document.getElementById("postersButton").className = "inactive";
-        document.getElementById("loginButton").className = "inactive";
-    }
-    if (fileName == "dashboard.html") {
-        notIndex();
-        document.getElementById("homeButton").class = "inactive";
-        document.getElementById("tragedyButton").className = "inactive";
-        document.getElementById("postersButton").className = "inactive";
-        document.getElementById("loginButton").className = "inactive";
-    }
-}
 
 function fixTravel(fileName){
     if (fileName == "index.html") {
         isIndex();
     }else if(fileName == "ourtragedy.html" || fileName == "wantedposters.html"
         || fileName == "login.html" || fileName == "register.html" || fileName == "dashboard.html"
-        || fileName == "learnmore.html"){
+        || fileName == "learnmore.html" || fileName == "warning.html"){
         notIndex();
     }else{
         console.error("JS: FixTravel Function: NavBar: Reached Illegal Page!")
@@ -59,6 +16,8 @@ function isIndex(){
     document.getElementById("tragedyButton").href = "/html/ourtragedy.html";
     document.getElementById("postersButton").href = "/html/wantedposters.html"
     document.getElementById("loginButton").href = "/html/login.html";
+    document.getElementById("dashboardButton").href = "/html/dashboard.html";
+    document.getElementById("logoutButton").href = "index.html";
 }
 
 function notIndex(){
@@ -66,13 +25,49 @@ function notIndex(){
     document.getElementById("tragedyButton").href = "ourtragedy.html";
     document.getElementById("postersButton").href = "wantedposters.html"
     document.getElementById("loginButton").href = "login.html";
+    document.getElementById("dashboardButton").href = "dashboard.html";
+    document.getElementById("logoutButton").href = "/../index.html";
 }
 
-function hoverButton(currentElement){
+function activeButton(currentElement){
     if(currentElement = "homeButton"){
         document.getElementById("homeButton").class = "active";
         document.getElementById("tragedyButton").class = "inactive";
         document.getElementById("postersButton").class = "inactive";
         document.getElementById("loginButton").class = "inactive";
+        document.getElementById("dashboardButton").class = "inactive";
+        document.getElementById("logoutButton").class = "inactive";
+    }
+    if(currentElement = "tragedyButton"){
+        document.getElementById("homeButton").class = "inactive";
+        document.getElementById("tragedyButton").class = "active";
+        document.getElementById("postersButton").class = "inactive";
+        document.getElementById("loginButton").class = "inactive";
+        document.getElementById("dashboardButton").class = "inactive";
+        document.getElementById("logoutButton").class = "inactive";
+    }
+    if(currentElement = "postersButton"){
+        document.getElementById("homeButton").class = "inactive";
+        document.getElementById("tragedyButton").class = "inactive";
+        document.getElementById("postersButton").class = "active";
+        document.getElementById("loginButton").class = "inactive";
+        document.getElementById("dashboardButton").class = "inactive";
+        document.getElementById("logoutButton").class = "inactive";
+    }
+    if(currentElement = "loginButton"){
+        document.getElementById("homeButton").class = "inactive";
+        document.getElementById("tragedyButton").class = "inactive";
+        document.getElementById("postersButton").class = "inactive";
+        document.getElementById("loginButton").class = "active";
+        document.getElementById("dashboardButton").class = "inactive";
+        document.getElementById("logoutButton").class = "inactive";
+    }
+    if(currentElement = "dashboardButton"){
+        document.getElementById("homeButton").class = "inactive";
+        document.getElementById("tragedyButton").class = "inactive";
+        document.getElementById("postersButton").class = "inactive";
+        document.getElementById("loginButton").class = "inactive";
+        document.getElementById("dashboardButton").class = "active";
+        document.getElementById("logoutButton").class = "inactive";
     }
 }
