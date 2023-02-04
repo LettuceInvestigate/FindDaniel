@@ -143,7 +143,7 @@
   color: #bc1823;
   font-weight: 600;
 }
-#D-tr{
+.D-tr{
   border-bottom: 1px solid #eef0f3;
 }
 #D-td-name{
@@ -214,11 +214,11 @@
   color: #bc1823;
   font-weight: 600;
 }
-#D-tr #D-td-edit-delete .editButton{
+.D-tr #D-td-edit-delete .editButton{
   padding-right: 15px;
   color: #bc1823;
 }
-#D-tr #D-td-edit-delete .deleteButton{
+.D-tr #D-td-edit-delete .deleteButton{
   padding-right: 30px;
 }
 
