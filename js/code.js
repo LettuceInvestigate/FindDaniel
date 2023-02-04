@@ -3,6 +3,7 @@ const extension = 'php';
 
 let userId = 0;
 let globalCounter = 0;
+let globalCounter2 = 1;
 let thisisanarray = new Array();
 let frontendUsername;
 
@@ -223,44 +224,44 @@ function loadContact()
 {
 	console.log("Hi");
 	thisisanarray = new Array();
-	for(let i = 0; i < 5; i++)
-	{
-		let tmp = {UserID:21,Counter:0,Counter2:1};
-		let jsonPayload = JSON.stringify( tmp );
+	let tmp = {UserID:21,Counter:globalCounter,Counter2:1};
+	let jsonPayload = JSON.stringify( tmp );
 
-		let url = urlBase + '/LoadContacts.' + extension;
+	let url = urlBase + '/LoadContacts.' + extension;
 		
-		let xhr = new XMLHttpRequest();
-		xhr.open("POST", url, true);
-		xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
-		try
+	let xhr = new XMLHttpRequest();
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	try
+	{
+		xhr.onreadystatechange = function() 
 		{
-			xhr.onreadystatechange = function() 
+			if (this.readyState == 4 && this.status == 200) 
 			{
-				if (this.readyState == 4 && this.status == 200) 
+				let temp = JSON.stringify(xhr.responseText);
+				let jsonObject = JSON.parse(temp );
+				console.log(jsonObject);
+				if(jsonObject.id == -1)
 				{
-					let temp = JSON.stringify(xhr.responseText);
-					let jsonObject = JSON.parse(temp );
-					console.log(jsonObject);
-					if(jsonObject.error != "")
-					{
-						
-						// here is when we run out of object in the database
-					}
-					else
-					{
-						globalCounter++;
-						thisisanarray.push(jsonObject);
-					}
-					
+					console.log("is this working?");
+					// here is when we run out of object in the database
 				}
-			};
-			xhr.send(jsonPayload);
-		}
-		catch(err)
-		{
-			document.getElementById("").innerHTML = err.message;
-		}
+				else
+				{
+					globalCounter = globalCounter+1;
+					globalCounter2 = globalCounter2+1;
+					console.log(globalCounter);
+					console.log(globalCounter2);
+					thisisanarray.push(jsonObject);
+				}
+				
+			}
+		};
+		xhr.send(jsonPayload);
+	}
+	catch(err)
+	{
+		document.getElementById("").innerHTML = err.message;
 	}
 }
 
