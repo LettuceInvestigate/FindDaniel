@@ -3,6 +3,7 @@ const extension = 'php';
 
 let userId = 0;
 let globalCounter = 0;
+let thisisanarray = new Array();
 let frontendUsername;
 
 function doLogin()
@@ -220,7 +221,7 @@ function addContact()
 
 function loadContact()
 {
-	let thisisanarray = new Array();
+	thisisanarray = new Array();
 	for(let i = 0; i < 5; i++)
 	{
 		let tmp = {UserID:userId,Counter:globalCounter,Counter2:globalCounter+1};
