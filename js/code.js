@@ -3,7 +3,6 @@ const extension = 'php';
 
 let userId = 0;
 let globalCounter = 0;
-let globalCounter2 = 1;
 let thisisanarray = new Array();
 let frontendUsername;
 
@@ -249,10 +248,9 @@ function loadContact()
 				else
 				{
 					globalCounter = globalCounter+1;
-					globalCounter2 = globalCounter2+1;
 					console.log(globalCounter);
-					console.log(globalCounter2);
 					thisisanarray.push(jsonObject);
+					console.log(thisisanarray[0]);
 				}
 				
 			}
