@@ -221,9 +221,8 @@ function addContact()
 
 function loadContact()
 {
-	console.log("Hi");
 	thisisanarray = new Array();
-	let tmp = {UserID:21,Counter:globalCounter,Counter2:1};
+	let tmp = {UserID:userId,Counter:globalCounter,Counter2:1};
 	let jsonPayload = JSON.stringify( tmp );
 
 	let url = urlBase + '/LoadContacts.' + extension;
@@ -242,7 +241,6 @@ function loadContact()
 				console.log(jsonObject);
 				if(jsonObject.id == -1)
 				{
-					console.log("is this working?");
 					// here is when we run out of object in the database
 				}
 				else
@@ -262,10 +260,46 @@ function loadContact()
 		document.getElementById("").innerHTML = err.message;
 	}
 }
+function editContact()
+{
+	let id = document.getElementById("PUT THE CONTACTID HERE").value;
+	let Contact = createContact();
+	let tmp = {ID:id,Contact};
+	let jsonPayload = JSON.stringify( tmp );
+
+	let url = urlBase + '/EditContact.' + extension;
+		
+	let xhr = new XMLHttpRequest();
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	try
+	{
+		xhr.onreadystatechange = function() 
+		{
+			if (this.readyState == 4 && this.status == 200) 
+			{
+				let temp = JSON.stringify(xhr.responseText);
+				let jsonObject = JSON.parse(temp );
+				
+				if(jsonObject.error == "")
+				{
+					// The object is updated I do not know what we need to do to redisplay it
+					// but if you need to call something here is where we should do that
+				}
+			}
+		};
+		xhr.send(jsonPayload);
+	}
+	catch(err)
+	{
+		document.getElementById("").innerHTML = err.message;
+	}
+}
 
 function deleteContact()
 {
-	let delContact = { Name: document.getElementById("contactName").value, UserID: userId};
+	let id = document.getElementById("PUT THE CONTACTID HERE").value;
+	let delContact = {ID: id};
 	document.getElementById("contactDeleteResult").innerHTML = "";
 
 	let jsonPayload = JSON.stringify( delContact );
