@@ -17,7 +17,6 @@ function numOfUsers(){
 }
 // document.getElementById("numOfUsers").innerHTML( numOfUsers() );
 
-
 // Shows the password requirements to the user when password field is clicked on
 function showRequirements() 
 {

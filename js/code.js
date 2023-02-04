@@ -221,10 +221,11 @@ function addContact()
 
 function loadContact()
 {
+	console.log("Hi");
 	thisisanarray = new Array();
 	for(let i = 0; i < 5; i++)
 	{
-		let tmp = {UserID:userId,Counter:globalCounter,Counter2:globalCounter+1};
+		let tmp = {UserID:21,Counter:0,Counter2:1};
 		let jsonPayload = JSON.stringify( tmp );
 
 		let url = urlBase + '/LoadContacts.' + extension;
@@ -238,11 +239,13 @@ function loadContact()
 			{
 				if (this.readyState == 4 && this.status == 200) 
 				{
-					document.getElementById("colorSearchResult").innerHTML = "Color(s) has been retrieved";
-					let jsonObject = JSON.parse( xhr.responseText );
+					let temp = JSON.stringify(xhr.responseText);
+					let jsonObject = JSON.parse(temp );
+					console.log(jsonObject);
 					if(jsonObject.error != "")
 					{
-						return; // here is when we run out of object in the database
+						
+						// here is when we run out of object in the database
 					}
 					else
 					{

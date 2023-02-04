@@ -43,7 +43,7 @@
   <div class='container-fluid vh-100 overflow-scroll'
     style='background-image: url("/images/paper.png"); padding-top: 10px; padding-bottom: 10px;'>
 
-    <!-- Rotating the Stars Animation --> 
+    <!-- Rotating the Stars Animation for the Title --> 
     <style>
       .star {
         -webkit-animation:spin 2.5s linear infinite;
@@ -74,7 +74,9 @@
       }
     </style>
 
-    <center><div class="container rounded-5 p-5" style='object-fit: cover; color: #bc1823; font-family: fibre; 
+    <!-- Title -->
+    <center>
+    <div id="title" class="container rounded-5 p-5" style='object-fit: cover; color: #bc1823; font-family: fibre; 
       border-radius: 50%; color: 444a53; opacity: 90%; font-size: 76px; font-weight: 700;
       padding-top: 15px; align-items: center; display: flex; justify-content: center;'>
       <img class="star" src="/images/star.png" style="height: 80px; width: 140px;">
@@ -90,7 +92,7 @@
       box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.4); justify-content: center; font-size: 24px;'>
       <input class="searchBar" type="text" style="font-size: 24px" placeholder="SEARCH...">
       <a href="#">
-        <li class="fas fa-search" id="searchButton"></li>
+        <li class="fas fa-search" style= "color: #bc1823;" id="searchButton"></li>
       </a>
     </div>
 
@@ -108,7 +110,7 @@
     <!--Data Boxes-->
     <div class='container'
       style='display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; max-width: 975px;'>
-      <div class='container rounded-3' style='background-color: #d9dfdb; opacity: 90%;
+      <div id="data-box-1" class='container rounded-3' style='background-color: #d9dfdb; opacity: 90%;
         margin-top: 20px; width: 220px; padding: 16px 20px; border-radius: 5px;
         display: flex; justify-content: flex-start; align-items: center;'>
         <i class="fas fa-users" style='font-size:25px; width: 60px;
@@ -120,7 +122,8 @@
           <span style='font-size: 15px; color: #828997;'>Users</span>
         </div>
       </div>
-      <div class='container rounded-3' style='background-color: #d9dfdb; opacity: 90%;
+
+      <div id="data-box-2" class='container rounded-3' style='background-color: #d9dfdb; opacity: 90%;
         margin-top: 20px; width: 220px; padding: 16px 20px; border-radius: 5px;
         display: flex; justify-content: flex-start; align-items: center;'>
         <i class="fas fa-user-secret" style='font-size:25px; width: 60px;
@@ -132,7 +135,8 @@
           <span style='font-size: 15px; color: #828997;'>Something</span>
         </div>
       </div>
-      <div class='container rounded-3' style='background-color: #d9dfdb; opacity: 90%;
+
+      <div id="data-box-3" class='container rounded-3' style='background-color: #d9dfdb; opacity: 90%;
           margin-top: 20px; width: 220px; padding: 16px 20px; border-radius: 5px;
           display: flex; justify-content: flex-start; align-items: center;'>
         <i class="fas fa-user-graduate" style='font-size:25px; width: 60px;
@@ -144,7 +148,8 @@
           <span style='font-size: 15px; color: #828997;'>Something 2</span>
         </div>
       </div>
-      <div class='container rounded-3' style='background-color: #d9dfdb; opacity: 90%;
+
+      <div id="data-box-4" class='container rounded-3' style='background-color: #d9dfdb; opacity: 90%;
           margin-top: 20px; width: 220px; padding: 16px 20px; border-radius: 5px;
           display: flex; justify-content: flex-start; align-items: center;'>
         <i class="fas fa-dizzy" style='font-size:25px; width: 60px;
@@ -158,9 +163,107 @@
       </div>
     </div>
 
+    <!-- Add Contact Box -->
+    <div id='add-contact-box' class='container-fluid vh-100 overflow-scroll'
+    style='padding-bottom: 70px; padding-top: 70px; display: none;'>
+      <div class='container rounded-5' style='padding: 50px; background-color: #212932; opacity: 90%; width: 90%; height: fit-content; border-radius: 24px;'>
+          <div class='container' style='display: flex; justify-content: space-between;
+          align-items: center; flex-wrap: wrap;'>
+
+            <!-- Adding Image -->
+              <div class='container' id="add_image">
+                  <input type="file" id="real-file" hidden="hidden"/>
+                  <button type="button" id="custom-button" style='font-family: bobby; padding: 10px; color: #d9dfdb;
+                      background-color: #bc1823; border: 1px solid #bc1823; border-radius: 5px;
+                      cursor: pointer;' onclick="openFiles()">CHOOSE AN IMAGE</button>
+                  <span id="custom-text" style=' font-family: bobby; font-size: 20px; 
+                      color: #7b7b7b;'>No file chosen, yet.</span>
+              </div>
+              <script> 
+                function openFiles() 
+                {
+                  $('#real-file').click(); 
+                }
+              </script>
+
+              <div id="add_Name" style=' margin: 10px; align-items: center; text-align: center; justify-content: space-between;'>
+                  <label for="addName" style='font-family: bobby; color: #bc1823; font-size: 1.8rem;'>NAME:</label>
+                  <input name="addName"  id="addName" style='font-family: bobby; text-align: center; font-size: 1.5rem; color: #212932; background-color: #d9dfdb; 
+                      border-radius: 24px; margin-top: 15px; border: 1px solid #d9dfdb;' placeholder="Full Name">
+              </div>
+
+              <div id="add_email" style=' margin: 10px; align-items: center; text-align: center; justify-content: space-between;'>
+                  <label for="addEmail" style='font-family: bobby; color: #bc1823; font-size: 1.8rem;'>EMAIL:</label>
+                  <input name="addEmail"  id="addEmail" style='font-family: bobby; text-align: center; font-size: 1.5rem; color: #212932; background-color: #d9dfdb; 
+                      border-radius: 24px; margin-top: 15px; border: 1px solid #d9dfdb;' placeholder="name@email.com">
+              </div>
+
+              <div id="add_num" style=' margin: 10px; align-items: center; text-align: center; justify-content: space-between;'>
+                  <label for="addNum" style='font-family: bobby; color: #bc1823; font-size: 1.8rem;'>PHONE NUMBER:</label>
+                  <input name="addNum"  id="addNum" style='font-family: bobby; text-align: center; font-size: 1.5rem; color: #212932; background-color: #d9dfdb; 
+                      border-radius: 24px; margin-top: 15px; border: 1px solid #d9dfdb;' placeholder="000-000-0000">
+              </div>
+
+              <div id="add_Relation" style=' margin: 10px; align-items: center; text-align: center; justify-content: space-between;'>
+                  <label for="addRelation" style='font-family: bobby; color: #bc1823; font-size: 1.8rem;'>RELATIONSHIP:</label>
+                  <input name="addRelation"  id="addRelation" style='font-family: bobby; text-align: center; font-size: 1.5rem; color: #212932; background-color: #d9dfdb; 
+                      border-radius: 24px; margin-top: 15px; border: 1px solid #d9dfdb;' placeholder="UNKNOWN">
+              </div>
+
+              <div id="add_Status" style=' margin: 10px; align-items: center; text-align: center; justify-content: space-between;'>
+                  <label for="addStatus" style='font-family: bobby; color: #bc1823; font-size: 1.8rem;'>STATUS:</label>
+                  <ul style="list-style: none;">
+                      <li style="display:inline-block; position: relative;">
+                          <a href="#">DEAD</a>
+                          <a href="#">ALIVE</a>
+                          <a href="#">MISSING</a>
+                          <a href="#">IN-JAIL</a>
+                      </li>
+                    </ul>
+              </div>
+          </div>    
+      </div>
+    </div>
+
+    <!-- Shows the add contact box when add is clicked on, hides, everything else -->
+    <script>
+      function showAndHide() 
+      {
+        var addContactBox = document.getElementById('add-contact-box');
+        var contactTable = document.getElementById('contact-table');
+        var searchBar = document.getElementById('box'); 
+        var title = document.getElementById('title'); 
+        var dataBox1 = document.getElementById('data-box-1'); 
+        var dataBox2 = document.getElementById('data-box-2'); 
+        var dataBox3 = document.getElementById('data-box-3'); 
+        var dataBox4 = document.getElementById('data-box-4'); 
+    
+        if (addContactBox.style.display == 'none') {
+          addContactBox.style.display = 'block'; 
+          contactTable.style.display = 'none'; 
+          searchBar.style.display = 'none'; 
+          title.style.display = 'none'; 
+          dataBox1.style.display = 'none'; 
+          dataBox2.style.display = 'none'; 
+          dataBox3.style.display = 'none'; 
+          dataBox4.style.display = 'none'; 
+        }
+        else 
+        {
+          addContactBox.style.display = 'none'; 
+          contactTable.style.display = 'block'; 
+          searchBar.style.display = 'block'; 
+          title.style.display = 'block'; 
+          dataBox1.style.display = 'block'; 
+          dataBox2.style.display = 'block'; 
+          dataBox3.style.display = 'block'; 
+          dataBox4.style.display = 'block'; 
+        }                      
+      }
+    </script>
 
     <!--Table-->
-    <div class="board"
+    <div id="contact-table" class="board"
       style='font-family: bobby; color: #212932; width: 95%; margin: 30px 0 30px 50px; overflow: auto; background-color: #d9dfdb; font-size: 18px; border-radius: 12px;'>
       <table width="100%" style='border-collapse: collapse;'>
         <thead>
@@ -171,7 +274,7 @@
             <td id="D-Tabel-Head" style="background-color: #212932; color: #d9dfdb;">Status</td>
             <td id="D-Tabel-Add" style="background-color: #212932; font-size: 24px;">
               <a href="#">
-                <li class="fas fa-plus" style="color: #bc1823;"></li>
+                <li class="fas fa-plus" style="color: #bc1823;" onclick="showAndHide()"></li>
               </a>
             </td>
           </tr>
