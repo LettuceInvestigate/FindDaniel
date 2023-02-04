@@ -189,13 +189,13 @@
               <div id="add_Name" style=' margin: 10px; align-items: center; text-align: center; justify-content: space-between;'>
                   <label for="addName" style='font-family: bobby; color: #bc1823; font-size: 1.8rem;'>NAME:</label>
                   <input name="addName"  id="addName" style='font-family: bobby; text-align: center; font-size: 1.5rem; color: #212932; background-color: #d9dfdb; 
-                      border-radius: 24px; margin-top: 15px; border: 1px solid #d9dfdb;' placeholder="Full Name">
+                      border-radius: 24px; margin-top: 15px; border: 1px solid #d9dfdb;' placeholder="SUSPECT NAME">
               </div>
 
               <div id="add_email" style=' margin: 10px; align-items: center; text-align: center; justify-content: space-between;'>
                   <label for="addEmail" style='font-family: bobby; color: #bc1823; font-size: 1.8rem;'>EMAIL:</label>
                   <input name="addEmail"  id="addEmail" style='font-family: bobby; text-align: center; font-size: 1.5rem; color: #212932; background-color: #d9dfdb; 
-                      border-radius: 24px; margin-top: 15px; border: 1px solid #d9dfdb;' placeholder="name@email.com">
+                      border-radius: 24px; margin-top: 15px; border: 1px solid #d9dfdb;' placeholder="NAME@EMAIL.com">
               </div>
 
               <div id="add_num" style=' margin: 10px; align-items: center; text-align: center; justify-content: space-between;'>
@@ -217,10 +217,19 @@
                           <a href="#">DEAD</a>
                           <a href="#">ALIVE</a>
                           <a href="#">MISSING</a>
-                          <a href="#">IN-JAIL</a>
+                          <a href="#">IN JAIL</a>
                       </li>
                     </ul>
               </div>
+
+              <!-- Save Button to Add the Contact -->
+              <div class='container'>
+                <button type="button" id="save-button" style='font-size: 1.7rem; font-family: bobby; padding: 10px; color: #d9dfdb;
+                    background-color: #bc1823; border: 1px solid #bc1823; border-radius: 5px;
+                    cursor: pointer;' onmouseover="this.style.backgroundColor='#dfdbd9'" 
+                    onmouseout= "this.style.backgroundColor='#bc1823'" onclick= "addContact();">SAVE
+                </button>
+            </div>
           </div>    
       </div>
     </div>
