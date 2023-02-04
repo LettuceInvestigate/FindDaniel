@@ -347,11 +347,7 @@ function loadContact()
 				let temp = JSON.stringify(xhr.responseText);
 				let jsonObject = JSON.parse(temp );
 				console.log(jsonObject);
-				if(jsonObject.id == -1)
-				{
-					// here is when we run out of object in the database
-				}
-				else
+				if (jsonObject.id != -1)
 				{
 					globalCounter = globalCounter+1;
 					console.log(globalCounter);
