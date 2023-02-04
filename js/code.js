@@ -2,6 +2,8 @@ const urlBase = 'http://wheresdaniel.io/LAMPAPI';
 const extension = 'php';
 
 let userId = 0;
+let globalCounter = 0;
+let thisisanarray = new Array();
 let frontendUsername;
 
 function doLogin()
@@ -217,9 +219,51 @@ function addContact()
 	
 }
 
+function loadContact()
+{
+	thisisanarray = new Array();
+	for(let i = 0; i < 5; i++)
+	{
+		let tmp = {UserID:userId,Counter:globalCounter,Counter2:globalCounter+1};
+		let jsonPayload = JSON.stringify( tmp );
+
+		let url = urlBase + '/LoadContacts.' + extension;
+		
+		let xhr = new XMLHttpRequest();
+		xhr.open("POST", url, true);
+		xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+		try
+		{
+			xhr.onreadystatechange = function() 
+			{
+				if (this.readyState == 4 && this.status == 200) 
+				{
+					document.getElementById("colorSearchResult").innerHTML = "Color(s) has been retrieved";
+					let jsonObject = JSON.parse( xhr.responseText );
+					if(jsonObject.error != "")
+					{
+						return; // here is when we run out of object in the database
+					}
+					else
+					{
+						globalCounter++;
+						thisisanarray.push(jsonObject);
+					}
+					
+				}
+			};
+			xhr.send(jsonPayload);
+		}
+		catch(err)
+		{
+			document.getElementById("").innerHTML = err.message;
+		}
+	}
+}
+
 function deleteContact()
 {
-	let delContact = { ID: document.getElementById("contactID").value};
+	let delContact = { Name: document.getElementById("contactName").value, UserID: userId};
 	document.getElementById("contactDeleteResult").innerHTML = "";
 
 	let jsonPayload = JSON.stringify( delContact );
@@ -247,14 +291,13 @@ function deleteContact()
 	
 }
 
-function searchColor()
+function searchContact()
 {
-	let srch = document.getElementById("searchText").value;
 	document.getElementById("colorSearchResult").innerHTML = "";
 	
-	let colorList = "";
+	let contactList = "";
 
-	let tmp = {search:srch,userId:userId};
+	let tmp = {Name:document.getElementById("searchText").value,UserID:userId};
 	let jsonPayload = JSON.stringify( tmp );
 
 	let url = urlBase + '/SearchColors.' + extension;
