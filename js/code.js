@@ -224,7 +224,7 @@ function display()
 	for (let i = 0; i < 5; i++)
 	{
 		loadContact();
-		if (globalCounter <= thisisanarray.length())
+		if (globalCounter <= thisisanarray.length)
 		{
 			//creat row 
 			let row = document.createElement("tr");
