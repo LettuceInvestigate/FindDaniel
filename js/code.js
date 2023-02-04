@@ -226,6 +226,7 @@ function display()
 		loadContact();
 		if (globalCounter <= thisisanarray.length)
 		{
+			let contactInfo = JSON.parse(thisisanarray[globalCounter-1])
 			//creat row 
 			let row = document.createElement("tr");
 			row.setAttribute("id","D-td-name")
@@ -236,16 +237,16 @@ function display()
 			cell1.setAttribute("id","D-td-name");
             //  <img src="HIS IMAGE SORCE HERE" alt="">
 			let cellImage = document.createElement("img");
-			cellImage.setAttribute("src",thisisanarray[globalCounter-1].Images);
+			cellImage.setAttribute("src",contactInfo.Images);
 			cellImage.setAttribute("alt","");
             //  <div>
 			let cellDiv = document.createElement("div");
             //    <h5>FULL NAME HERE</h5>
 			let cellName = document.createElement("h5");
-			cellName.innerHTML = thisisanarray[globalCounter-1].Name;
+			cellName.innerHTML = contactInfo.Name;
             //    <p>EMAIL HERE</p>
 			let cellEmail = document.createElement("p");
-			cellEmail.innerHTML = thisisanarray[globalCounter-1].Email;
+			cellEmail.innerHTML = contactInfo.Email;
             //  </div>
 			cellDiv.appendChild(cellName);
 			cellDiv.appendChild(cellEmail);
@@ -260,7 +261,7 @@ function display()
 			cell2.setAttribute("id","D-td-num");
             //  <p>PHONE NUM HERE</p>
 			let cellPhone = document.createElement("p");
-			cellPhone.innerHTML = thisisanarray[globalCounter-1].Phone;
+			cellPhone.innerHTML = contactInfo.Phone;
             // </td>
 			cell2.appendChild(cellPhone)
 
@@ -271,7 +272,7 @@ function display()
 			cell3.setAttribute("id","D-td-relation-status");
             //  <p>RELATION HERE</p>
 			let cellRelation = document.createElement("p");
-			cellRelation.innerHTML = thisisanarray[globalCounter-1].Relation;
+			cellRelation.innerHTML = contactInfo.Relation;
             //</td>
 			cell3.appendChild(cellRelation);
 
@@ -282,7 +283,7 @@ function display()
 			cell4.setAttribute("id","D-td-relation-status");
             //  <p>STATUS HERE</p>
 			let cellStatus = document.createElement("p");
-			cellStatusn.innerHTML = thisisanarray[globalCounter-1].Alive;
+			cellStatusn.innerHTML = contactInfo.Alive;
             //</td>
 			cell4.appendChild(cellStatus);
 
