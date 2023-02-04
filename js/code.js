@@ -232,7 +232,7 @@ function display()
 		{
 			//creat row 
 			let row = document.createElement("tr");
-			row.setAttribute("id","D-td-name")
+			row.setAttribute("id","D-tr")
 
 			// creating name column
 			//<td id="D-td-name">
