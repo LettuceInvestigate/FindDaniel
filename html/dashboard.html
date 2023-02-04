@@ -174,7 +174,7 @@
               <div class='container' id="add_image">
                   <input type="file" id="real-file" hidden="hidden"/>
                   <button type="button" id="custom-button" style='font-family: bobby; padding: 10px; color: #d9dfdb;
-                      background-color: #bc1823; border: 1px solid #bc1823; border-radius: 5px;
+                      background-color: #bc1823; border: 1px solid #bc1823; border-radius: 12px;
                       cursor: pointer;' onclick="openFiles()">CHOOSE AN IMAGE</button>
                   <span id="custom-text" style=' font-family: bobby; font-size: 20px; 
                       color: #7b7b7b;'>No file chosen, yet.</span>
@@ -225,9 +225,16 @@
               <!-- Save Button to Add the Contact -->
               <div class='container'>
                 <button type="button" id="save-button" style='font-size: 1.7rem; font-family: bobby; padding: 10px; color: #d9dfdb;
-                    background-color: #bc1823; border: 1px solid #bc1823; border-radius: 5px;
-                    cursor: pointer;' onmouseover="this.style.backgroundColor='#dfdbd9'" 
-                    onmouseout= "this.style.backgroundColor='#bc1823'" onclick= "addContact();">SAVE
+                    background-color: #bc1823; border: 1px solid #bc1823; border-radius: 12px;
+                    cursor: pointer;' onclick= "addContact();">SAVE
+                </button>
+              </div>
+
+              <!-- Cancel Button to go back to dashboard -->
+              <div class='container'>
+                <button type="button" id="cancel-button" style='font-size: 1.7rem; font-family: bobby; padding: 10px; color: #d9dfdb;
+                    background-color: #bc1823; border: 1px solid #bc1823; border-radius: 12px;
+                    cursor: pointer;' onclick="window.location.href='dashboard.html'">CANCEL
                 </button>
             </div>
           </div>    
