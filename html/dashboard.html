@@ -21,7 +21,7 @@
   <script type="text/javascript" src="/./js/userupdater.js"></script>
   
   <script type="text/javascript">
-    if(readCookie() < 1){
+    if(readCookie() >  1){
       window.location.href = "warning.html";
     }
   </script>
@@ -279,81 +279,13 @@
             </td>
           </tr>
         </thead>
-
-
-        <tbody>
-          <!--temp ex 1 -->
-          <!--THIS ALL NEEDS TO BE SURROUNDED IN JS-->
+        <tbody id="tbody">
           <script>
-            incNumUser();
+            display();
           </script>
-          <tr id="D-tr">
-            <td id="D-td-name">
-              <img src="/../images/poster.png" alt="">
-              <div>
-                <h5>John Smith</h5>
-                <p>John1324@gmail.com</p>
-              </div>
-            </td>
-            <td id="D-td-num">
-              <p>000-000-0000</p>
-            </td>
-
-
-            <td id="D-td-relation-status">
-              <p>Brother</p>
-            </td>
-            
-            <td id="D-td-relation-status">
-              <p>Missing</p>
-            </td>
-            <td id="D-td-edit-delete">
-              <a class="editButton" style="color: #bc1823" href="#">
-                <li class="fas fa-user-edit"></li>
-              </a>
-              <a class="deleteButton" style="color: #bc1823" href="#">
-                <li class="fas fa-trash-alt"></li>
-              </a>
-            </td>
-          </tr>
-
-          <!--temp ex 2-->
-          <script>
-            incNumUser();
-          </script>
-          <tr id="D-tr">
-            <td id="D-td-name">
-              <img src="/../images/person.png" alt="">
-              <div>
-                <h5>Sam Johnson</h5>
-                <p>Sam18J@gmail.com</p>
-              </div>
-            </td>
-            <td id="D-td-num">
-              <p>333-222-1111</p>
-            </td>
-            <td id="D-td-relation-status">
-              <p>Unknown</p>
-            </td>
-            <td id="D-td-relation-status">
-              <p>Suspect</p>
-            </td>
-            <td id="D-td-edit-delete">
-              <a class="editButton" style="color: #bc1823" href="#">
-                <li class="fas fa-user-edit"></li>
-              </a>
-              <a class="deleteButton" style="color: #bc1823" href="#">
-                <li class="fas fa-trash-alt"></li>
-              </a>              
-            </td>
-          </tr>
         </tbody>
       </table>
     </div>
-
-
-
-
   </div>
 </body>
 
