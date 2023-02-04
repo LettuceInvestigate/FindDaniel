@@ -1,3 +1,55 @@
+var url = window.location.pathname;
+var file = url.substring(url.lastIndexOf('/')+1);
+if(file == "index.html"){
+    document.getElementById("homeButton").className = "active";
+    document.getElementById("tragedyButton").className = "inactive";
+    document.getElementById("postersButton").className = "inactive"
+    document.getElementById("loginButton").className = "inactive";
+    document.getElementById("dashboardButton").className = "inactive";
+    document.getElementById("logoutButton").className = "inactive";
+}else if(file == "ourtragedy.html"){
+    document.getElementById("homeButton").className = "inactive";
+    document.getElementById("tragedyButton").className = "active";
+    document.getElementById("postersButton").className = "inactive"
+    document.getElementById("loginButton").className = "inactive";
+    document.getElementById("dashboardButton").className = "inactive";
+    document.getElementById("logoutButton").className = "inactive";
+}else if(file == "wantedposters.html"){
+    document.getElementById("homeButton").className = "inactive";
+    document.getElementById("tragedyButton").className = "inactive";
+    document.getElementById("postersButton").className = "active"
+    document.getElementById("loginButton").className = "inactive";
+    document.getElementById("dashboardButton").className = "inactive";
+    document.getElementById("logoutButton").className = "inactive";
+}else if(file == "login.html"){
+    document.getElementById("homeButton").className = "inactive";
+    document.getElementById("tragedyButton").className = "inactive";
+    document.getElementById("postersButton").className = "inactive"
+    document.getElementById("loginButton").className = "active";
+    document.getElementById("dashboardButton").className = "inactive";
+    document.getElementById("logoutButton").className = "inactive";
+}else if(file == "register.html"){
+    document.getElementById("homeButton").className = "inactive";
+    document.getElementById("tragedyButton").className = "inactive";
+    document.getElementById("postersButton").className = "inactive"
+    document.getElementById("loginButton").className = "active";
+    document.getElementById("dashboardButton").className = "inactive";
+    document.getElementById("logoutButton").className = "inactive";
+}else if(file == "dashboard.html"){
+    document.getElementById("homeButton").className = "inactive";
+    document.getElementById("tragedyButton").className = "inactive";
+    document.getElementById("postersButton").className = "inactive"
+    document.getElementById("loginButton").className = "inactive";
+    document.getElementById("dashboardButton").className = "active";
+    document.getElementById("logoutButton").className = "inactive";
+}else{
+    document.getElementById("homeButton").className = "inactive";
+    document.getElementById("tragedyButton").className = "inactive";
+    document.getElementById("postersButton").className = "inactive"
+    document.getElementById("loginButton").className = "inactive";
+    document.getElementById("dashboardButton").className = "inactive";
+    document.getElementById("logoutButton").className = "inactive";
+}
 
 function fixTravel(fileName){
     if (fileName == "index.html") {
