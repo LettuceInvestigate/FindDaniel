@@ -88,7 +88,7 @@ function checkRequirements()
             }
         }
 
-        else if (current == current.toUpperCase())
+        else if (ascii >= 65 && ascii <= 90)
         {
             numUppercase++; 
 
