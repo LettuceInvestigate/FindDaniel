@@ -223,10 +223,19 @@ function display()
 {
 	for (let i = 0; i < 5; i++)
 	{
-		loadContact();
-		if (globalCounter <= thisisanarray.length)
+		//let contactJSON = loadContact();
+		//thisisanarray.push(contactJSON);
+		let contactJSON = '{"Image":"\images\person.png", "Name":"James Bond","Email":"jamesbond007@gmail.com","Phone":"678-678-6789","Relation":"Father","Alive":"Alive"}'
+		let contactInfo = JSON.parse(contactJSON)
+		if (true)
 		{
-			let contactInfo = JSON.parse(thisisanarray[globalCounter-1])
+			console.log(contactInfo.Image);
+			console.log(contactInfo.Name);
+			console.log(contactInfo.Email);
+			console.log(contactInfo.Phone);
+			console.log(contactInfo.Relation);
+			console.log(contactInfo.Alive);
+			
 			//creat row 
 			let row = document.createElement("tr");
 			row.setAttribute("id","D-td-name")
@@ -283,7 +292,7 @@ function display()
 			cell4.setAttribute("id","D-td-relation-status");
             //  <p>STATUS HERE</p>
 			let cellStatus = document.createElement("p");
-			cellStatusn.innerHTML = contactInfo.Alive;
+			cellStatus.innerHTML = contactInfo.Alive;
             //</td>
 			cell4.appendChild(cellStatus);
 
@@ -298,7 +307,7 @@ function display()
 			cellEdit.setAttribute("class", "editButton");
 			cellEdit.setAttribute("href","editContact()");
             //    <li class="fas fa-user-edit"></li>
-			let cellLI1 = createElement("li");
+			let cellLI1 = document.createElement("li");
 			cellLI1.setAttribute("class","fas fa-user-edit");
             //  </a>
 			cellEdit.appendChild(cellLI1);
@@ -308,10 +317,10 @@ function display()
 			cellDelete.setAttribute("class", "deleteButton");
 			cellDelete.setAttribute("href","deleteContact()");
             //    <li class="fas fa-trash-alt"></li>
-			let cellLI2 = createElement("li");
-			cellLI1.setAttribute("class","fas fa-trash-alt");
+			let cellLI2 = document.createElement("li");
+			cellLI2.setAttribute("class","fas fa-trash-alt");
             //  </a>
-			cellDelete.appendChild("cellLI2");
+			cellDelete.appendChild(cellLI2);
             //</td>
 			cell5.appendChild(cellEdit);
 			cell5.appendChild(cellDelete);
@@ -322,7 +331,7 @@ function display()
 			row.appendChild(cell4);
 			row.appendChild(cell5);
 			
-			document.querySelector('#tbody').appendChild(row);
+			document.querySelector("#fred").appendChild(row);
 		}
 		
 	}
@@ -330,7 +339,6 @@ function display()
 
 function loadContact()
 {
-	thisisanarray = new Array();
 	let tmp = {UserID:userId,Counter:globalCounter,Counter2:1};
 	let jsonPayload = JSON.stringify( tmp );
 
@@ -348,13 +356,11 @@ function loadContact()
 				let temp = JSON.stringify(xhr.responseText);
 				let jsonObject = JSON.parse(temp );
 				console.log(jsonObject);
-				if (jsonObject.id != -1)
+				if (jsonObject.id == -1)
 				{
-					globalCounter = globalCounter+1;
-					console.log(globalCounter);
-					thisisanarray.push(jsonObject);
-					console.log(thisisanarray[0]);
+
 				}
+				else return jsonObject;
 				
 			}
 		};
