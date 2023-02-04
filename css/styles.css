@@ -107,6 +107,60 @@
   color: #bc1823; 
 }
 
+#save-button {
+  font-size: 1.7rem; 
+  font-family: bobby; 
+  padding: 10px; 
+  color: #d9dfdb;
+  background-color: #bc1823; 
+  border: 4px solid #bc1823; 
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+#save-button:hover {
+  cursor: pointer; 
+  color: #bc1823; 
+  background-color: #d9dfdb; 
+  border: 4px solid #bc1823; 
+}
+
+#cancel-button {
+  font-size: 1.7rem; 
+  font-family: bobby; 
+  padding: 10px; 
+  color: #d9dfdb;
+  background-color: #bc1823; 
+  border: 4px solid #bc1823; 
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+#cancel-button:hover {
+  cursor: pointer; 
+  color: #bc1823; 
+  background-color: #d9dfdb; 
+  border: 4px solid #bc1823; 
+}
+
+#image-button {
+  font-family: bobby; 
+  font-size: 1rem; 
+  padding: 10px; 
+  color: #d9dfdb;
+  background-color: #bc1823; 
+  border: 4px solid #bc1823; 
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+#image-button:hover {
+  color: #bc1823;
+  background-color: #d9dfdb; 
+  border: 4px solid #bc1823; 
+  cursor: pointer;
+}
+
 /* DASHBOARD */
 #box{
   width: fit-content;
