@@ -294,7 +294,7 @@ function display()
 			// creating user controls column
 			//<td id="D-td-edit-delete">
 			let cell5 = document.createElement("td");
-			cell5.setAttribute("id","D-td-relation-status");
+			cell5.setAttribute("id","D-td-edit-delete");
             //  <a class="editButton" href="editContact()">
 			let cellEdit = document.createElement("a");
 			// *** MIGHT NOT WORK ***
