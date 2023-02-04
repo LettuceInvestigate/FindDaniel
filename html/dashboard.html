@@ -173,9 +173,7 @@
             <!-- Adding Image -->
               <div class='container' id="add_image">
                   <input type="file" id="real-file" hidden="hidden"/>
-                  <button type="button" id="custom-button" style='font-family: bobby; padding: 10px; color: #d9dfdb;
-                      background-color: #bc1823; border: 1px solid #bc1823; border-radius: 12px;
-                      cursor: pointer;' onclick="openFiles()">CHOOSE AN IMAGE</button>
+                  <button type="button" id="image-button" onclick="openFiles()">CHOOSE AN IMAGE</button>
                   <span id="custom-text" style=' font-family: bobby; font-size: 20px; 
                       color: #7b7b7b;'>No file chosen, yet.</span>
               </div>
@@ -224,18 +222,12 @@
 
               <!-- Save Button to Add the Contact -->
               <div class='container'>
-                <button type="button" id="save-button" style='font-size: 1.7rem; font-family: bobby; padding: 10px; color: #d9dfdb;
-                    background-color: #bc1823; border: 1px solid #bc1823; border-radius: 12px;
-                    cursor: pointer;' onclick= "addContact();">SAVE
-                </button>
+                <button id="save-button" onclick= "addContact();">SAVE</button>
               </div>
 
               <!-- Cancel Button to go back to dashboard -->
               <div class='container'>
-                <button type="button" id="cancel-button" style='font-size: 1.7rem; font-family: bobby; padding: 10px; color: #d9dfdb;
-                    background-color: #bc1823; border: 1px solid #bc1823; border-radius: 12px;
-                    cursor: pointer;' onclick="window.location.href='dashboard.html'">CANCEL
-                </button>
+                <button id="cancel-button" onclick="window.location.href='dashboard.html'">CANCEL</button>
             </div>
           </div>    
       </div>
