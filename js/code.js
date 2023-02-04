@@ -325,7 +325,7 @@ function display()
 			row.appendChild(cell4);
 			row.appendChild(cell5);
 			
-			document.querySelector("#fred").appendChild(row);
+			document.querySelector("#tbody").appendChild(row);
 		}
 		
 	}
