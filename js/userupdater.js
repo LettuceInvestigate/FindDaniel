@@ -66,7 +66,9 @@ function checkRequirements()
     {
         let current = string.charAt(i); 
 
-        if (current == current.toLowerCase())
+        let ascii = current.charCodeAt(0); 
+
+        if (ascii >= 97 && ascii <= 122)
         {
             numLowercase++; 
 
@@ -80,6 +82,7 @@ function checkRequirements()
             // Has no lowercase letters 
             else if (numLowercase < 1)
             {
+
                 lowercase.textContent = "✗ At least one lowercase letter"; 
                 lowercase.style.color = '#bc1823'; 
             }

@@ -16,7 +16,7 @@
   color: #bc1823;
 }
 
-/* Animation */ 
+/* Animations */ 
 @keyframes fadeIn {
     0% 
     { 
@@ -27,6 +27,35 @@
     { 
         opacity: 1; 
     }
+}
+
+.star {
+  -webkit-animation:spin 2.5s linear infinite;
+  -moz-animation:spin 2.5s linear infinite;
+  animation:spin 2.5s linear infinite;
+}
+
+/* Rotating the Stars */ 
+@keyframes anim-lineUp {
+  0% {
+    opacity: 0;
+    transform: translateY(80%);
+  }
+  20% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); }
 }
 
 #signin-button {
@@ -140,7 +169,7 @@
   text-align: end;
   text-decoration: none;
   padding-right: 50px;
-  color: #554CD1;
+  color: #bc1823;
   font-weight: 600;
 }
 #D-tr{
@@ -211,7 +240,7 @@
 #D-td-edit-delete a{
   text-decoration: none;
   font-size: 15;
-  color: #554CD1;
+  color: #bc1823;
   font-weight: 600;
 }
 #D-tr #D-td-edit-delete .editButton{

@@ -41,18 +41,54 @@
 
   <!-- Page -->
   <div class='container-fluid vh-100 overflow-scroll'
-    style='background-color: lightgrey; padding-top: 10px; padding-bottom: 10px;'>
+    style='background-image: url("/images/paper.png"); padding-top: 10px; padding-bottom: 10px;'>
 
-    <!--Welcome Back Massage-->
-    <center class="DashboardInterfaceName" style=' object-fit: cover; 
-      border-radius: 50%; color: 444a53; opacity: 90%; font-size: 42px; font-weight: 700;
-      padding-top: 15px; align-items: center;'>WANTED: <span>User_Name</span>!</center>
-    
+    <!-- Rotating the Stars Animation --> 
+    <style>
+      .star {
+        -webkit-animation:spin 2.5s linear infinite;
+        -moz-animation:spin 2.5s linear infinite;
+        animation:spin 2.5s linear infinite;
+      }
+
+      @keyframes anim-lineUp {
+        0% {
+          opacity: 0;
+          transform: translateY(80%);
+        }
+        20% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+          transform: translateY(0%);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0%);
+        }
+      }
+      @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+      @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+      @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); }
+      }
+    </style>
+
+    <center><div class="container rounded-5 p-5" style='object-fit: cover; color: #bc1823; font-family: fibre; 
+      border-radius: 50%; color: 444a53; opacity: 90%; font-size: 76px; font-weight: 700;
+      padding-top: 15px; align-items: center; display: flex; justify-content: center;'>
+      <img class="star" src="/images/star.png" style="height: 80px; width: 140px;">
+      WANTED: User_Name!
+      <img class="star" src="/images/star.png" style="height: 80px; width: 140px;">
+    </div>
+    </center>  
+
     <!--Search Bar-->
-    <div class="container rounded-5" id="box" style='background: #fff; height: 40px; border-radius: 30px; 
-      margin-top: 20px; display: flex; align-items:center; transition: 0.8s;
-      box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.4); justify-content: center; '>
-      <input class="searchBar" type="text" placeholder="Search..">
+    <div class="container rounded-5" id="box" style='background-color: #d9dfdb; 
+    ; height: 50px; border-radius: 30px; font-family: bobby; color: #212932; 
+      margin-top: 0px; display: flex; align-items:center; transition: 0.8s;
+      box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.4); justify-content: center; font-size: 24px;'>
+      <input class="searchBar" type="text" style="font-size: 24px" placeholder="SEARCH...">
       <a href="#">
         <li class="fas fa-search" id="searchButton"></li>
       </a>
@@ -72,48 +108,48 @@
     <!--Data Boxes-->
     <div class='container'
       style='display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; max-width: 975px;'>
-      <div class='container rounded-3' style='background-color: #fff; opacity: 90%;
+      <div class='container rounded-3' style='background-color: #d9dfdb; opacity: 90%;
         margin-top: 20px; width: 220px; padding: 16px 20px; border-radius: 5px;
         display: flex; justify-content: flex-start; align-items: center;'>
         <i class="fas fa-users" style='font-size:25px; width: 60px;
           height: 60px; line-height: 60px; border-radius: 50%; 
-          text-align: center; color: #fff; background-color: #7B74EC; margin-right: 15px;'></i>
+          text-align: center; color: #d9dfdb; background-color: #bc1823; margin-right: 15px;'></i>
         <div>
           <h3 style='font-size: 18px; font-weight: 600; margin-bottom:0rem; '><span>8,512</span></h3>
           <!--TEMP-->
           <span style='font-size: 15px; color: #828997;'>Users</span>
         </div>
       </div>
-      <div class='container rounded-3' style='background-color: #fff; opacity: 90%;
+      <div class='container rounded-3' style='background-color: #d9dfdb; opacity: 90%;
         margin-top: 20px; width: 220px; padding: 16px 20px; border-radius: 5px;
         display: flex; justify-content: flex-start; align-items: center;'>
         <i class="fas fa-user-secret" style='font-size:25px; width: 60px;
           height: 60px; line-height: 60px; border-radius: 50%; 
-          text-align: center; color: #fff; background-color: #5C8AF0; margin-right: 15px;'></i>
+          text-align: center; color: #d9dfdb; background-color: #bc1823; margin-right: 15px;'></i>
         <div>
           <h3 style='font-size: 18px; font-weight: 600; margin-bottom:0rem; '><span>21</span></h3>
           <!--TEMP-->
           <span style='font-size: 15px; color: #828997;'>Something</span>
         </div>
       </div>
-      <div class='container rounded-3' style='background-color: #fff; opacity: 90%;
+      <div class='container rounded-3' style='background-color: #d9dfdb; opacity: 90%;
           margin-top: 20px; width: 220px; padding: 16px 20px; border-radius: 5px;
           display: flex; justify-content: flex-start; align-items: center;'>
         <i class="fas fa-user-graduate" style='font-size:25px; width: 60px;
           height: 60px; line-height: 60px; border-radius: 50%; 
-          text-align: center; color: #fff; background-color: #E45D99; margin-right: 15px;'></i>
+          text-align: center; color: #d9dfdb; background-color: #bc1823; margin-right: 15px;'></i>
         <div>
           <h3 style='font-size: 18px; font-weight: 600; margin-bottom:0rem; '><span>45</span></h3>
           <!--TEMP-->
           <span style='font-size: 15px; color: #828997;'>Something 2</span>
         </div>
       </div>
-      <div class='container rounded-3' style='background-color: #fff; opacity: 90%;
+      <div class='container rounded-3' style='background-color: #d9dfdb; opacity: 90%;
           margin-top: 20px; width: 220px; padding: 16px 20px; border-radius: 5px;
           display: flex; justify-content: flex-start; align-items: center;'>
         <i class="fas fa-dizzy" style='font-size:25px; width: 60px;
           height: 60px; line-height: 60px; border-radius: 50%; 
-          text-align: center; color: #fff; background-color: #74DAEC; margin-right: 15px;'></i>
+          text-align: center; color: #d9dfdb; background-color: #bc1823; margin-right: 15px;'></i>
         <div>
           <h3 style='font-size: 18px; font-weight: 600; margin-bottom:0rem; '><span>6</span></h3>
           <!--TEMP-->
@@ -125,17 +161,17 @@
 
     <!--Table-->
     <div class="board"
-      style='width: 95%; margin: 30px 0 30px 50px; overflow: auto; background-color: #fff; border-radius: 8px;'>
+      style='font-family: bobby; color: #212932; width: 95%; margin: 30px 0 30px 50px; overflow: auto; background-color: #d9dfdb; font-size: 18px; border-radius: 12px;'>
       <table width="100%" style='border-collapse: collapse;'>
         <thead>
-          <tr style='border-bottom: 1px solid #eef0f3;'>
-            <td id="D-Tabel-Head">Name</td>
-            <td id="D-Tabel-Head">Phone Number</td>
-            <td id="D-Tabel-Head">Relation</td>
-            <td id="D-Tabel-Head">Status</td>
-            <td id="D-Tabel-Add">
+          <tr style='border-bottom: 1px solid #212932;'>
+            <td id="D-Tabel-Head" style="background-color: #212932; color: #d9dfdb;">Name</td>
+            <td id="D-Tabel-Head" style="background-color: #212932; color: #d9dfdb;">Phone Number</td>
+            <td id="D-Tabel-Head" style="background-color: #212932; color: #d9dfdb;">Relationship</td>
+            <td id="D-Tabel-Head" style="background-color: #212932; color: #d9dfdb;">Status</td>
+            <td id="D-Tabel-Add" style="background-color: #212932; font-size: 24px;">
               <a href="#">
-                <li class="fas fa-plus"></li>
+                <li class="fas fa-plus" style="color: #bc1823;"></li>
               </a>
             </td>
           </tr>
@@ -169,10 +205,10 @@
               <p>Missing</p>
             </td>
             <td id="D-td-edit-delete">
-              <a class="editButton" href="#">
+              <a class="editButton" style="color: #bc1823" href="#">
                 <li class="fas fa-user-edit"></li>
               </a>
-              <a class="deleteButton" href="#">
+              <a class="deleteButton" style="color: #bc1823" href="#">
                 <li class="fas fa-trash-alt"></li>
               </a>
             </td>
@@ -200,10 +236,10 @@
               <p>Suspect</p>
             </td>
             <td id="D-td-edit-delete">
-              <a class="editButton" href="#">
+              <a class="editButton" style="color: #bc1823" href="#">
                 <li class="fas fa-user-edit"></li>
               </a>
-              <a class="deleteButton" href="#">
+              <a class="deleteButton" style="color: #bc1823" href="#">
                 <li class="fas fa-trash-alt"></li>
               </a>              
             </td>
