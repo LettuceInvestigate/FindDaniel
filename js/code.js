@@ -227,15 +227,9 @@ function display()
 		//thisisanarray.push(contactJSON);
 		let contactJSON = '{"Image":"\images\person.png", "Name":"James Bond","Email":"jamesbond007@gmail.com","Phone":"678-678-6789","Relation":"Father","Alive":"Alive"}'
 		let contactInfo = JSON.parse(contactJSON)
+		// check we dont repeat 
 		if (true)
 		{
-			console.log(contactInfo.Image);
-			console.log(contactInfo.Name);
-			console.log(contactInfo.Email);
-			console.log(contactInfo.Phone);
-			console.log(contactInfo.Relation);
-			console.log(contactInfo.Alive);
-			
 			//creat row 
 			let row = document.createElement("tr");
 			row.setAttribute("id","D-td-name")
@@ -286,7 +280,7 @@ function display()
 			cell3.appendChild(cellRelation);
 
 
-			// creating relation column
+			// creating status column
 			//<td id="D-td-relation-status">
 			let cell4 = document.createElement("td");
 			cell4.setAttribute("id","D-td-relation-status");
