@@ -2,6 +2,7 @@ Functionality:
 
 - EditContact API might not be Working
 
+- check if username is taken when register
 - Password validation
 - Password requirements in register
 - Login error notification class fix
