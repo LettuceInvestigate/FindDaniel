@@ -161,6 +161,21 @@
   cursor: pointer;
 }
 
+#the-suspects-button {
+  background: none;
+  border: none; 
+  text-decoration: underline; 
+  cursor: pointer; 
+  color: #dfd9db;
+}
+#the-suspects-button:hover {
+  background: none;
+  border: none; 
+  text-decoration: underline;
+  cursor: pointer;
+  color: #bc1823; 
+}
+
 /* DASHBOARD */
 #box{
   width: fit-content;

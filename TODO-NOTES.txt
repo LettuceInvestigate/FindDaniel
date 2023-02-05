@@ -2,6 +2,7 @@ Functionality:
 
 - EditContact API might not be Working
 
+- when at end of dashboard.html table "at end" & disable view more button
 - check if username is taken when register
 - Password validation
 - Password requirements in register
@@ -19,4 +20,3 @@ Functionality:
 Additional:
 - Add our images
 - Email validation
-- when at end of dashboard.html table "at end" & disable view more button
