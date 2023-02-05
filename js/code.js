@@ -224,14 +224,11 @@ function wrapperDisplay() {
 	console.log(globalCounter);
 	document.getElementById('user-name-title').innerHTML = frontendUsername;
 	
-	for (i=0; i<5; i++) {
-		if(!loadContact(display)){
-			console.log(globalCounter + "AAAAh");
-			continue;
-		}else{
-			globalCounter += 1;
-		}
+	while (globalCounter%5 != 0) 
+	{
+		loadContact(display);
 	}
+	globalCounter += 1;
 }
 
 function display(jsonObject)
@@ -365,15 +362,12 @@ function loadContact(callback)
 					console.log(jsonObject);
 					callback("Error");
 				} else {
-					// Checkrepeats returns true if a match is found in contactList
-					if(checkRepeats(jsonObject)){
-						// Return false to indicate to wrapperfunction loadContact skipped contact
-						return false;
-					}else{
+					// Checkrepeats if not increments counter
+					if(!checkRepeats(jsonObject)){
 						console.log(jsonObject);
 						callback(jsonObject);
 						console.log(jsonObject);
-						return true;
+						globalCounter += 1;
 					}
 				}
 			}
