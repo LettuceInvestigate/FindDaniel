@@ -3,7 +3,7 @@ const extension = 'php';
 
 let userId = 0;
 let globalCounter = 0;
-let contactList = new Array();
+let thisisanarray = new Array();
 let frontendUsername;
 let emptyJSON = false;
 
@@ -231,7 +231,9 @@ function display(jsonObject)
 {
 	var contactInfo = jsonObject;
 	console.log(contactInfo);
-	contactList.push(contactJSON);
+	//thisisanarray.push(contactJSON);
+	//let contactJSON = '{"Image":"\images\person.png", "Name":"James Bond","Email":"jamesbond007@gmail.com","Phone":"678-678-6789","Relation":"Father","Alive":"Alive"}'
+	//let contactInfo = JSON.parse(contactJSON)
 	// check we dont repeat 
 	if (!emptyJSON)
 	{
