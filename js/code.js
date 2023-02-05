@@ -235,6 +235,7 @@ function display(jsonObject)
 	// check we dont repeat 
 	if (!emptyJSON)
 	{
+		contactList.push(jsonObject);
 		//creat row 
 		let row = document.createElement("tr");
 		row.setAttribute("class","D-tr");
@@ -337,6 +338,7 @@ function display(jsonObject)
 
 function loadContact(callback)
 {
+	var i = 0;
 	let tmp = {UserID:13,Counter:globalCounter,Counter2:1};
 	let jsonPayload = JSON.stringify( tmp );
 	let url = urlBase + '/LoadContacts.' + extension;
@@ -352,14 +354,15 @@ function loadContact(callback)
 			{
 				let jsonObject = JSON.parse(xhr.responseText);
 				console.log(jsonObject);
-				if (jsonObject != null) {
-					console.log(jsonObject);
-					callback(jsonObject);
-					console.log(jsonObject);
-				} else {
+				if (jsonObject.error == "No Records Found") {
 					emptyJSON = true;
 					console.log(jsonObject);
 					callback("Error");
+				} else {
+					checkRepeats(jsonObject);
+					console.log(jsonObject);
+					callback(jsonObject);
+					console.log(jsonObject);
 				}
 			}
 		};
@@ -369,6 +372,13 @@ function loadContact(callback)
 	{
 		document.getElementById("").innerHTML = err.message;
 	}
+}
+
+function checkRepeats() {
+	while (contactList[i] !== null && jsonObject.ID !== contactList[i].ID) {
+		i++;
+	}
+	return
 }
 
 function editContact()
