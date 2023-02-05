@@ -6,12 +6,13 @@ let globalCounter = 0;
 let thisisanarray = new Array();
 let frontendUsername;
 let emptyJSON = false;
+let login;
 
 function doLogin()
 {
 	userId = 0;
 	
-	let login = document.getElementById("loginName").value;
+	login = document.getElementById("loginName").value;
 	let password = document.getElementById("loginPassword").value;
 
 	//var hash = md5( password );
@@ -43,7 +44,6 @@ function doLogin()
 				username = jsonObject.Username;
 				email = jsonObject.Email;
 
-				frontendUsername = login;
 				saveCookie();
 	
 				window.location.href = "dashboard.html";
@@ -221,24 +221,23 @@ function addContact()
 }
 
 function wrapperDisplay() {
-	console.log(globalCounter);
-	document.getElementById('user-name-title').innerHTML = frontendUsername;
-	
-	while (globalCounter%5 != 0) 
-	{
+//	document.getElementById('user-name-title').innerHTML = login;
+	for (i=0; i<5; i++) {
 		loadContact(display);
+		globalCounter += 1;
 	}
-	globalCounter += 1;
 }
 
 function display(jsonObject)
 {
 	var contactInfo = jsonObject;
-	contactList.push(contactInfo);
+	console.log(contactInfo);
+	//thisisanarray.push(contactJSON);
+	//let contactJSON = '{"Image":"\images\person.png", "Name":"James Bond","Email":"jamesbond007@gmail.com","Phone":"678-678-6789","Relation":"Father","Alive":"Alive"}'
+	//let contactInfo = JSON.parse(contactJSON)
 	// check we dont repeat 
 	if (!emptyJSON)
 	{
-		contactList.push(jsonObject);
 		//creat row 
 		let row = document.createElement("tr");
 		row.setAttribute("class","D-tr");
@@ -341,7 +340,6 @@ function display(jsonObject)
 
 function loadContact(callback)
 {
-	var i = 0;
 	let tmp = {UserID:13,Counter:globalCounter,Counter2:1};
 	let jsonPayload = JSON.stringify( tmp );
 	let url = urlBase + '/LoadContacts.' + extension;
@@ -357,18 +355,14 @@ function loadContact(callback)
 			{
 				let jsonObject = JSON.parse(xhr.responseText);
 				console.log(jsonObject);
-				if (jsonObject.error == "No Records Found") {
+				if (jsonObject.error !== "No Records Found") {
+					console.log(jsonObject);
+					callback(jsonObject);
+					console.log(jsonObject);
+				} else {
 					emptyJSON = true;
 					console.log(jsonObject);
 					callback("Error");
-				} else {
-					// Checkrepeats if not increments counter
-					if(!checkRepeats(jsonObject)){
-						console.log(jsonObject);
-						callback(jsonObject);
-						console.log(jsonObject);
-						globalCounter += 1;
-					}
 				}
 			}
 		};
@@ -378,15 +372,6 @@ function loadContact(callback)
 	{
 		document.getElementById("").innerHTML = err.message;
 	}
-}
-
-function checkRepeats(jsonObject) {
-	while(contactList[i] !== undefined){
-		if(jsonObject.ID == contactList[i].ID){
-			return true;
-		}
-	}
-	return false;
 }
 
 function editContact()
@@ -497,5 +482,5 @@ function searchContact()
 	{
 		document.getElementById("colorSearchResult").innerHTML = err.message;
 	}
-s
+
 }
