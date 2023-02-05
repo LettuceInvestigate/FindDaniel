@@ -17,8 +17,6 @@ Functionality:
 - Connect Dashboard searchbar to search API
 
 Additional:
-- Fix navbar size
-- Make logo smaller
-- Add people images to homepage
+- Add our images
 - Email validation
-- Hover functionality fix
+- when at end of dashboard.html table "at end" & disable view more button

@@ -236,36 +236,27 @@
     <!-- Shows the add contact box when add is clicked on, hides, everything else -->
     <script>
       function showAndHide() 
-      {
-        var addContactBox = document.getElementById('add-contact-box');
-        var contactTable = document.getElementById('contact-table');
-        var searchBar = document.getElementById('box'); 
-        var title = document.getElementById('title'); 
-        var dataBox1 = document.getElementById('data-box-1'); 
-        var dataBox2 = document.getElementById('data-box-2'); 
-        var dataBox3 = document.getElementById('data-box-3'); 
-        var dataBox4 = document.getElementById('data-box-4'); 
-    
-        if (addContactBox.style.display == 'none') {
-          addContactBox.style.display = 'block'; 
-          contactTable.style.display = 'none'; 
-          searchBar.style.display = 'none'; 
-          title.style.display = 'none'; 
-          dataBox1.style.display = 'none'; 
-          dataBox2.style.display = 'none'; 
-          dataBox3.style.display = 'none'; 
-          dataBox4.style.display = 'none'; 
+      {    
+        if (document.getElementById('add-contact-box').style.display == 'none') {
+          document.getElementById('add-contact-box').style.display = 'block'; 
+          document.getElementById('contact-table').style.display = 'none'; 
+          document.getElementById('box').style.display = 'none'; 
+          document.getElementById('title').style.display = 'none'; 
+          document.getElementById('data-box-1').style.display = 'none'; 
+          document.getElementById('data-box-2').style.display = 'none'; 
+          document.getElementById('data-box-3').style.display = 'none'; 
+          document.getElementById('data-box-4').style.display = 'none'; 
         }
         else 
         {
-          addContactBox.style.display = 'none'; 
-          contactTable.style.display = 'block'; 
-          searchBar.style.display = 'block'; 
-          title.style.display = 'block'; 
-          dataBox1.style.display = 'block'; 
-          dataBox2.style.display = 'block'; 
-          dataBox3.style.display = 'block'; 
-          dataBox4.style.display = 'block'; 
+          document.getElementById('add-contact-box').style.display = 'none'; 
+          document.getElementById('contact-table').style.display = 'block'; 
+          document.getElementById('box').style.display = 'block'; 
+          document.getElementById('title').style.display = 'block'; 
+          document.getElementById('data-box-1').style.display = 'block'; 
+          document.getElementById('data-box-2').style.display = 'block'; 
+          document.getElementById('data-box-3').style.display = 'block'; 
+          document.getElementById('data-box-4').style.display = 'block'; 
         }                      
       }
     </script>
