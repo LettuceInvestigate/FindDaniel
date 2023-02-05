@@ -6,15 +6,14 @@ let globalCounter = 0;
 let thisisanarray = new Array();
 let frontendUsername;
 let emptyJSON = false;
-let login;
 
 function doLogin()
 {
 	userId = 0;
 	
-	login = document.getElementById("loginName").value;
+	let login = document.getElementById("loginName").value;
 	let password = document.getElementById("loginPassword").value;
-
+	frontendUsername = login;
 	//var hash = md5( password );
 
 	var tmp = {Username:login,Password:password};
@@ -43,7 +42,7 @@ function doLogin()
 		
 				username = jsonObject.Username;
 				email = jsonObject.Email;
-
+				
 				saveCookie();
 	
 				window.location.href = "dashboard.html";
@@ -221,7 +220,7 @@ function addContact()
 }
 
 function wrapperDisplay() {
-//	document.getElementById('user-name-title').innerHTML = login;
+	document.getElementById('user-name-title').innerHTML = frontendUsername;
 	for (i=0; i<5; i++) {
 		loadContact(display);
 		globalCounter += 1;
@@ -232,9 +231,6 @@ function display(jsonObject)
 {
 	var contactInfo = jsonObject;
 	console.log(contactInfo);
-	//thisisanarray.push(contactJSON);
-	//let contactJSON = '{"Image":"\images\person.png", "Name":"James Bond","Email":"jamesbond007@gmail.com","Phone":"678-678-6789","Relation":"Father","Alive":"Alive"}'
-	//let contactInfo = JSON.parse(contactJSON)
 	// check we dont repeat 
 	if (!emptyJSON)
 	{
@@ -483,4 +479,8 @@ function searchContact()
 		document.getElementById("colorSearchResult").innerHTML = err.message;
 	}
 
+}
+
+function loadOnTable(){
+	document.getElementById("loadMore-button").click();
 }
