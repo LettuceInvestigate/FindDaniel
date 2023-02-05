@@ -1,4 +1,26 @@
-let numUsers = -999999;
+function showAndHide() {    
+    if (document.getElementById('add-contact-box').style.display == 'none') {
+        document.getElementById('add-contact-box').style.display = 'block'; 
+        document.getElementById('contact-table').style.display = 'none'; 
+        document.getElementById('box').style.display = 'none'; 
+        document.getElementById('title').style.display = 'none'; 
+        document.getElementById('data-box-1').style.display = 'none'; 
+        document.getElementById('data-box-2').style.display = 'none'; 
+        document.getElementById('data-box-3').style.display = 'none'; 
+        document.getElementById('data-box-4').style.display = 'none'; 
+    }
+    else 
+    {
+        document.getElementById('add-contact-box').style.display = 'none'; 
+        document.getElementById('contact-table').style.display = 'block'; 
+        document.getElementById('box').style.display = 'block'; 
+        document.getElementById('title').style.display = 'block'; 
+        document.getElementById('data-box-1').style.display = 'block'; 
+        document.getElementById('data-box-2').style.display = 'block'; 
+        document.getElementById('data-box-3').style.display = 'block'; 
+        document.getElementById('data-box-4').style.display = 'block'; 
+    }                      
+}
 
 function setNumUsers(num){
     numUsers = num;

@@ -185,30 +185,35 @@
                 }
               </script> 
             
+              <!-- Name -->
               <div id="add_Name" style=' margin: 10px; align-items: center; text-align: center; justify-content: space-between;'>
                 <label for="addName" style='font-family: bobby; color: #bc1823; font-size: 1.8rem;'>NAME:</label>
                 <input name="addName"  id="addName" style='font-family: bobby; text-align: center; font-size: 1.5rem; color: #212932; background-color: #d9dfdb; 
                     border-radius: 24px; margin-top: 15px; border: 1px solid #d9dfdb;' placeholder="SUSPECT NAME">
               </div>
 
+              <!-- Email -->
               <div id="add_email" style=' margin: 10px; align-items: center; text-align: center; justify-content: space-between;'>
                   <label for="addEmail" style='font-family: bobby; color: #bc1823; font-size: 1.8rem;'>EMAIL:</label>
                   <input name="addEmail"  id="addEmail" style='font-family: bobby; text-align: center; font-size: 1.5rem; color: #212932; background-color: #d9dfdb; 
                       border-radius: 24px; margin-top: 15px; border: 1px solid #d9dfdb;' placeholder="NAME@EMAIL.COM">
               </div>
 
+              <!-- Phone Number -->
               <div id="add_num" style=' margin: 10px; align-items: center; text-align: center; justify-content: space-between;'>
                   <label for="addNum" style='font-family: bobby; color: #bc1823; font-size: 1.8rem;'>PHONE NUMBER:</label>
                   <input name="addNum"  id="addNum" style='font-family: bobby; text-align: center; font-size: 1.5rem; color: #212932; background-color: #d9dfdb; 
                       border-radius: 24px; margin-top: 15px; border: 1px solid #d9dfdb;' placeholder="000-000-0000">
               </div>
 
+              <!-- Relationship -->
               <div id="add_Relation" style=' margin: 10px; align-items: center; text-align: center; justify-content: space-between;'>
                   <label for="addRelation" style='font-family: bobby; color: #bc1823; font-size: 1.8rem;'>RELATIONSHIP:</label>
                   <input name="addRelation"  id="addRelation" style='font-family: bobby; text-align: center; font-size: 1.5rem; color: #212932; background-color: #d9dfdb; 
                       border-radius: 24px; margin-top: 15px; border: 1px solid #d9dfdb;' placeholder="UNKNOWN">
               </div>
 
+              <!-- Status -->
               <div id="add_Status" style=' margin: 10px; align-items: center; text-align: center; justify-content: space-between;'>
                   <label for="addStatus" style='font-family: bobby; color: #bc1823; font-size: 1.8rem;'>STATUS:</label>
                   <select style="background-color: #dfdbd9; border-radius: 24px; font-family: bobby; text-align: center; color: #212932; font-size: 1.5rem; width: fit-content; padding: 8px;"> 
@@ -223,65 +228,36 @@
               <div id="add_Status" style='margin: 20px; align-items: center; text-align: center; justify-content: space-between;'>
                 <button id="save-button" onclick= "addContact();">SAVE</button>
                 <button id="cancel-button" onclick="window.location.href='dashboard.html'">CANCEL</button>
-              </div> 
+            </div>
+          </div>    
       </div>
-    </div>
-
-    <!-- Shows the add contact box when add is clicked on, hides, everything else -->
-    <script>
-      function showAndHide() 
-      {    
-        if (document.getElementById('add-contact-box').style.display == 'none') {
-          document.getElementById('add-contact-box').style.display = 'block'; 
-          document.getElementById('contact-table').style.display = 'none'; 
-          document.getElementById('box').style.display = 'none'; 
-          document.getElementById('title').style.display = 'none'; 
-          document.getElementById('data-box-1').style.display = 'none'; 
-          document.getElementById('data-box-2').style.display = 'none'; 
-          document.getElementById('data-box-3').style.display = 'none'; 
-          document.getElementById('data-box-4').style.display = 'none'; 
-        }
-        else 
-        {
-          document.getElementById('add-contact-box').style.display = 'none'; 
-          document.getElementById('contact-table').style.display = 'block'; 
-          document.getElementById('box').style.display = 'block'; 
-          document.getElementById('title').style.display = 'block'; 
-          document.getElementById('data-box-1').style.display = 'block'; 
-          document.getElementById('data-box-2').style.display = 'block'; 
-          document.getElementById('data-box-3').style.display = 'block'; 
-          document.getElementById('data-box-4').style.display = 'block'; 
-        }                      
-      }
-    </script>
 
     <!--Table-->
     <div id="contact-table" class="board"
       style='font-family: bobby; color: #212932; width: 95%; margin: 30px 0 30px 50px; overflow: auto; background-color: #d9dfdb; font-size: 18px; border-radius: 12px;'>
       <!-- <div class='container m-0 width-100 overflow-scroll' style="height: 500px"> -->
-        <table width="100%" style='border-collapse: collapse;'>
+      <table width="100%" style='border-collapse: collapse;'>
           <thead style="top: 0; z-index: 2; position: sticky;">
-            <tr style='border-bottom: 1px solid #212932;'>
-              <td id="D-Tabel-Head" style="background-color: #212932; color: #d9dfdb;">Name</td>
-              <td id="D-Tabel-Head" style="background-color: #212932; color: #d9dfdb;">Phone Number</td>
-              <td id="D-Tabel-Head" style="background-color: #212932; color: #d9dfdb;">Relationship</td>
-              <td id="D-Tabel-Head" style="background-color: #212932; color: #d9dfdb;">Status</td>
-              <td id="D-Tabel-Add" style="background-color: #212932; font-size: 24px;">
-                <a href="#">
-                  <li class="fas fa-plus" style="color: #bc1823;" onclick="showAndHide()"></li>
-                </a>
-              </td>
-            </tr>
-          </thead>
-          <tbody id="tbody">
-            <script>
-              setTimeout(function(){
-                loadOnTable();
+          <tr style='border-bottom: 1px solid #212932;'>
+            <td id="D-Tabel-Head" style="background-color: #212932; color: #d9dfdb;">Name</td>
+            <td id="D-Tabel-Head" style="background-color: #212932; color: #d9dfdb;">Phone Number</td>
+            <td id="D-Tabel-Head" style="background-color: #212932; color: #d9dfdb;">Relationship</td>
+            <td id="D-Tabel-Head" style="background-color: #212932; color: #d9dfdb;">Status</td>
+            <td id="D-Tabel-Add" style="background-color: #212932; font-size: 24px;">
+              <a href="#">
+                <li class="fas fa-plus" style="color: #bc1823;" onclick="showAndHide()"></li>
+              </a>
+            </td>
+          </tr>
+        </thead>
+        <tbody id="tbody">
+          <script>
+            setTimeout(function(){
+              loadOnTable();
               }, 100); 
-            </script>
-          </tbody>
-        </table>
-      <!-- </div> -->
+          </script>
+        </tbody>         
+      </table>
       <center><button id="loadMore-button" onclick="wrapperDisplay();">Load More</button></center>
     </div>
   </div>
