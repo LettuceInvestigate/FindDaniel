@@ -480,3 +480,7 @@ function searchContact()
 	}
 
 }
+
+function loadOnTable(){
+	document.getElementById("loadMore-button").click();
+}
