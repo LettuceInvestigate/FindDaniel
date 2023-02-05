@@ -282,7 +282,12 @@
             </td>
           </tr>
         </thead>
-        <tbody id="tbody">
+        <tbody id="tbody" onload="loadMoreClick();">
+          <script>
+            function loadMoreClick(){
+              document.getElementById("loadMore-button").click();
+            }
+          </script>
         </tbody>
           
       </table>
