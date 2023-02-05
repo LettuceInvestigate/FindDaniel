@@ -43,7 +43,7 @@ function doLogin()
 				username = jsonObject.Username;
 				email = jsonObject.Email;
 
-				frontendUsername = username;
+				frontendUsername = login;
 				saveCookie();
 	
 				window.location.href = "dashboard.html";
@@ -222,7 +222,7 @@ function addContact()
 
 function wrapperDisplay() {
 	console.log(globalCounter);
-	document.getElementById('user-name-title').innerHTML = frontendUsername; 
+	document.getElementById('user-name-title').innerHTML = frontendUsername;
 	
 	for (i=0; i<5; i++) {
 		if(!loadContact(display)){

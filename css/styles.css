@@ -218,8 +218,7 @@
 #D-td-name{
   padding: 10px 16px;
   display:flex;
-  justify-content:
-  flex-start;
+  justify-content: flex-start;
   align-items: center;
   text-align: start;
 }
