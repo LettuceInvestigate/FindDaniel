@@ -44,6 +44,7 @@ function doLogin()
 				email = jsonObject.Email;
 
 				frontendUsername = login;
+				console.log(login);
 				saveCookie();
 	
 				window.location.href = "dashboard.html";
