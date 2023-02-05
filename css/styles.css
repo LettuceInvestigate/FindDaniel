@@ -15,6 +15,9 @@
 #our-red {
   color: #bc1823;
 }
+.body{
+  overflow:hidden;
+}
 
 /* Animations */ 
 @keyframes fadeIn {
