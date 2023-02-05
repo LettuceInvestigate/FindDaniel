@@ -222,6 +222,8 @@ function addContact()
 
 function wrapperDisplay() {
 	console.log(globalCounter);
+	document.getElementById('user-name-title').innerHTML = frontendUsername; 
+	
 	for (i=0; i<5; i++) {
 		if(!loadContact(display)){
 			console.log(globalCounter + "AAAAh");
@@ -501,5 +503,5 @@ function searchContact()
 	{
 		document.getElementById("colorSearchResult").innerHTML = err.message;
 	}
-
+s
 }
