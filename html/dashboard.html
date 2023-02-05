@@ -21,8 +21,8 @@
   <script type="text/javascript" src="/./js/userupdater.js"></script>
   
   <script type="text/javascript">
-    if(readCookie() < 1){
-      window.location.href = "login.html";
+    if(readCookie() > 1){
+      window.location.href = "warning.html";
     }
   </script>
   <script>
@@ -41,27 +41,64 @@
 
   <!-- Page -->
   <div class='container-fluid vh-100 overflow-scroll'
-    style='background-color: lightgrey; padding-top: 10px; padding-bottom: 10px;'>
+    style='background-image: url("/images/paper.png"); background-size: cover; padding-top: 10px; padding-bottom: 10px;'>
 
-    <!--Welcome Back Massage-->
-    <center class="DashboardInterfaceName" style=' object-fit: cover; 
-      border-radius: 50%; color: 444a53; opacity: 90%; font-size: 42px; font-weight: 700;
-      padding-top: 15px; align-items: center;'>WANTED: <span>User_Name</span>!</center>
-    
+    <!-- Rotating the Stars Animation for the Title --> 
+    <style>
+      .star {
+        -webkit-animation:spin 2.5s linear infinite;
+        -moz-animation:spin 2.5s linear infinite;
+        animation:spin 2.5s linear infinite;
+      }
+
+      @keyframes anim-lineUp {
+        0% {
+          opacity: 0;
+          transform: translateY(80%);
+        }
+        20% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+          transform: translateY(0%);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0%);
+        }
+      }
+      @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+      @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+      @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); }
+      }
+    </style>
+
+    <!-- Title -->
+    <center>
+    <div id="title" class="container rounded-5 p-5" style='object-fit: cover; color: #bc1823; font-family: fibre; 
+      border-radius: 50%; color: 444a53; opacity: 90%; font-size: 76px; font-weight: 700;
+      padding-top: 15px; align-items: center; display: flex; justify-content: center;'>
+      <img class="star" src="/images/star.png" style="height: 80px; width: 140px;">
+      WANTED: <span id="user-name-title"></span>
+      <img class="star" src="/images/star.png" style="height: 80px; width: 140px;">
+    </div>
+    </center>  
+
     <!--Search Bar-->
-    <div class="container rounded-5" id="box" style='background: #fff; height: 40px; border-radius: 30px; 
-      margin-top: 20px; display: flex; align-items:center; transition: 0.8s;
-      box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.4); justify-content: center; '>
-      <input class="searchBar" type="text" placeholder="Search..">
+    <div class="container rounded-5" id="box" style='background-color: #d9dfdb; 
+    ; height: 50px; border-radius: 30px; font-family: bobby; color: #212932; 
+      margin-top: 0px; display: flex; align-items:center; transition: 0.8s;
+      box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.4); justify-content: center; font-size: 24px;'>
+      <input class="searchBar" type="text" style="font-size: 24px" placeholder="SEARCH...">
       <a href="#">
-        <li class="fas fa-search" id="searchButton"></li>
+        <li class="fas fa-search" style= "color: #bc1823;" id="searchButton"></li>
       </a>
     </div>
 
     <script>
       var input = document.getElementsByClassName("searchBar");
       input.addEventListener("keypress", function(event) {
-        console.log("hi");
         if (event.key == "Enter"){
           event.preventDefault();
           document.getElementById("searchButton").click();
@@ -72,48 +109,51 @@
     <!--Data Boxes-->
     <div class='container'
       style='display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; max-width: 975px;'>
-      <div class='container rounded-3' style='background-color: #fff; opacity: 90%;
+      <div id="data-box-1" class='container rounded-3' style='background-color: #d9dfdb; opacity: 90%;
         margin-top: 20px; width: 220px; padding: 16px 20px; border-radius: 5px;
         display: flex; justify-content: flex-start; align-items: center;'>
         <i class="fas fa-users" style='font-size:25px; width: 60px;
           height: 60px; line-height: 60px; border-radius: 50%; 
-          text-align: center; color: #fff; background-color: #7B74EC; margin-right: 15px;'></i>
+          text-align: center; color: #d9dfdb; background-color: #bc1823; margin-right: 15px;'></i>
         <div>
           <h3 style='font-size: 18px; font-weight: 600; margin-bottom:0rem; '><span>8,512</span></h3>
           <!--TEMP-->
           <span style='font-size: 15px; color: #828997;'>Users</span>
         </div>
       </div>
-      <div class='container rounded-3' style='background-color: #fff; opacity: 90%;
+
+      <div id="data-box-2" class='container rounded-3' style='background-color: #d9dfdb; opacity: 90%;
         margin-top: 20px; width: 220px; padding: 16px 20px; border-radius: 5px;
         display: flex; justify-content: flex-start; align-items: center;'>
         <i class="fas fa-user-secret" style='font-size:25px; width: 60px;
           height: 60px; line-height: 60px; border-radius: 50%; 
-          text-align: center; color: #fff; background-color: #5C8AF0; margin-right: 15px;'></i>
+          text-align: center; color: #d9dfdb; background-color: #bc1823; margin-right: 15px;'></i>
         <div>
           <h3 style='font-size: 18px; font-weight: 600; margin-bottom:0rem; '><span>21</span></h3>
           <!--TEMP-->
           <span style='font-size: 15px; color: #828997;'>Something</span>
         </div>
       </div>
-      <div class='container rounded-3' style='background-color: #fff; opacity: 90%;
+
+      <div id="data-box-3" class='container rounded-3' style='background-color: #d9dfdb; opacity: 90%;
           margin-top: 20px; width: 220px; padding: 16px 20px; border-radius: 5px;
           display: flex; justify-content: flex-start; align-items: center;'>
         <i class="fas fa-user-graduate" style='font-size:25px; width: 60px;
           height: 60px; line-height: 60px; border-radius: 50%; 
-          text-align: center; color: #fff; background-color: #E45D99; margin-right: 15px;'></i>
+          text-align: center; color: #d9dfdb; background-color: #bc1823; margin-right: 15px;'></i>
         <div>
           <h3 style='font-size: 18px; font-weight: 600; margin-bottom:0rem; '><span>45</span></h3>
           <!--TEMP-->
           <span style='font-size: 15px; color: #828997;'>Something 2</span>
         </div>
       </div>
-      <div class='container rounded-3' style='background-color: #fff; opacity: 90%;
+
+      <div id="data-box-4" class='container rounded-3' style='background-color: #d9dfdb; opacity: 90%;
           margin-top: 20px; width: 220px; padding: 16px 20px; border-radius: 5px;
           display: flex; justify-content: flex-start; align-items: center;'>
         <i class="fas fa-dizzy" style='font-size:25px; width: 60px;
           height: 60px; line-height: 60px; border-radius: 50%; 
-          text-align: center; color: #fff; background-color: #74DAEC; margin-right: 15px;'></i>
+          text-align: center; color: #d9dfdb; background-color: #bc1823; margin-right: 15px;'></i>
         <div>
           <h3 style='font-size: 18px; font-weight: 600; margin-bottom:0rem; '><span>6</span></h3>
           <!--TEMP-->
@@ -122,98 +162,102 @@
       </div>
     </div>
 
+    <!-- Add Contact Box -->
+    <div id='add-contact-box' class='container-fluid vh-100 overflow-scroll' style='padding-bottom: 70px; padding-top: 70px; display: none;'>
+      <div class='container rounded-5' style='padding: 50px; background-color: #212932; opacity: 90%; width: 90%; height: fit-content; border-radius: 24px; animation: fadeIn 4s;'>
+        <div id="add_Name" style=' margin: 10px; align-items: center; text-align: center; justify-content: space-between; font-family: fibre; color: #bc1823; font-size: 80px;'>
+          ADD A SUSPECT
+        </div>
+
+        <div id="add_image" style=' margin: 10px; align-items: center; text-align: center; justify-content: space-between;'>
+          <input type="file" id="real-file" hidden="hidden"/>
+          <button type="button" id="image-button" onclick="openFiles()">CHOOSE AN IMAGE</button>
+          <span id="custom-text" style=' font-family: bobby; font-size: 20px; 
+              color: #7b7b7b;'>No file chosen, yet.</span>
+        </div>
+
+        <script> 
+          function openFiles() 
+          {
+            $('#real-file').click(); 
+          }
+        </script> 
+      
+        <!-- Name -->
+        <div id="add_Name" style=' margin: 10px; align-items: center; text-align: center; justify-content: space-between;'>
+          <label for="addName" style='font-family: bobby; color: #bc1823; font-size: 1.8rem;'>NAME:</label>
+          <input name="addName"  id="addName" style='font-family: bobby; text-align: center; font-size: 1.5rem; color: #212932; background-color: #d9dfdb; 
+              border-radius: 24px; margin-top: 15px; border: 1px solid #d9dfdb;' placeholder="SUSPECT NAME">
+        </div>
+
+        <!-- Email -->
+        <div id="add_email" style=' margin: 10px; align-items: center; text-align: center; justify-content: space-between;'>
+            <label for="addEmail" style='font-family: bobby; color: #bc1823; font-size: 1.8rem;'>EMAIL:</label>
+            <input name="addEmail"  id="addEmail" style='font-family: bobby; text-align: center; font-size: 1.5rem; color: #212932; background-color: #d9dfdb; 
+                border-radius: 24px; margin-top: 15px; border: 1px solid #d9dfdb;' placeholder="NAME@EMAIL.COM">
+        </div>
+
+        <!-- Phone Number -->
+        <div id="add_num" style=' margin: 10px; align-items: center; text-align: center; justify-content: space-between;'>
+            <label for="addNum" style='font-family: bobby; color: #bc1823; font-size: 1.8rem;'>PHONE NUMBER:</label>
+            <input name="addNum"  id="addNum" style='font-family: bobby; text-align: center; font-size: 1.5rem; color: #212932; background-color: #d9dfdb; 
+                border-radius: 24px; margin-top: 15px; border: 1px solid #d9dfdb;' placeholder="000-000-0000">
+        </div>
+
+        <!-- Relationship -->
+        <div id="add_Relation" style=' margin: 10px; align-items: center; text-align: center; justify-content: space-between;'>
+            <label for="addRelation" style='font-family: bobby; color: #bc1823; font-size: 1.8rem;'>RELATIONSHIP:</label>
+            <input name="addRelation"  id="addRelation" style='font-family: bobby; text-align: center; font-size: 1.5rem; color: #212932; background-color: #d9dfdb; 
+                border-radius: 24px; margin-top: 15px; border: 1px solid #d9dfdb;' placeholder="UNKNOWN">
+        </div>
+
+        <!-- Status -->
+        <div id="add_Status" style=' margin: 10px; align-items: center; text-align: center; justify-content: space-between;'>
+          <label for="addStatus" style='font-family: bobby; color: #bc1823; font-size: 1.8rem;'>STATUS:</label>
+          <select style="background-color: #dfdbd9; border-radius: 24px; font-family: bobby; text-align: center; color: #212932; font-size: 1.5rem; width: fit-content; padding: 8px;"> 
+            <option></option>
+            <option value="dead">DEAD</option>
+            <option value="alive">ALIVE</option>
+            <option value="missing">MISSING</option>
+            <option value="injail">IN JAIL</option>
+          </select>
+        </div>
+
+        <div id="add_Status" style='margin: 20px; align-items: center; text-align: center; justify-content: space-between;'>
+          <button id="save-button" onclick= "addContact();">SAVE</button>
+          <button id="cancel-button" onclick="window.location.href='dashboard.html'">CANCEL</button>
+        </div>
+      </div>    
+    </div>
 
     <!--Table-->
-    <div class="board"
-      style='width: 95%; margin: 30px 0 30px 50px; overflow: auto; background-color: #fff; border-radius: 8px;'>
+    <div id="contact-table" class="board"
+      style='font-family: bobby; color: #212932; width: 95%; margin: 30px 0 30px 50px; overflow: auto; background-color: #d9dfdb; font-size: 18px; border-radius: 12px;'>
+      <!-- <div class='container m-0 width-100 overflow-scroll' style="height: 500px"> -->
       <table width="100%" style='border-collapse: collapse;'>
-        <thead>
-          <tr style='border-bottom: 1px solid #eef0f3;'>
-            <td id="D-Tabel-Head">Name</td>
-            <td id="D-Tabel-Head">Username</td>
-            <td id="D-Tabel-Head">Phone Number</td>
-            <td id="D-Tabel-Head">Role</td>
-            <td id="D-Tabel-Add">
+          <thead style="top: 0; z-index: 2; position: sticky;">
+          <tr style='border-bottom: 1px solid #212932;'>
+            <td id="D-Tabel-Head" style="background-color: #212932; color: #d9dfdb;">Name</td>
+            <td id="D-Tabel-Head" style="background-color: #212932; color: #d9dfdb;">Phone Number</td>
+            <td id="D-Tabel-Head" style="background-color: #212932; color: #d9dfdb;">Relationship</td>
+            <td id="D-Tabel-Head" style="background-color: #212932; color: #d9dfdb;">Status</td>
+            <td id="D-Tabel-Add" style="background-color: #212932; font-size: 24px;">
               <a href="#">
-                <li class="fas fa-plus"></li>
+                <li class="fas fa-plus" style="color: #bc1823;" onclick="showAndHide()"></li>
               </a>
             </td>
           </tr>
         </thead>
-
-
-        <tbody>
-          <!--temp ex 1 -->
-          <!--THIS ALL NEEDS TO BE SURROUNDED IN JS-->
+        <tbody id="tbody">
           <script>
-            incNumUser();
+            setTimeout(function(){
+              loadOnTable();
+              }, 100); 
           </script>
-          <tr id="D-tr">
-            <td id="D-td-name">
-              <img src="/../images/poster.png" alt="">
-              <div>
-                <h5>John Smith</h5>
-                <p>John1324@gmail.com</p>
-              </div>
-            </td>
-            <td id="D-td-username">
-              <h5>Jsmith22</h5>
-              <p>User</p>
-            </td>
-            <td id="D-td-num">
-              <p>000-000-0000</p>
-            </td>
-            <td id="D-td-role">
-              <p>Suspect</p>
-            </td>
-            <td id="D-td-edit-delete">
-              <a class="editButton" href="#">
-                <li class="fas fa-user-edit"></li>
-              </a>
-              <a class="deleteButton" href="#">
-                <li class="fas fa-trash-alt"></li>
-              </a>
-            </td>
-          </tr>
-
-          <!--temp ex 2-->
-          <script>
-            incNumUser();
-          </script>
-          <tr id="D-tr">
-            <td id="D-td-name">
-              <img src="/../images/person.png" alt="">
-              <div>
-                <h5>Sam Johnson</h5>
-                <p>Sam18J@gmail.com</p>
-              </div>
-            </td>
-            <td id="D-td-username">
-              <h5>Sammm8</h5>
-              <p>Admin</p>
-            </td>
-            <td id="D-td-num">
-              <p>333-222-1111</p>
-            </td>
-            <td id="D-td-role">
-              <p>Missing</p>
-            </td>
-            <td id="D-td-edit-delete">
-              <a class="editButton" href="#">
-                <li class="fas fa-user-edit"></li>
-              </a>
-              <a class="deleteButton" href="#">
-                <li class="fas fa-trash-alt"></li>
-              </a>              
-            </td>
-          </tr>
-        </tbody>
+        </tbody>         
       </table>
+      <center><button id="loadMore-button" onclick="wrapperDisplay();">Load More</button></center>
     </div>
-
-
-
-
   </div>
 </body>
 

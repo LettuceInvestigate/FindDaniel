@@ -19,7 +19,11 @@
 	else
 	{
 		// WHERE will either be pulled by HTML or provided by Query, fix once FrontEnd finishes design
-		mysqli_query($conn,"UPDATE `Contacts` SET Images = $Images, Name = $Name, Phone = $Phone, Email = $Email, Alive = $Alive, Relation = $Relation WHERE ID = $ID");
+		$stmt = $conn->prepare("UPDATE Contacts SET Images = ?, Name = ?, Phone = ?, Email = ?,
+					Alive = ?, Relation = ? WHERE ID = ?");
+		$stmt->bind_param("sssssss", $Images, $Name, $Phone, $Email, $Alive, $Relation, $ID );
+		$stmt->execute();
+		$stmt->close();
 		$conn->close();
 		returnWithError("");
 	}

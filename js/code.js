@@ -2,6 +2,10 @@ const urlBase = 'http://wheresdaniel.io/LAMPAPI';
 const extension = 'php';
 
 let userId = 0;
+let globalCounter = 0;
+let thisisanarray = new Array();
+let frontendUsername;
+let emptyJSON = false;
 
 function doLogin()
 {
@@ -9,7 +13,7 @@ function doLogin()
 	
 	let login = document.getElementById("loginName").value;
 	let password = document.getElementById("loginPassword").value;
-
+	frontendUsername = login;
 	//var hash = md5( password );
 
 	var tmp = {Username:login,Password:password};
@@ -38,7 +42,7 @@ function doLogin()
 		
 				username = jsonObject.Username;
 				email = jsonObject.Email;
-
+				
 				saveCookie();
 	
 				window.location.href = "dashboard.html";
@@ -88,8 +92,9 @@ function readCookie()
 function doLogout()
 {
 	userId = 0;
-	// COOKIE DOES NOT DELETE
+	//COOKIE DOES NOT DELETE
 	document.cookie = "userId=0";
+	fixTravel(page);
 	window.location.href = "/../index.html";
 }
 
@@ -214,9 +219,197 @@ function addContact()
 	
 }
 
+function wrapperDisplay() {
+	document.getElementById('user-name-title').innerHTML = frontendUsername;
+	for (i=0; i<5; i++) {
+		loadContact(display);
+		globalCounter += 1;
+	}
+}
+
+function display(jsonObject)
+{
+	var contactInfo = jsonObject;
+	console.log(contactInfo);
+	// check we dont repeat 
+	if (!emptyJSON)
+	{
+		//creat row 
+		let row = document.createElement("tr");
+		row.setAttribute("class","D-tr");
+		row.setAttribute("id",globalCounter);
+
+		// creating name column
+		//<td class="D-td-name" id=[incrimenter]>
+		let cell1 = document.createElement("td");
+		cell1.setAttribute("id","D-td-name");
+		//  <img src="HIS IMAGE SORCE HERE" alt="">
+		let cellImage = document.createElement("img");
+		cellImage.setAttribute("src","/../images/person.png");
+		cellImage.setAttribute("alt","");
+		//  <div>
+		let cellDiv = document.createElement("div");
+		//    <h5>FULL NAME HERE</h5>
+		let cellName = document.createElement("h5");
+		cellName.innerHTML = contactInfo.Name;
+		//    <p>EMAIL HERE</p>
+		let cellEmail = document.createElement("p");
+		cellEmail.innerHTML = contactInfo.Email;
+		//  </div>
+		cellDiv.appendChild(cellName);
+		cellDiv.appendChild(cellEmail);
+		//</td>
+		cell1.appendChild(cellImage);
+		cell1.appendChild(cellDiv);
+
+
+		// creating phone column
+		// <td id="D-td-num">
+		let cell2 = document.createElement("td");
+		cell2.setAttribute("id","D-td-num");
+		//  <p>PHONE NUM HERE</p>
+		let cellPhone = document.createElement("p");
+		cellPhone.innerHTML = contactInfo.Phone;
+		// </td>
+		cell2.appendChild(cellPhone)
+
+
+		// creating relation column
+		//<td id="D-td-relation-status">
+		let cell3 = document.createElement("td");
+		cell3.setAttribute("id","D-td-relation-status");
+		//  <p>RELATION HERE</p>
+		let cellRelation = document.createElement("p");
+		cellRelation.innerHTML = contactInfo.Relation;
+		//</td>
+		cell3.appendChild(cellRelation);
+
+
+		// creating status column
+		//<td id="D-td-relation-status">
+		let cell4 = document.createElement("td");
+		cell4.setAttribute("id","D-td-relation-status");
+		//  <p>STATUS HERE</p>
+		let cellStatus = document.createElement("p");
+		cellStatus.innerHTML = contactInfo.Alive;
+		//</td>
+		cell4.appendChild(cellStatus);
+
+
+		// creating user controls column
+		//<td id="D-td-edit-delete">
+		let cell5 = document.createElement("td");
+		cell5.setAttribute("id","D-td-edit-delete");
+		//  <a class="editButton" href="editContact()">
+		let cellEdit = document.createElement("a");
+		// *** MIGHT NOT WORK ***
+		cellEdit.setAttribute("class", "editButton");
+		cellEdit.setAttribute("href","editContact()");
+		//    <li class="fas fa-user-edit"></li>
+		let cellLI1 = document.createElement("li");
+		cellLI1.setAttribute("class","fas fa-user-edit");
+		//  </a>
+		cellEdit.appendChild(cellLI1);
+		//  <a class="deleteButton" href="deleteContact()">
+		let cellDelete = document.createElement("a");
+		// *** MIGHT NOT WORK ***
+		cellDelete.setAttribute("class", "deleteButton");
+		cellDelete.setAttribute("href","deleteContact()");
+		//    <li class="fas fa-trash-alt"></li>
+		let cellLI2 = document.createElement("li");
+		cellLI2.setAttribute("class","fas fa-trash-alt");
+		//  </a>
+		cellDelete.appendChild(cellLI2);
+		//</td>
+		cell5.appendChild(cellEdit);
+		cell5.appendChild(cellDelete);
+
+		row.appendChild(cell1);
+		row.appendChild(cell2);
+		row.appendChild(cell3);
+		row.appendChild(cell4);
+		row.appendChild(cell5);
+		
+		document.querySelector("#tbody").appendChild(row);
+	}
+}
+
+function loadContact(callback)
+{
+	let tmp = {UserID:13,Counter:globalCounter,Counter2:1};
+	let jsonPayload = JSON.stringify( tmp );
+	let url = urlBase + '/LoadContacts.' + extension;
+		
+	let xhr = new XMLHttpRequest();
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	try
+	{
+		xhr.onreadystatechange = function() 
+		{
+			if (this.readyState == 4 && this.status == 200) 
+			{
+				let jsonObject = JSON.parse(xhr.responseText);
+				console.log(jsonObject);
+				if (jsonObject.error !== "No Records Found") {
+					console.log(jsonObject);
+					callback(jsonObject);
+					console.log(jsonObject);
+				} else {
+					emptyJSON = true;
+					console.log(jsonObject);
+					callback("Error");
+				}
+			}
+		};
+		xhr.send(jsonPayload);
+	}
+	catch(err)
+	{
+		document.getElementById("").innerHTML = err.message;
+	}
+}
+
+function editContact()
+{
+	let id = document.getElementById("PUT THE CONTACTID HERE").value;
+	let Contact = createContact();
+	let tmp = {ID:id,Contact};
+	let jsonPayload = JSON.stringify( tmp );
+
+	let url = urlBase + '/EditContact.' + extension;
+		
+	let xhr = new XMLHttpRequest();
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	try
+	{
+		xhr.onreadystatechange = function() 
+		{
+			if (this.readyState == 4 && this.status == 200) 
+			{
+				let temp = JSON.stringify(xhr.responseText);
+				let jsonObject = JSON.parse(temp );
+				
+				if(jsonObject.error == "")
+				{
+					// The object is updated I do not know what we need to do to redisplay it
+					// but if you need to call something here is where we should do that
+				}
+			}
+		};
+		xhr.send(jsonPayload);
+	}
+	catch(err)
+	{
+		document.getElementById("").innerHTML = err.message;
+	}
+}
+
 function deleteContact()
 {
-	let delContact = { ID: document.getElementById("contactID").value};
+	let id = document.getElementById("PUT THE CONTACTID HERE").value;
+	let delContact = {ID: id};
 	document.getElementById("contactDeleteResult").innerHTML = "";
 
 	let jsonPayload = JSON.stringify( delContact );
@@ -244,14 +437,13 @@ function deleteContact()
 	
 }
 
-function searchColor()
+function searchContact()
 {
-	let srch = document.getElementById("searchText").value;
 	document.getElementById("colorSearchResult").innerHTML = "";
 	
-	let colorList = "";
+	let contactList = "";
 
-	let tmp = {search:srch,userId:userId};
+	let tmp = {Name:document.getElementById("searchText").value,UserID:userId};
 	let jsonPayload = JSON.stringify( tmp );
 
 	let url = urlBase + '/SearchColors.' + extension;
@@ -287,4 +479,8 @@ function searchColor()
 		document.getElementById("colorSearchResult").innerHTML = err.message;
 	}
 
+}
+
+function loadOnTable(){
+	document.getElementById("loadMore-button").click();
 }
