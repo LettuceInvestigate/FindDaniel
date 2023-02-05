@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <html>
+
 <head>
   <!--HTML-->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Learn More</title>
+  <title>Delete This</title>
 
   <!--CSS-->
-  <link rel="stylesheet" href="/./css/styles.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  <link rel="stylesheet" href="/./css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
   
 
   <!--JavaScript-->
   <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript" src="/./js/code.js"></script>
+  <script type="text/javascript" src="/./js/userupdater.js"></script>
   <script>
     $(function () {
       $("#includeHtml").load("navbar.html");
@@ -25,71 +28,113 @@
 </head>
 
 <body style="background-color: #d9dfdb">
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-  
-    <!--NavBar-->
-    <div id="includeHtml" class="container-fluid p-0 m-0"></div>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+
+  <!--NavBar-->
+  <div id="includeHtml" class="container-fluid p-0 m-0"></div>
+
+  <!-- Rotating the Stars Animation for the Title --> 
+  <style>
+    .star {
+      -webkit-animation:spin 2.5s linear infinite;
+      -moz-animation:spin 2.5s linear infinite;
+      animation:spin 2.5s linear infinite;
+    }
+
+    @keyframes anim-lineUp {
+      0% {
+        opacity: 0;
+        transform: translateY(80%);
+      }
+      20% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+        transform: translateY(0%);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0%);
+      }
+    }
+    @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+    @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+    @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); }
+    }
+  </style>
+
+  <div class='container-fluid vh-100 overflow-scroll' style='overflow: none ;background-image: url("/images/paper.png"); background-size: cover; padding-top: 10px; padding-bottom: 10px;'>
 
     <!-- Add Contact Box -->
-    <div id='add-contact-box' class='container-fluid vh-100 overflow-scroll'
-    style='padding-bottom: 70px; padding-top: 70px; display: none;'>
-      <div class='container rounded-5' style='padding: 50px; background-color: #212932; opacity: 90%; width: 90%; height: fit-content; border-radius: 24px;'>
-          <div class='container' style='display: flex; justify-content: space-between;
-          align-items: center; flex-wrap: wrap;'>
+    <div id='add-contact-box' class='container-fluid vh-100 overflow-scroll' style='padding-bottom: 70px; padding-top: 70px;'><!--removed  display: none;-->
+      <div class='container rounded-5' style='padding: 50px; background-color: #212932; opacity: 90%; width: 90%; height: fit-content; border-radius: 24px; animation: fadeIn 4s;'>
+        <div id="add_Name" style=' margin: 10px; align-items: center; text-align: center; justify-content: space-between; font-family: fibre; color: #bc1823; font-size: 80px;'>
+          ADD A SUSPECT
+        </div>
 
-            <!-- Adding Image -->
-              <div class='container' id="add_image">
-                  <input type="file" id="real-file" hidden="hidden"/>
-                  <button type="button" id="custom-button" style='font-family: bobby; padding: 10px; color: #d9dfdb;
-                      background-color: #bc1823; border: 1px solid #bc1823; border-radius: 5px;
-                      cursor: pointer;' onclick="openFiles()">CHOOSE AN IMAGE</button>
-                  <span id="custom-text" style=' font-family: bobby; font-size: 20px; 
-                      color: #7b7b7b;'>No file chosen, yet.</span>
-              </div>
-              <script> 
-                function openFiles() 
-                {
-                  $('#real-file').click(); 
-                }
-              </script>
+        <div id="add_image" style=' margin: 10px; align-items: center; text-align: center; justify-content: space-between;'>
+          <input type="file" id="real-file" hidden="hidden"/>
+          <button type="button" id="image-button" onclick="openFiles()">CHOOSE AN IMAGE</button>
+          <span id="custom-text" style=' font-family: bobby; font-size: 20px; 
+              color: #7b7b7b;'>No file chosen, yet.</span>
+        </div>
 
-              <div id="add_Name" style=' margin: 10px; align-items: center; text-align: center; justify-content: space-between;'>
-                  <label for="addName" style='font-family: bobby; color: #bc1823; font-size: 1.8rem;'>NAME:</label>
-                  <input name="addName"  id="addName" style='font-family: bobby; text-align: center; font-size: 1.5rem; color: #212932; background-color: #d9dfdb; 
-                      border-radius: 24px; margin-top: 15px; border: 1px solid #d9dfdb;' placeholder="Full Name">
-              </div>
+        <script> 
+          function openFiles() 
+          {
+            $('#real-file').click(); 
+          }
+        </script> 
+      
+        <!-- Name -->
+        <div id="add_Name" style=' margin: 10px; align-items: center; text-align: center; justify-content: space-between;'>
+          <label for="addName" style='font-family: bobby; color: #bc1823; font-size: 1.8rem;'>NAME:</label>
+          <input name="addName"  id="addName" style='font-family: bobby; text-align: center; font-size: 1.5rem; color: #212932; background-color: #d9dfdb; 
+              border-radius: 24px; margin-top: 15px; border: 1px solid #d9dfdb;' placeholder="SUSPECT NAME">
+        </div>
 
-              <div id="add_email" style=' margin: 10px; align-items: center; text-align: center; justify-content: space-between;'>
-                  <label for="addEmail" style='font-family: bobby; color: #bc1823; font-size: 1.8rem;'>EMAIL:</label>
-                  <input name="addEmail"  id="addEmail" style='font-family: bobby; text-align: center; font-size: 1.5rem; color: #212932; background-color: #d9dfdb; 
-                      border-radius: 24px; margin-top: 15px; border: 1px solid #d9dfdb;' placeholder="name@email.com">
-              </div>
+        <!-- Email -->
+        <div id="add_email" style=' margin: 10px; align-items: center; text-align: center; justify-content: space-between;'>
+            <label for="addEmail" style='font-family: bobby; color: #bc1823; font-size: 1.8rem;'>EMAIL:</label>
+            <input name="addEmail"  id="addEmail" style='font-family: bobby; text-align: center; font-size: 1.5rem; color: #212932; background-color: #d9dfdb; 
+                border-radius: 24px; margin-top: 15px; border: 1px solid #d9dfdb;' placeholder="NAME@EMAIL.COM">
+        </div>
 
-              <div id="add_num" style=' margin: 10px; align-items: center; text-align: center; justify-content: space-between;'>
-                  <label for="addNum" style='font-family: bobby; color: #bc1823; font-size: 1.8rem;'>PHONE NUMBER:</label>
-                  <input name="addNum"  id="addNum" style='font-family: bobby; text-align: center; font-size: 1.5rem; color: #212932; background-color: #d9dfdb; 
-                      border-radius: 24px; margin-top: 15px; border: 1px solid #d9dfdb;' placeholder="000-000-0000">
-              </div>
+        <!-- Phone Number -->
+        <div id="add_num" style=' margin: 10px; align-items: center; text-align: center; justify-content: space-between;'>
+            <label for="addNum" style='font-family: bobby; color: #bc1823; font-size: 1.8rem;'>PHONE NUMBER:</label>
+            <input name="addNum"  id="addNum" style='font-family: bobby; text-align: center; font-size: 1.5rem; color: #212932; background-color: #d9dfdb; 
+                border-radius: 24px; margin-top: 15px; border: 1px solid #d9dfdb;' placeholder="000-000-0000">
+        </div>
 
-              <div id="add_Relation" style=' margin: 10px; align-items: center; text-align: center; justify-content: space-between;'>
-                  <label for="addRelation" style='font-family: bobby; color: #bc1823; font-size: 1.8rem;'>RELATIONSHIP:</label>
-                  <input name="addRelation"  id="addRelation" style='font-family: bobby; text-align: center; font-size: 1.5rem; color: #212932; background-color: #d9dfdb; 
-                      border-radius: 24px; margin-top: 15px; border: 1px solid #d9dfdb;' placeholder="UNKNOWN">
-              </div>
+        <!-- Relationship -->
+        <div id="add_Relation" style=' margin: 10px; align-items: center; text-align: center; justify-content: space-between;'>
+            <label for="addRelation" style='font-family: bobby; color: #bc1823; font-size: 1.8rem;'>RELATIONSHIP:</label>
+            <input name="addRelation"  id="addRelation" style='font-family: bobby; text-align: center; font-size: 1.5rem; color: #212932; background-color: #d9dfdb; 
+                border-radius: 24px; margin-top: 15px; border: 1px solid #d9dfdb;' placeholder="UNKNOWN">
+        </div>
 
-              <div id="add_Status" style=' margin: 10px; align-items: center; text-align: center; justify-content: space-between;'>
-                  <label for="addStatus" style='font-family: bobby; color: #bc1823; font-size: 1.8rem;'>STATUS:</label>
-                  <ul style="list-style: none;">
-                      <li style="display:inline-block; position: relative;">
-                          <a href="#">DEAD</a>
-                          <a href="#">ALIVE</a>
-                          <a href="#">MISSING</a>
-                          <a href="#">IN-JAIL</a>
-                      </li>
-                    </ul>
-              </div>
-          </div>    
-      </div>
+        <!-- Status -->
+        <div id="add_Status" style=' margin: 10px; align-items: center; text-align: center; justify-content: space-between;'>
+          <label for="addStatus" style='font-family: bobby; color: #bc1823; font-size: 1.8rem;'>STATUS:</label>
+          <select style="background-color: #dfdbd9; border-radius: 24px; font-family: bobby; text-align: center; color: #212932; font-size: 1.5rem; width: fit-content; padding: 8px;"> 
+            <option></option>
+            <option value="dead">DEAD</option>
+            <option value="alive">ALIVE</option>
+            <option value="missing">MISSING</option>
+            <option value="injail">IN JAIL</option>
+          </select>
+        </div>
+
+        <div id="add_Status" style='margin: 20px; align-items: center; text-align: center; justify-content: space-between;'>
+          <button id="save-button" onclick= "addContact();">SAVE</button>
+          <button id="cancel-button" onclick="window.location.href='dashboard.html'">CANCEL</button>
+        </div>
+      </div>    
     </div>
+  </div>
 </body>
 </html>
+
+
