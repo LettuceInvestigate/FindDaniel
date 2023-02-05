@@ -5,6 +5,7 @@ let userId = 0;
 let globalCounter = 0;
 let thisisanarray = new Array();
 let frontendUsername;
+let emptyJSON = false;
 
 function doLogin()
 {
@@ -219,125 +220,127 @@ function addContact()
 	
 }
 
-function display()
-{
-	for (let i = 0; i < 5; i++)
-	{
-		//let contactJSON = loadContact();
-		//thisisanarray.push(contactJSON);
-		let contactJSON = '{"Image":"\images\person.png", "Name":"James Bond","Email":"jamesbond007@gmail.com","Phone":"678-678-6789","Relation":"Father","Alive":"Alive"}'
-		let contactInfo = JSON.parse(contactJSON)
-		// check we dont repeat 
-		// if (contactInfo.err == "")
-		if (true)
-		{
-			//creat row 
-			let row = document.createElement("tr");
-			row.setAttribute("class","D-tr");
-			row.setAttribute("id",globalCounter);
-
-			// creating name column
-			//<td class="D-td-name" id=[incrimenter]>
-			let cell1 = document.createElement("td");
-			cell1.setAttribute("id","D-td-name");
-            //  <img src="HIS IMAGE SORCE HERE" alt="">
-			let cellImage = document.createElement("img");
-			cellImage.setAttribute("src","/../images/person.png");
-			cellImage.setAttribute("alt","");
-            //  <div>
-			let cellDiv = document.createElement("div");
-            //    <h5>FULL NAME HERE</h5>
-			let cellName = document.createElement("h5");
-			cellName.innerHTML = contactInfo.Name;
-            //    <p>EMAIL HERE</p>
-			let cellEmail = document.createElement("p");
-			cellEmail.innerHTML = contactInfo.Email;
-            //  </div>
-			cellDiv.appendChild(cellName);
-			cellDiv.appendChild(cellEmail);
-            //</td>
-			cell1.appendChild(cellImage);
-			cell1.appendChild(cellDiv);
-
-
-			// creating phone column
-            // <td id="D-td-num">
-			let cell2 = document.createElement("td");
-			cell2.setAttribute("id","D-td-num");
-            //  <p>PHONE NUM HERE</p>
-			let cellPhone = document.createElement("p");
-			cellPhone.innerHTML = contactInfo.Phone;
-            // </td>
-			cell2.appendChild(cellPhone)
-
-
-			// creating relation column
-			//<td id="D-td-relation-status">
-			let cell3 = document.createElement("td");
-			cell3.setAttribute("id","D-td-relation-status");
-            //  <p>RELATION HERE</p>
-			let cellRelation = document.createElement("p");
-			cellRelation.innerHTML = contactInfo.Relation;
-            //</td>
-			cell3.appendChild(cellRelation);
-
-
-			// creating status column
-			//<td id="D-td-relation-status">
-			let cell4 = document.createElement("td");
-			cell4.setAttribute("id","D-td-relation-status");
-            //  <p>STATUS HERE</p>
-			let cellStatus = document.createElement("p");
-			cellStatus.innerHTML = contactInfo.Alive;
-            //</td>
-			cell4.appendChild(cellStatus);
-
-
-			// creating user controls column
-			//<td id="D-td-edit-delete">
-			let cell5 = document.createElement("td");
-			cell5.setAttribute("id","D-td-edit-delete");
-            //  <a class="editButton" href="editContact()">
-			let cellEdit = document.createElement("a");
-			// *** MIGHT NOT WORK ***
-			cellEdit.setAttribute("class", "editButton");
-			cellEdit.setAttribute("href","editContact()");
-            //    <li class="fas fa-user-edit"></li>
-			let cellLI1 = document.createElement("li");
-			cellLI1.setAttribute("class","fas fa-user-edit");
-            //  </a>
-			cellEdit.appendChild(cellLI1);
-            //  <a class="deleteButton" href="deleteContact()">
-			let cellDelete = document.createElement("a");
-			// *** MIGHT NOT WORK ***
-			cellDelete.setAttribute("class", "deleteButton");
-			cellDelete.setAttribute("href","deleteContact()");
-            //    <li class="fas fa-trash-alt"></li>
-			let cellLI2 = document.createElement("li");
-			cellLI2.setAttribute("class","fas fa-trash-alt");
-            //  </a>
-			cellDelete.appendChild(cellLI2);
-            //</td>
-			cell5.appendChild(cellEdit);
-			cell5.appendChild(cellDelete);
-
-			row.appendChild(cell1);
-			row.appendChild(cell2);
-			row.appendChild(cell3);
-			row.appendChild(cell4);
-			row.appendChild(cell5);
-			
-			document.querySelector("#tbody").appendChild(row);
-		}
+function wrapperDisplay() {
+	for (i=0; i<5; i++) {
+		loadContact(display);
 		globalCounter += 1;
 	}
 }
 
-function loadContact()
+function display(jsonObject)
 {
-	let tmp = {UserID:userId,Counter:globalCounter,Counter2:1};
-	let jsonPayload = JSON.stringify( tmp );
+	var contactInfo = jsonObject;
+	console.log(contactInfo);
+	//thisisanarray.push(contactJSON);
+	//let contactJSON = '{"Image":"\images\person.png", "Name":"James Bond","Email":"jamesbond007@gmail.com","Phone":"678-678-6789","Relation":"Father","Alive":"Alive"}'
+	//let contactInfo = JSON.parse(contactJSON)
+	// check we dont repeat 
+	if (!emptyJSON)
+	{
+		//creat row 
+		let row = document.createElement("tr");
+		row.setAttribute("class","D-tr");
+		row.setAttribute("id",globalCounter);
 
+		// creating name column
+		//<td class="D-td-name" id=[incrimenter]>
+		let cell1 = document.createElement("td");
+		cell1.setAttribute("id","D-td-name");
+		//  <img src="HIS IMAGE SORCE HERE" alt="">
+		let cellImage = document.createElement("img");
+		cellImage.setAttribute("src","/../images/person.png");
+		cellImage.setAttribute("alt","");
+		//  <div>
+		let cellDiv = document.createElement("div");
+		//    <h5>FULL NAME HERE</h5>
+		let cellName = document.createElement("h5");
+		cellName.innerHTML = contactInfo.Name;
+		//    <p>EMAIL HERE</p>
+		let cellEmail = document.createElement("p");
+		cellEmail.innerHTML = contactInfo.Email;
+		//  </div>
+		cellDiv.appendChild(cellName);
+		cellDiv.appendChild(cellEmail);
+		//</td>
+		cell1.appendChild(cellImage);
+		cell1.appendChild(cellDiv);
+
+
+		// creating phone column
+		// <td id="D-td-num">
+		let cell2 = document.createElement("td");
+		cell2.setAttribute("id","D-td-num");
+		//  <p>PHONE NUM HERE</p>
+		let cellPhone = document.createElement("p");
+		cellPhone.innerHTML = contactInfo.Phone;
+		// </td>
+		cell2.appendChild(cellPhone)
+
+
+		// creating relation column
+		//<td id="D-td-relation-status">
+		let cell3 = document.createElement("td");
+		cell3.setAttribute("id","D-td-relation-status");
+		//  <p>RELATION HERE</p>
+		let cellRelation = document.createElement("p");
+		cellRelation.innerHTML = contactInfo.Relation;
+		//</td>
+		cell3.appendChild(cellRelation);
+
+
+		// creating status column
+		//<td id="D-td-relation-status">
+		let cell4 = document.createElement("td");
+		cell4.setAttribute("id","D-td-relation-status");
+		//  <p>STATUS HERE</p>
+		let cellStatus = document.createElement("p");
+		cellStatus.innerHTML = contactInfo.Alive;
+		//</td>
+		cell4.appendChild(cellStatus);
+
+
+		// creating user controls column
+		//<td id="D-td-edit-delete">
+		let cell5 = document.createElement("td");
+		cell5.setAttribute("id","D-td-edit-delete");
+		//  <a class="editButton" href="editContact()">
+		let cellEdit = document.createElement("a");
+		// *** MIGHT NOT WORK ***
+		cellEdit.setAttribute("class", "editButton");
+		cellEdit.setAttribute("href","editContact()");
+		//    <li class="fas fa-user-edit"></li>
+		let cellLI1 = document.createElement("li");
+		cellLI1.setAttribute("class","fas fa-user-edit");
+		//  </a>
+		cellEdit.appendChild(cellLI1);
+		//  <a class="deleteButton" href="deleteContact()">
+		let cellDelete = document.createElement("a");
+		// *** MIGHT NOT WORK ***
+		cellDelete.setAttribute("class", "deleteButton");
+		cellDelete.setAttribute("href","deleteContact()");
+		//    <li class="fas fa-trash-alt"></li>
+		let cellLI2 = document.createElement("li");
+		cellLI2.setAttribute("class","fas fa-trash-alt");
+		//  </a>
+		cellDelete.appendChild(cellLI2);
+		//</td>
+		cell5.appendChild(cellEdit);
+		cell5.appendChild(cellDelete);
+
+		row.appendChild(cell1);
+		row.appendChild(cell2);
+		row.appendChild(cell3);
+		row.appendChild(cell4);
+		row.appendChild(cell5);
+		
+		document.querySelector("#tbody").appendChild(row);
+	}
+}
+
+function loadContact(callback)
+{
+	let tmp = {UserID:13,Counter:globalCounter,Counter2:1};
+	let jsonPayload = JSON.stringify( tmp );
 	let url = urlBase + '/LoadContacts.' + extension;
 		
 	let xhr = new XMLHttpRequest();
@@ -349,15 +352,17 @@ function loadContact()
 		{
 			if (this.readyState == 4 && this.status == 200) 
 			{
-				let temp = JSON.stringify(xhr.responseText);
-				let jsonObject = JSON.parse(temp );
+				let jsonObject = JSON.parse(xhr.responseText);
 				console.log(jsonObject);
-				if (jsonObject.id == -1)
-				{
-
+				if (jsonObject != null) {
+					console.log(jsonObject);
+					callback(jsonObject);
+					console.log(jsonObject);
+				} else {
+					emptyJSON = true;
+					console.log(jsonObject);
+					callback("Error");
 				}
-				else return jsonObject;
-				
 			}
 		};
 		xhr.send(jsonPayload);
@@ -367,6 +372,7 @@ function loadContact()
 		document.getElementById("").innerHTML = err.message;
 	}
 }
+
 function editContact()
 {
 	let id = document.getElementById("PUT THE CONTACTID HERE").value;

@@ -11,7 +11,7 @@ if( $conn->connect_error )
 else
 {
   $stmt = $conn->prepare("SELECT * FROM Contacts WHERE UserID = ? LIMIT ?,?");
-  $stmt->bind_param("sii", $inData["UserID"], $inData["Counter"],$inData["Counter2"]);
+  $stmt->bind_param("sss", $inData["UserID"], $inData["Counter"],$inData["Counter2"]);
   $stmt->execute();
   $result = $stmt->get_result();
 
@@ -56,7 +56,11 @@ function sendResultInfoAsJson( $obj )
 }
 function returnWithInfo( $images, $name, $email, $phone, $relation, $alive, $id)
 {
+<<<<<<< Updated upstream
   $retValue = '{"Image":"' . $images . '","Name":"' . $name . '","Email": "' . $email . '","Phone":"' . $phone . '","Relation":"' . $relation . '","Alive":"' . $alive . '","ID":"' . $id . '","error":""}';
+=======
+  $retValue = '{"Image":"' . $images . '","Name":"' . $name . '","Email":" ' . $email . '","Phone":"' . $phone . '","Relation":"' . $relation . '","Alive":"' . $alive . '","ID":"' . $id . '","error":""}';
+>>>>>>> Stashed changes
   sendResultInfoAsJson( $retValue );
 }
 
