@@ -184,40 +184,44 @@
                 }
               </script>
 
+              <!-- Name -->
               <div id="add_Name" style=' margin: 10px; align-items: center; text-align: center; justify-content: space-between;'>
                   <label for="addName" style='font-family: bobby; color: #bc1823; font-size: 1.8rem;'>NAME:</label>
                   <input name="addName"  id="addName" style='font-family: bobby; text-align: center; font-size: 1.5rem; color: #212932; background-color: #d9dfdb; 
                       border-radius: 24px; margin-top: 15px; border: 1px solid #d9dfdb;' placeholder="SUSPECT NAME">
               </div>
 
+              <!-- Email -->
               <div id="add_email" style=' margin: 10px; align-items: center; text-align: center; justify-content: space-between;'>
                   <label for="addEmail" style='font-family: bobby; color: #bc1823; font-size: 1.8rem;'>EMAIL:</label>
                   <input name="addEmail"  id="addEmail" style='font-family: bobby; text-align: center; font-size: 1.5rem; color: #212932; background-color: #d9dfdb; 
-                      border-radius: 24px; margin-top: 15px; border: 1px solid #d9dfdb;' placeholder="NAME@EMAIL.com">
+                      border-radius: 24px; margin-top: 15px; border: 1px solid #d9dfdb;' placeholder="NAME@EMAIL.COM">
               </div>
 
+              <!-- Phone Number -->
               <div id="add_num" style=' margin: 10px; align-items: center; text-align: center; justify-content: space-between;'>
                   <label for="addNum" style='font-family: bobby; color: #bc1823; font-size: 1.8rem;'>PHONE NUMBER:</label>
                   <input name="addNum"  id="addNum" style='font-family: bobby; text-align: center; font-size: 1.5rem; color: #212932; background-color: #d9dfdb; 
                       border-radius: 24px; margin-top: 15px; border: 1px solid #d9dfdb;' placeholder="000-000-0000">
               </div>
 
+              <!-- Relationship -->
               <div id="add_Relation" style=' margin: 10px; align-items: center; text-align: center; justify-content: space-between;'>
                   <label for="addRelation" style='font-family: bobby; color: #bc1823; font-size: 1.8rem;'>RELATIONSHIP:</label>
                   <input name="addRelation"  id="addRelation" style='font-family: bobby; text-align: center; font-size: 1.5rem; color: #212932; background-color: #d9dfdb; 
                       border-radius: 24px; margin-top: 15px; border: 1px solid #d9dfdb;' placeholder="UNKNOWN">
               </div>
 
+              <!-- Status -->
               <div id="add_Status" style=' margin: 10px; align-items: center; text-align: center; justify-content: space-between;'>
                   <label for="addStatus" style='font-family: bobby; color: #bc1823; font-size: 1.8rem;'>STATUS:</label>
-                  <ul style="list-style: none;">
-                      <li style="display:inline-block; position: relative;">
-                          <a href="#">DEAD</a>
-                          <a href="#">ALIVE</a>
-                          <a href="#">MISSING</a>
-                          <a href="#">IN JAIL</a>
-                      </li>
-                    </ul>
+                  <select style="background-color: #dfdbd9; border-radius: 24px; font-family: bobby; color: #212932; font-size: 24px; width: fit-content; padding: 8px;"> 
+                    <option></option>
+                    <option value="dead">DEAD</option>
+                    <option value="alive">ALIVE</option>
+                    <option value="missing">MISSING</option>
+                    <option value="injail">IN JAIL</option>
+                  </select>
               </div>
 
               <!-- Save Button to Add the Contact -->
