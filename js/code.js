@@ -3,7 +3,7 @@ const extension = 'php';
 
 let userId = 0;
 let globalCounter = 0;
-let thisisanarray = new Array();
+let contactArray = new Array();
 let frontendUsername;
 
 function doLogin()
@@ -224,9 +224,9 @@ function display()
 	for (let i = 0; i < 5; i++)
 	{
 		//let contactJSON = loadContact();
-		//thisisanarray.push(contactJSON);
 		let contactJSON = '{"Image":"\images\person.png", "Name":"James Bond","Email":"jamesbond007@gmail.com","Phone":"678-678-6789","Relation":"Father","Alive":"Alive"}'
 		let contactInfo = JSON.parse(contactJSON)
+		contactList.push(contactJSON);
 		// check we dont repeat 
 		if (true)
 		{
@@ -328,7 +328,7 @@ function display()
 			
 			document.querySelector("#tbody").appendChild(row);
 		}
-		
+		globalCounter += 1;
 	}
 }
 
@@ -351,13 +351,8 @@ function loadContact()
 				let temp = JSON.stringify(xhr.responseText);
 				let jsonObject = JSON.parse(temp );
 				console.log(jsonObject);
-				if (jsonObject.id == -1)
+				if (jsonObject.id != -1)
 				{
-
-				}
-				else 
-				{
-					globalCounter += 1;
 					return jsonObject;
 				}
 				
