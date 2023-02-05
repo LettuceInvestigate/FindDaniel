@@ -221,9 +221,11 @@ function addContact()
 }
 
 function wrapperDisplay() {
+	console.log(globalCounter);
 	for (i=0; i<5; i++) {
 		if(!loadContact(display)){
-			continue
+			console.log(globalCounter + "AAAAh");
+			continue;
 		}else{
 			globalCounter += 1;
 		}
@@ -233,10 +235,7 @@ function wrapperDisplay() {
 function display(jsonObject)
 {
 	var contactInfo = jsonObject;
-	console.log(contactInfo);
-	//thisisanarray.push(contactJSON);
-	//let contactJSON = '{"Image":"\images\person.png", "Name":"James Bond","Email":"jamesbond007@gmail.com","Phone":"678-678-6789","Relation":"Father","Alive":"Alive"}'
-	//let contactInfo = JSON.parse(contactJSON)
+	contactList.push(contactInfo);
 	// check we dont repeat 
 	if (!emptyJSON)
 	{
@@ -364,12 +363,15 @@ function loadContact(callback)
 					console.log(jsonObject);
 					callback("Error");
 				} else {
+					// Checkrepeats returns true if a match is found in contactList
 					if(checkRepeats(jsonObject)){
+						// Return false to indicate to wrapperfunction loadContact skipped contact
 						return false;
 					}else{
 						console.log(jsonObject);
 						callback(jsonObject);
 						console.log(jsonObject);
+						return true;
 					}
 				}
 			}
@@ -382,8 +384,8 @@ function loadContact(callback)
 	}
 }
 
-function checkRepeats() {
-	while(contactList[i] !== null){
+function checkRepeats(jsonObject) {
+	while(contactList[i] !== undefined){
 		if(jsonObject.ID == contactList[i].ID){
 			return true;
 		}
