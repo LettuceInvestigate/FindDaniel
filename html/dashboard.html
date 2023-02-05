@@ -282,9 +282,12 @@
             </td>
           </tr>
         </thead>
-        <tbody id="tbody" onload="loadMoreClick();">
+        <tbody id="tbody">
           <script>
-            window.onload = loadMoreClick();
+            window.document.onload = function(e){ 
+              console.log("YAY???"); 
+              loadMoreClick();
+            }
           </script>
         </tbody>
           
