@@ -232,10 +232,11 @@ function display()
 		{
 			//creat row 
 			let row = document.createElement("tr");
-			row.setAttribute("id","D-tr")
+			row.setAttribute("class","D-tr");
+			row.setAttribute("id",globalCounter);
 
 			// creating name column
-			//<td id="D-td-name">
+			//<td class="D-td-name" id=[incrimenter]>
 			let cell1 = document.createElement("td");
 			cell1.setAttribute("id","D-td-name");
             //  <img src="HIS IMAGE SORCE HERE" alt="">
