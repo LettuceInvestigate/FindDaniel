@@ -222,7 +222,6 @@ function addContact()
 
 function wrapperDisplay() {
 	console.log(globalCounter);
-	document.getElementById('user-name-title').innerHTML = frontendUsername; 
 	
 	for (i=0; i<5; i++) {
 		if(!loadContact(display)){
