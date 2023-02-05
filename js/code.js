@@ -228,6 +228,7 @@ function display()
 		let contactJSON = '{"Image":"\images\person.png", "Name":"James Bond","Email":"jamesbond007@gmail.com","Phone":"678-678-6789","Relation":"Father","Alive":"Alive"}'
 		let contactInfo = JSON.parse(contactJSON)
 		// check we dont repeat 
+		// if (contactInfo.err == "")
 		if (true)
 		{
 			//creat row 

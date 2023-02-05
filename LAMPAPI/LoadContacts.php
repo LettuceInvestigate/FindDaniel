@@ -56,7 +56,8 @@ function sendResultInfoAsJson( $obj )
 }
 function returnWithInfo( $images, $name, $email, $phone, $relation, $alive, $id)
 {
-  $retValue = '{"Image":' . $images . ',"Name":' . $name . ',"Email": ' . $email . ',"Phone":' . $phone . ',"Relation":' . $relation . ',"Alive":' . $alive . ',"ID":' . $id . ',"error":""}';
+  $retValue = '{"Image":"' . $images . '","Name":"' . $name . '","Email": "' . $email . '","Phone":"' . $phone . '","Relation":"' . $relation . '","Alive":"' . $alive . '","ID":"' . $id . '","error":""}';
+  '{"id":"' . $id . '","Username":"' . $Username . '","Email": "' . $Email . '","error":""}';
   sendResultInfoAsJson( $retValue );
 }
 
