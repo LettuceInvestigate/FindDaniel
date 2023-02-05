@@ -355,7 +355,11 @@ function loadContact()
 				{
 
 				}
-				else return jsonObject;
+				else 
+				{
+					globalCounter += 1;
+					return jsonObject;
+				}
 				
 			}
 		};
