@@ -222,8 +222,11 @@ function addContact()
 
 function wrapperDisplay() {
 	for (i=0; i<5; i++) {
-		loadContact(display);
-		globalCounter += 1;
+		if(!loadContact(display)){
+			continue
+		}else{
+			globalCounter += 1;
+		}
 	}
 }
 
@@ -359,10 +362,13 @@ function loadContact(callback)
 					console.log(jsonObject);
 					callback("Error");
 				} else {
-					checkRepeats(jsonObject);
-					console.log(jsonObject);
-					callback(jsonObject);
-					console.log(jsonObject);
+					if(checkRepeats(jsonObject)){
+						return false;
+					}else{
+						console.log(jsonObject);
+						callback(jsonObject);
+						console.log(jsonObject);
+					}
 				}
 			}
 		};
@@ -375,10 +381,12 @@ function loadContact(callback)
 }
 
 function checkRepeats() {
-	while (contactList[i] !== null && jsonObject.ID !== contactList[i].ID) {
-		i++;
+	while(contactList[i] !== null){
+		if(jsonObject.ID == contactList[i].ID){
+			return true;
+		}
 	}
-	return
+	return false;
 }
 
 function editContact()
