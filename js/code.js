@@ -7,10 +7,6 @@ let thisisanarray = new Array();
 let frontendUsername;
 let emptyJSON = false;
 
-function loadMoreClick(){
-	document.getElementById("loadMore-button").click();
-}
-
 function doLogin()
 {
 	userId = 0;
