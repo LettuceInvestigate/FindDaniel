@@ -21,7 +21,7 @@
   <script type="text/javascript" src="/./js/userupdater.js"></script>
   
   <script type="text/javascript">
-    if(readCookie() > 1){
+    if(readCookie() < 1){
       window.location.href = "warning.html";
     }
   </script>
@@ -118,116 +118,48 @@
         <div>
           <h3 style='font-size: 18px; font-weight: 600; margin-bottom:0rem; '><span>8,512</span></h3>
           <!--TEMP-->
-          <span style='font-size: 15px; color: #828997;'>Users</span>
+          <span style='font-size: 15px; color: #828997;'>CONTACTS</span>
         </div>
       </div>
 
       <div id="data-box-2" class='container rounded-3' style='background-color: #d9dfdb; opacity: 90%;
         margin-top: 20px; width: 220px; padding: 16px 20px; border-radius: 5px;
         display: flex; justify-content: flex-start; align-items: center;'>
-        <i class="fas fa-user-secret" style='font-size:25px; width: 60px;
+        <i class="fas fa-dizzy" style='font-size:25px; width: 60px;
           height: 60px; line-height: 60px; border-radius: 50%; 
           text-align: center; color: #d9dfdb; background-color: #bc1823; margin-right: 15px;'></i>
         <div>
           <h3 style='font-size: 18px; font-weight: 600; margin-bottom:0rem; '><span>21</span></h3>
           <!--TEMP-->
-          <span style='font-size: 15px; color: #828997;'>Something</span>
+          <span style='font-size: 15px; color: #828997;'>DEAD</span>
         </div>
       </div>
 
       <div id="data-box-3" class='container rounded-3' style='background-color: #d9dfdb; opacity: 90%;
           margin-top: 20px; width: 220px; padding: 16px 20px; border-radius: 5px;
           display: flex; justify-content: flex-start; align-items: center;'>
-        <i class="fas fa-user-graduate" style='font-size:25px; width: 60px;
+        <i class="fas fa-street-view" style='font-size:25px; width: 60px;
           height: 60px; line-height: 60px; border-radius: 50%; 
           text-align: center; color: #d9dfdb; background-color: #bc1823; margin-right: 15px;'></i>
         <div>
           <h3 style='font-size: 18px; font-weight: 600; margin-bottom:0rem; '><span>45</span></h3>
           <!--TEMP-->
-          <span style='font-size: 15px; color: #828997;'>Something 2</span>
+          <span style='font-size: 15px; color: #828997;'>MISSING</span>
         </div>
       </div>
 
       <div id="data-box-4" class='container rounded-3' style='background-color: #d9dfdb; opacity: 90%;
           margin-top: 20px; width: 220px; padding: 16px 20px; border-radius: 5px;
           display: flex; justify-content: flex-start; align-items: center;'>
-        <i class="fas fa-dizzy" style='font-size:25px; width: 60px;
+        <i class="fas fa-user-lock" style='font-size:25px; width: 60px;
           height: 60px; line-height: 60px; border-radius: 50%; 
           text-align: center; color: #d9dfdb; background-color: #bc1823; margin-right: 15px;'></i>
         <div>
           <h3 style='font-size: 18px; font-weight: 600; margin-bottom:0rem; '><span>6</span></h3>
           <!--TEMP-->
-          <span style='font-size: 15px; color: #828997;'>Something 3</span>
+          <span style='font-size: 15px; color: #828997;'>IN JAIL</span>
         </div>
       </div>
-    </div>
-
-    <!-- Add Contact Box -->
-    <div id='add-contact-box' class='container-fluid vh-100 overflow-scroll' style='padding-bottom: 70px; padding-top: 70px; display: none;'>
-      <div class='container rounded-5' style='padding: 50px; background-color: #212932; opacity: 90%; width: 90%; height: fit-content; border-radius: 24px; animation: fadeIn 4s;'>
-        <div id="add_Name" style=' margin: 10px; align-items: center; text-align: center; justify-content: space-between; font-family: fibre; color: #bc1823; font-size: 80px;'>
-          ADD A SUSPECT
-        </div>
-
-        <div id="add_image" style=' margin: 10px; align-items: center; text-align: center; justify-content: space-between;'>
-          <input type="file" id="real-file" hidden="hidden"/>
-          <button type="button" id="image-button" onclick="openFiles()">CHOOSE AN IMAGE</button>
-          <span id="custom-text" style=' font-family: bobby; font-size: 20px; 
-              color: #7b7b7b;'>No file chosen, yet.</span>
-        </div>
-
-        <script> 
-          function openFiles() 
-          {
-            $('#real-file').click(); 
-          }
-        </script> 
-      
-        <!-- Name -->
-        <div id="add_Name" style=' margin: 10px; align-items: center; text-align: center; justify-content: space-between;'>
-          <label for="addName" style='font-family: bobby; color: #bc1823; font-size: 1.8rem;'>NAME:</label>
-          <input name="addName"  id="addName" style='font-family: bobby; text-align: center; font-size: 1.5rem; color: #212932; background-color: #d9dfdb; 
-              border-radius: 24px; margin-top: 15px; border: 1px solid #d9dfdb;' placeholder="SUSPECT NAME">
-        </div>
-
-        <!-- Email -->
-        <div id="add_email" style=' margin: 10px; align-items: center; text-align: center; justify-content: space-between;'>
-            <label for="addEmail" style='font-family: bobby; color: #bc1823; font-size: 1.8rem;'>EMAIL:</label>
-            <input name="addEmail"  id="addEmail" style='font-family: bobby; text-align: center; font-size: 1.5rem; color: #212932; background-color: #d9dfdb; 
-                border-radius: 24px; margin-top: 15px; border: 1px solid #d9dfdb;' placeholder="NAME@EMAIL.COM">
-        </div>
-
-        <!-- Phone Number -->
-        <div id="add_num" style=' margin: 10px; align-items: center; text-align: center; justify-content: space-between;'>
-            <label for="addNum" style='font-family: bobby; color: #bc1823; font-size: 1.8rem;'>PHONE NUMBER:</label>
-            <input name="addNum"  id="addNum" style='font-family: bobby; text-align: center; font-size: 1.5rem; color: #212932; background-color: #d9dfdb; 
-                border-radius: 24px; margin-top: 15px; border: 1px solid #d9dfdb;' placeholder="000-000-0000">
-        </div>
-
-        <!-- Relationship -->
-        <div id="add_Relation" style=' margin: 10px; align-items: center; text-align: center; justify-content: space-between;'>
-            <label for="addRelation" style='font-family: bobby; color: #bc1823; font-size: 1.8rem;'>RELATIONSHIP:</label>
-            <input name="addRelation"  id="addRelation" style='font-family: bobby; text-align: center; font-size: 1.5rem; color: #212932; background-color: #d9dfdb; 
-                border-radius: 24px; margin-top: 15px; border: 1px solid #d9dfdb;' placeholder="UNKNOWN">
-        </div>
-
-        <!-- Status -->
-        <div id="add_Status" style=' margin: 10px; align-items: center; text-align: center; justify-content: space-between;'>
-          <label for="addStatus" style='font-family: bobby; color: #bc1823; font-size: 1.8rem;'>STATUS:</label>
-          <select style="background-color: #dfdbd9; border-radius: 24px; font-family: bobby; text-align: center; color: #212932; font-size: 1.5rem; width: fit-content; padding: 8px;"> 
-            <option></option>
-            <option value="dead">DEAD</option>
-            <option value="alive">ALIVE</option>
-            <option value="missing">MISSING</option>
-            <option value="injail">IN JAIL</option>
-          </select>
-        </div>
-
-        <div id="add_Status" style='margin: 20px; align-items: center; text-align: center; justify-content: space-between;'>
-          <button id="save-button" onclick= "addContact();">SAVE</button>
-          <button id="cancel-button" onclick="window.location.href='dashboard.html'">CANCEL</button>
-        </div>
-      </div>    
     </div>
 
     <!--Table-->
@@ -243,7 +175,7 @@
             <td id="D-Tabel-Head" style="background-color: #212932; color: #d9dfdb;">Status</td>
             <td id="D-Tabel-Add" style="background-color: #212932; font-size: 24px;">
               <a href="#">
-                <li class="fas fa-plus" style="color: #bc1823;" onclick="showAndHide()"></li>
+                <li class="fas fa-plus" id="addContactButton" style="color: #bc1823;" onclick="showAddModal();"></li>
               </a>
             </td>
           </tr>
@@ -254,10 +186,120 @@
               loadOnTable();
               }, 100); 
           </script>
-        </tbody>         
+        </tbody>
       </table>
+      <!--load more button-->
       <center><button id="loadMore-button" onclick="wrapperDisplay();">Load More</button></center>
     </div>
+
+    <!--Add Contact-->
+    <dialog class="container rounded-5" id="addModal">
+      <div style='text-align: center; font-family: fibre; color: #bc1823; font-size: 75px;'>
+        ADD A SUSPECT
+      </div>
+
+      <form>
+        <center><label>
+          <input type="file" id="real-file" hidden="hidden"/>
+          <button type="button" id="image-button" onclick="openFiles()">CHOOSE AN IMAGE</button>
+          <span id="custom-text" style=' font-family: bobby; font-size: 20px; 
+            color: #7b7b7b;'>No file chosen, yet.
+          </span>
+        </label></center>
+
+        <center><label for="addName" style='text-align: center; font-family: bobby; color: #bc1823; font-size: 1.8rem;'>NAME:
+          <input name="addName" style='font-family: bobby; text-align: center; font-size: 1.5rem; color: #212932;
+          background-color: #d9dfdb; border-radius: 24px; margin-top: 15px; border: 1px solid #d9dfdb;' placeholder="SUSPECT NAME" required></input>
+          </label>
+        </center>
+
+        <center><label for="addEmail" style='font-family: bobby; color: #bc1823; font-size: 1.8rem;'>EMAIL:
+          <input name="addEmail" style='font-family: bobby; text-align: center; font-size: 1.5rem; color: #212932; background-color: #d9dfdb; 
+            border-radius: 24px; margin-top: 15px; border: 1px solid #d9dfdb;' placeholder="NAME@EMAIL.COM">
+        </label></center>
+
+        <center><label for="addNum" style='font-family: bobby; color: #bc1823; font-size: 1.8rem;'>PHONE NUMBER:
+          <input name="addNum" style='font-family: bobby; text-align: center; font-size: 1.5rem; color: #212932; background-color: #d9dfdb; 
+            border-radius: 24px; margin-top: 15px; border: 1px solid #d9dfdb;' placeholder="000-000-0000">
+        </label></center>
+
+        <center><label for="addRelation" style='font-family: bobby; color: #bc1823; font-size: 1.8rem;'>RELATIONSHIP:
+          <input name="addRelation" style='font-family: bobby; text-align: center; font-size: 1.5rem; color: #212932; background-color: #d9dfdb; 
+            border-radius: 24px; margin-top: 15px; border: 1px solid #d9dfdb;' placeholder="UNKNOWN">
+        </label></center>
+
+        <center><label for="addStatus"style='font-family: bobby; color: #bc1823; font-size: 1.8rem;'>STATUS:
+          <select style="background-color: #dfdbd9; border-radius: 24px; margin-top: 15px; font-family: bobby; text-align: center;
+            color: #212932; font-size: 1.5rem; width: fit-content; padding: 8px;">
+            <option></option>
+            <option value="dead">DEAD</option>
+            <option value="alive">ALIVE</option>
+            <option value="missing">MISSING</option>
+            <option value="injail">IN JAIL</option>
+          </select>
+        </label></center>
+
+      </form>
+      <div">
+        <button id="addCancelButton" onclick="cancelAddModal();">CANCEL</button>
+        <button id="addSaveButton" onclick="saveAddModal();">SAVE</button>
+      </div>
+    </dialog>
+
+    <!--Edit Contact-->
+    <dialog class="container rounded-5" id="editModal">
+      <div style='text-align: center; font-family: fibre; color: #bc1823; font-size: 75px;'>
+        EDIT *UNDEFINED*
+      </div><!--ADD EDITED CONTACT NAME ABOVE-->
+
+      <form>
+        <center><label>
+          <input type="file" id="real-file" hidden="hidden"/>
+          <button type="button" id="image-button" onclick="openFiles()">CHOOSE AN IMAGE</button>
+          <span id="custom-text" style=' font-family: bobby; font-size: 20px; 
+            color: #7b7b7b;'>No file chosen, yet.
+          </span>
+        </label></center>
+
+        <center><label for="editName" style='text-align: center; font-family: bobby; color: #bc1823; font-size: 1.8rem;'>NAME:
+          <input name="editName" style='font-family: bobby; text-align: center; font-size: 1.5rem; color: #212932;
+          background-color: #d9dfdb; border-radius: 24px; margin-top: 15px; border: 1px solid #d9dfdb;' placeholder="SUSPECT NAME" required></input>
+          </label>
+        </center>
+
+        <center><label for="editEmail" style='font-family: bobby; color: #bc1823; font-size: 1.8rem;'>EMAIL:
+          <input name="editEmail" style='font-family: bobby; text-align: center; font-size: 1.5rem; color: #212932; background-color: #d9dfdb; 
+            border-radius: 24px; margin-top: 15px; border: 1px solid #d9dfdb;' placeholder="NAME@EMAIL.COM">
+        </label></center>
+
+        <center><label for="editNum" style='font-family: bobby; color: #bc1823; font-size: 1.8rem;'>PHONE NUMBER:
+          <input name="editNum" style='font-family: bobby; text-align: center; font-size: 1.5rem; color: #212932; background-color: #d9dfdb; 
+            border-radius: 24px; margin-top: 15px; border: 1px solid #d9dfdb;' placeholder="000-000-0000">
+        </label></center>
+
+        <center><label for="editRelation" style='font-family: bobby; color: #bc1823; font-size: 1.8rem;'>RELATIONSHIP:
+          <input name="editRelation" style='font-family: bobby; text-align: center; font-size: 1.5rem; color: #212932; background-color: #d9dfdb; 
+            border-radius: 24px; margin-top: 15px; border: 1px solid #d9dfdb;' placeholder="UNKNOWN">
+        </label></center>
+
+        <center><label for="editStatus"style='font-family: bobby; color: #bc1823; font-size: 1.8rem;'>STATUS:
+          <select style="background-color: #dfdbd9; border-radius: 24px; margin-top: 15px; font-family: bobby; text-align: center;
+            color: #212932; font-size: 1.5rem; width: fit-content; padding: 8px;">
+            <option></option>
+            <option value="dead">DEAD</option>
+            <option value="alive">ALIVE</option>
+            <option value="missing">MISSING</option>
+            <option value="injail">IN JAIL</option>
+          </select>
+        </label></center>
+
+      </form>
+      <div">
+        <button id="editCancelButton" onclick="cancelEditModal();">CANCEL</button>
+        <button id="editSaveButton" onclick="saveEditModal();">SAVE</button>
+      </div>
+    </dialog>
+
   </div>
 </body>
 

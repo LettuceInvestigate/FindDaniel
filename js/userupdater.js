@@ -1,53 +1,50 @@
-function showAndHide() {    
-    if (document.getElementById('add-contact-box').style.display == 'none') {
-        document.getElementById('add-contact-box').style.display = 'block'; 
-        document.getElementById('contact-table').style.display = 'none'; 
-        document.getElementById('box').style.display = 'none'; 
-        document.getElementById('title').style.display = 'none'; 
-        document.getElementById('data-box-1').style.display = 'none'; 
-        document.getElementById('data-box-2').style.display = 'none'; 
-        document.getElementById('data-box-3').style.display = 'none'; 
-        document.getElementById('data-box-4').style.display = 'none'; 
-    }
-    else 
-    {
-        document.getElementById('add-contact-box').style.display = 'none'; 
-        document.getElementById('contact-table').style.display = 'block'; 
-        document.getElementById('box').style.display = 'block'; 
-        document.getElementById('title').style.display = 'block'; 
-        document.getElementById('data-box-1').style.display = 'block'; 
-        document.getElementById('data-box-2').style.display = 'block'; 
-        document.getElementById('data-box-3').style.display = 'block'; 
-        document.getElementById('data-box-4').style.display = 'block'; 
-    }                      
+//open files:
+function openFiles(){
+    $('#real-file').click(); 
+}
+//Add Contact:
+function showAddModal(){
+    document.getElementById('addModal').showModal();
+}
+function cancelAddModal(){
+    document.getElementById('addModal').close();
+}
+function saveAddModal(){
+    //add contact function call here needs to be connected with API
+    addContact();
+
+    document.getElementById('addModal').close();
+}
+//Edit Contact
+function showEditModal(){
+    document.getElementById('editModal').showModal();
+}
+function cancelEditModal(){
+    document.getElementById('editModal').close();
+}
+function saveEditModal(){
+    //edit contact function call here needs to be connected with API
+    editContact();
+
+    document.getElementById('editModal').close();
 }
 
-function setNumUsers(num){
-    numUsers = num;
-}
 
-function incNumUser(){
-    numUsers++;
-}
 
-function decNumUser(){
-    numUsers--;
-}
 
-function numOfUsers(){
-    return numUsers;
-}
-// document.getElementById("numOfUsers").innerHTML( numOfUsers() );
 
-// Shows the password requirements to the user when password field is clicked on
+
+//Daizy's stuff (Most Need fixing):
+
 function showRequirements() 
 {
+    // Shows the password requirements to the user when password field is clicked on
 	document.getElementById('password-requirements-title').style.display = "grid"; 
 }
 
-// Hides  the password requirements to the user when password field is clicked on
 function hideRequirements() 
 {
+    // Hides  the password requirements to the user when password field is clicked on
 	document.getElementById('password-requirements-title').style.display = "hidden"; 
 }
 
@@ -57,9 +54,10 @@ const uppercase = document.querySelector('#num-uppercase');
 const digits = document.querySelector('#num-digits'); 
 const special = document.querySelector('#num-special'); 
 
-// Displays to the user what password requirements they have met
+
 function checkRequirements() 
 {
+    // Displays to the user what password requirements they have met
     let numLowercase = 0; 
     let numUppercase = 0; 
     let numDigits = 0
