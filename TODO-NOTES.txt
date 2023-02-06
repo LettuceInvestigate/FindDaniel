@@ -20,3 +20,6 @@ Additional:
 - Email validation
 - when at end of dashboard.html table "at end" & disable view more button
 - check if username is taken when register
+
+to add error next to feild not met:
+<i for="addName" id="addContactNameRequire" class="fas fa-asterisk" style='padding-left: 2px; color:red; font-size: 20px;'></i>
