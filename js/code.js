@@ -184,11 +184,11 @@ function doRegister()
 
 function createContact()
 {
-	let name = document.getElementById("contactName").value;
-	let phone = document.getElementById("contactPhone").value;
-	let email = document.getElementById("contactEmail").value;
-	let alive = document.getElementById("contactAlive").value;
-	let relation = document.getElementById("contactRelation").value;
+	let name = document.getElementById("addName").value;
+	let phone = document.getElementById("addPhone").value;
+	let email = document.getElementById("addEmail").value;
+	let alive = document.getElementById("addAlive").value;
+	let relation = document.getElementById("addRelation").value;
 	let image = "/images/person.png";
 	return newContact ={ Images: image, Name: name, Phone: phone, Email: email, Alive: alive, Relation: relation, userId: userId };
 }
@@ -220,7 +220,10 @@ function addContact()
 	{
 		document.getElementById("contactAddResult").innerHTML = err.message;
 	}
-	
+	globalCounter = 0;
+	setTimeout(function(){
+		loadOnTable();
+		}, 100); 
 }
 
 function wrapperDisplay() {
