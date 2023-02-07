@@ -4,8 +4,12 @@ const extension = 'php';
 let userId = 0;
 let globalCounter = 0;
 let thisisanarray = new Array();
-let frontendUsername;
 let emptyJSON = false;
+let frontendUsername = "";
+
+function displayUser() {
+	document.getElementById('user-name-title').innerHTML = frontendUsername; 
+}
 
 function doLogin()
 {
@@ -13,7 +17,7 @@ function doLogin()
 	
 	let login = document.getElementById("loginName").value;
 	let password = document.getElementById("loginPassword").value;
-	frontendUsername = login;
+
 	//var hash = md5( password );
 
 	var tmp = {Username:login,Password:password};
@@ -42,7 +46,7 @@ function doLogin()
 		
 				username = jsonObject.Username;
 				email = jsonObject.Email;
-				
+
 				saveCookie();
 	
 				window.location.href = "dashboard.html";
@@ -220,7 +224,7 @@ function addContact()
 }
 
 function wrapperDisplay() {
-	document.getElementById('user-name-title').innerHTML = frontendUsername;
+
 	for (i=0; i<5; i++) {
 		loadContact(display);
 		globalCounter += 1;
@@ -484,3 +488,6 @@ function searchContact()
 function loadOnTable(){
 	document.getElementById("loadMore-button").click();
 }
+
+
+
