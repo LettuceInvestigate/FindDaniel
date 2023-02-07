@@ -308,7 +308,8 @@ function display(jsonObject)
 		let cellEdit = document.createElement("a");
 		// *** MIGHT NOT WORK ***
 		cellEdit.setAttribute("class", "editButton");
-		cellEdit.setAttribute("href","editContact()");
+		cellEdit.setAttribute("id",globalCounter);
+		cellEdit.setAttribute("onclick","showEditModal();");
 		//    <li class="fas fa-user-edit"></li>
 		let cellLI1 = document.createElement("li");
 		cellLI1.setAttribute("class","fas fa-user-edit");
@@ -317,8 +318,9 @@ function display(jsonObject)
 		//  <a class="deleteButton" href="deleteContact()">
 		let cellDelete = document.createElement("a");
 		// *** MIGHT NOT WORK ***
-		cellDelete.setAttribute("class", "deleteButton");
-		cellDelete.setAttribute("href","deleteContact()");
+		cellDelete.setAttribute("class", "deleteButton");globalCounter
+		cellDelete.setAttribute("id",globalCounter);
+		cellDelete.setAttribute("onclick","showDeleteModal();");
 		//    <li class="fas fa-trash-alt"></li>
 		let cellLI2 = document.createElement("li");
 		cellLI2.setAttribute("class","fas fa-trash-alt");

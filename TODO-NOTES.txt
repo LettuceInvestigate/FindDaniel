@@ -1,3 +1,12 @@
+Not working:
+- REMOVE POP UP WHEN WRONG REGISTER OR WE GET AN GRADES TAKEN OFF!!!!!!!!
+- "no files added" does not change when adding a file
+- maybe: adding a file does nothing??
+- wrong password & username error on login Page
+- no error shown if register passwords do not match
+- maybe add the following to 'special characters': "_" "-" "~" "." "," 
+- maybe specify what special characters are?
+
 Functionality:
 
 - EditContact API might not be Working
@@ -5,8 +14,6 @@ Functionality:
 - Password validation
 - Password requirements in register
 - Login error notification class fix
-- Display.php API
-- Lazy loading dashboard (Dispay.php integration)
 - Dashboard add button functionality
 - Dashboard add button API
 - Dashboard edit button functionality
@@ -20,6 +27,8 @@ Additional:
 - Email validation
 - when at end of dashboard.html table "at end" & disable view more button
 - check if username is taken when register
+- Lazy loading dashboard (Display.php integration)
+- add whom is being edited in edit dialog
 
 to add error next to feild not met:
 <i for="addName" id="addContactNameRequire" class="fas fa-asterisk" style='padding-left: 2px; color:red; font-size: 20px;'></i>

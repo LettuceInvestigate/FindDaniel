@@ -28,6 +28,10 @@ function saveEditModal(){
 
     document.getElementById('editModal').close();
 }
+//Delete Contact
+function showDeleteModal(){
+    
+}
 
 function showRequirements() 
 {

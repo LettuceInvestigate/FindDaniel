@@ -103,7 +103,6 @@
 }
 /*Add Contacts Model:*/
 #addModal{
-  padding: 1rem;
   max-width: 100ch;
   border: 0;
   box-shadow: 0 0 1rem rgb(0, 0, 0 /.3);
@@ -111,6 +110,7 @@
   width: 600px;
   height: fit-content;
   background-color: #212932;
+  overflow: hidden;
 }
 #addModal::backdrop{
   background:  rgb(0 0 0);
@@ -152,7 +152,6 @@
 }
 /*Edit Contacts Model:*/
 #editModal{
-  padding: 1rem;
   max-width: 100ch;
   border: 0;
   box-shadow: 0 0 1rem rgb(0, 0, 0 /.3);
@@ -160,6 +159,7 @@
   width: 600px;
   height: fit-content;
   background-color: #212932;
+  overflow: hidden;
 }
 #editModal::backdrop{
   background:  rgb(0 0 0);
