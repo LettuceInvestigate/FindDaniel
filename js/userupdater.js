@@ -2,36 +2,6 @@
 function openFiles(){
     $('#real-file').click(); 
 }
-//Add Contact:
-function showAddModal(){
-    document.getElementById('addModal').showModal();
-}
-function cancelAddModal(){
-    document.getElementById('addModal').close();
-}
-function saveAddModal(){
-    //add contact function call here needs to be connected with API
-    addContact();
-
-    document.getElementById('addModal').close();
-}
-//Edit Contact
-function showEditModal(){
-    document.getElementById('editModal').showModal();
-}
-function cancelEditModal(){
-    document.getElementById('editModal').close();
-}
-function saveEditModal(){
-    //edit contact function call here needs to be connected with API
-    editContact();
-
-    document.getElementById('editModal').close();
-}
-//Delete Contact
-function showDeleteModal(){
-    
-}
 
 function showRequirements() 
 {

@@ -7,6 +7,39 @@ let thisisanarray = new Array();
 let emptyJSON = false;
 let frontendUsername = "";
 
+//FRONTEND:
+
+//Add Contact:
+function showAddModal(){
+    document.getElementById('addModal').showModal();
+}
+function cancelAddModal(){
+    document.getElementById('addModal').close();
+}
+function saveAddModal(){
+    addContact();
+
+    document.getElementById('addModal').close();
+}
+//Edit Contact
+function showEditModal(){
+    document.getElementById('editModal').showModal();
+}
+function cancelEditModal(){
+    document.getElementById('editModal').close();
+}
+function saveEditModal(){
+    //edit contact function call here needs to be connected with API
+    editContact();
+
+    document.getElementById('editModal').close();
+}
+//Delete Contact
+function showDeleteModal(){
+    
+}
+
+//API:
 function displayUser() {
 	document.getElementById('user-name-title').innerHTML = frontendUsername; 
 }
