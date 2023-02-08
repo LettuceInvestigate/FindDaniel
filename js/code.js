@@ -269,24 +269,20 @@ function addContact()
 		{
 			if (this.readyState == 4 && this.status == 200) 
 			{
-				console.log("I changed state!");
 			}
 		};
 		xhr.send(jsonPayload);
 	}
 	catch(err)
 	{
-		console.log("i have an error");
-		document.getElementById("contactAddResult").innerHTML = err.message;
+		document.getElementById("").innerHTML = err.message;
 	}
-	console.log("How did it get here!");
 }
 
 function wrapperDisplay() {
 
 	for (i=0; i<5; i++) {
 		loadContact(display);
-		console.log(globalCounter);
 		globalCounter += 1;
 	}
 }
@@ -510,8 +506,12 @@ function deleteContact(id)
 
 function searchContact()
 {
-	
 	let contactList = "";
+	// drops all rows on table and all globals
+	document.getElementById("tbody").remove();
+	globalCounter = 0;
+	contArr = new Array();
+
 
 	let tmp = {Name:document.getElementById("searchText").value,UserID:userId};
 	let jsonPayload = JSON.stringify( tmp );
@@ -545,7 +545,7 @@ function searchContact()
 	}
 	catch(err)
 	{
-		document.getElementById("colorSearchResult").innerHTML = err.message;
+		document.getElementById("").innerHTML = err.message;
 	}
 
 }

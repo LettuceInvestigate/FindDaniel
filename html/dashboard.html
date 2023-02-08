@@ -90,16 +90,17 @@
     ; height: 50px; border-radius: 30px; font-family: bobby; color: #212932; 
       margin-top: 0px; display: flex; align-items:center; transition: 0.8s;
       box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.4); justify-content: center; font-size: 24px;'>
-      <input class="searchBar" type="text" style="font-size: 24px" placeholder="SEARCH...">
+      <input class="searchBar" type="text" id="searchText" style="font-size: 24px" placeholder="SEARCH...">
       <a href="#">
-        <li class="fas fa-search" style= "color: #bc1823;" id="searchButton"></li>
+        <li class="fas fa-search" style= "color: #bc1823;" id="searchButton" onclick="searchContact();"></li>
       </a>
     </div>
 
     <script>
       var input = document.getElementsByClassName("searchBar");
-      input.addEventListener("keypress", function(event) {
-        if (event.key == "Enter"){
+      document.addEventListener("keypress", (event)=> {
+        let keyCode = event.keyCode ? event.keyCode : event.which;
+        if (keyCode === 13){
           event.preventDefault();
           document.getElementById("searchButton").click();
         }
