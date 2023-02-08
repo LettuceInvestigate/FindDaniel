@@ -44,8 +44,8 @@ function saveEditModal(){
     document.getElementById('editModal').close();
 }
 //Delete Contact
-function showDeleteModal(){
-    
+function showDeleteModal(id){
+    tempID = id;
 }
 
 //API:
@@ -280,7 +280,7 @@ function display(jsonObject)
 	// check we dont repeat 
 	if (!emptyJSON)
 	{
-		contArr.push(contactInfo.ID);
+		contArr.push(contactInfo);
 		//creat row 
 		let row = document.createElement("tr");
 		row.setAttribute("class","D-tr");
@@ -428,7 +428,7 @@ function createEditContact(id)
 	let alive = document.getElementById("editStatus").value;
 	let relation = document.getElementById("editRelation").value;
 	let image = "/images/person.png";
-	return newContact ={ Images: image, Name: name, Phone: phone, Email: email, Alive: alive, Relation: relation, UserID: userId };
+	return newContact ={ Images: image, Name: name, Phone: phone, Email: email, Alive: alive, Relation: relation, ID: id };
 
 }
 
@@ -450,7 +450,8 @@ function editContact(id)
 			{
 				let temp = JSON.stringify(xhr.responseText);
 				let jsonObject = JSON.parse(temp );
-				
+				let editFields = contArr.filter(Object => Object.ID == id);
+
 				if(jsonObject.error == "")
 				{
 					// The object is updated I do not know what we need to do to redisplay it
@@ -466,11 +467,9 @@ function editContact(id)
 	}
 }
 
-function deleteContact()
+function deleteContact(id)
 {
-	let id = document.getElementById("PUT THE CONTACTID HERE").value;
 	let delContact = {ID: id};
-	document.getElementById("contactDeleteResult").innerHTML = "";
 
 	let jsonPayload = JSON.stringify( delContact );
 
@@ -485,14 +484,14 @@ function deleteContact()
 		{
 			if (this.readyState == 4 && this.status == 200) 
 			{
-				document.getElementById("contactDeleteResult").innerHTML = "Contact has been deleted!";
+
 			}
 		};
 		xhr.send(jsonPayload);
 	}
 	catch(err)
 	{
-		document.getElementById("contactDeleteResult").innerHTML = err.message;
+		document.getElementById("").innerHTML = err.message;
 	}
 	
 }
