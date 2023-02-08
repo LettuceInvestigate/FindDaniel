@@ -36,10 +36,11 @@ function saveAddModal(){
 function showEditModal(id){
 	tempID = id;
 	let editFields = contArr.filter(Object => Object.ID == tempID);
-	document.getElementById("editName").value = editFields.Name;
-	document.getElementById("editNum").value = editFields.Phone;
-	document.getElementById("editEmail").value = editFields.Email;
-	document.getElementById("editRelation").value = editFields.Relation
+
+	document.getElementById("editName").value = editFields["Name"];
+	document.getElementById("editNum").value = editFields["Phone"];
+	document.getElementById("editEmail").value = editFields["Email"];
+	document.getElementById("editRelation").value = editFields["Relation"];
     document.getElementById('editModal').showModal();
 }
 function cancelEditModal(){
@@ -269,6 +270,7 @@ function addContact()
 		{
 			if (this.readyState == 4 && this.status == 200) 
 			{
+				location.reload();
 			}
 		};
 		xhr.send(jsonPayload);
@@ -459,7 +461,7 @@ function editContact(id)
 			{
 				let temp = JSON.stringify(xhr.responseText);
 				let jsonObject = JSON.parse(temp );
-
+				location.reload();
 				if(jsonObject.error == "")
 				{
 					// The object is updated I do not know what we need to do to redisplay it
@@ -492,7 +494,7 @@ function deleteContact(id)
 		{
 			if (this.readyState == 4 && this.status == 200) 
 			{
-
+				location.reload();
 			}
 		};
 		xhr.send(jsonPayload);
