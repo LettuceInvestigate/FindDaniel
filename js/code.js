@@ -25,7 +25,7 @@ function saveAddModal(){
 		loadOnTable();
 		contArr = new Array();
 	}, 250); 
-	ocument.getElementById("addName").value = "";
+	document.getElementById("addName").value = "";
 	document.getElementById("addNum").value = "";
 	document.getElementById("addEmail").value = "";
 	document.getElementById("addRelation").value = "";
