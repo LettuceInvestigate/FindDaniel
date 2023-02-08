@@ -31,6 +31,12 @@ function saveAddModal(){
 //Edit Contact
 function showEditModal(id){
 	tempID = id;
+	let editFields = contArr.filter(Object => Object.ID == tempID);
+	document.getElementById("editName").value = editFields.Name;
+	document.getElementById("editNum").value = editFields.Phone;
+	document.getElementById("editEmail").value = editFields.Email;
+	document.getElementById("editStatus").value = editFields.Alive;
+	document.getElementById("editRelation").value = editFields.Relation
     document.getElementById('editModal').showModal();
 }
 function cancelEditModal(){
@@ -399,14 +405,11 @@ function loadContact(callback)
 			if (this.readyState == 4 && this.status == 200) 
 			{
 				let jsonObject = JSON.parse(xhr.responseText);
-				console.log(jsonObject);
+
 				if (jsonObject.error !== "No Records Found") {
-					console.log(jsonObject);
 					callback(jsonObject);
-					console.log(jsonObject);
 				} else {
 					emptyJSON = true;
-					console.log(jsonObject);
 					callback("Error");
 				}
 			}
@@ -421,7 +424,6 @@ function loadContact(callback)
 
 function createEditContact(id)
 {
-	console.log(id);
 	let name = document.getElementById("editName").value;
 	let phone = document.getElementById("editNum").value;
 	let email = document.getElementById("editEmail").value;
@@ -450,7 +452,6 @@ function editContact(id)
 			{
 				let temp = JSON.stringify(xhr.responseText);
 				let jsonObject = JSON.parse(temp );
-				let editFields = contArr.filter(Object => Object.ID == id);
 
 				if(jsonObject.error == "")
 				{
