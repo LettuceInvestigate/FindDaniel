@@ -3,7 +3,8 @@ const extension = 'php';
 
 let userId = 0;
 let globalCounter = 0;
-let thisisanarray = new Array();
+let tempIndex = 0;
+let contArr = new Array();
 let emptyJSON = false;
 let frontendUsername = "";
 
@@ -22,12 +23,14 @@ function saveAddModal(){
 	globalCounter = 0;
 	setTimeout(function(){
 		loadOnTable();
+		contArr = new Array();
 		}, 250); 
 
     document.getElementById('addModal').close();
 }
 //Edit Contact
-function showEditModal(){
+function showEditModal(id){
+	tempIndex = id;
     document.getElementById('editModal').showModal();
 }
 function cancelEditModal(){
@@ -35,7 +38,8 @@ function cancelEditModal(){
 }
 function saveEditModal(){
     //edit contact function call here needs to be connected with API
-    editContact();
+	console.log(tempIndex);
+    editContact( tempIndex );
 
     document.getElementById('editModal').close();
 }
@@ -265,6 +269,7 @@ function wrapperDisplay() {
 
 	for (i=0; i<5; i++) {
 		loadContact(display);
+		console.log(globalCounter);
 		globalCounter += 1;
 	}
 }
@@ -272,10 +277,10 @@ function wrapperDisplay() {
 function display(jsonObject)
 {
 	let contactInfo = jsonObject;
-	console.log(contactInfo);
 	// check we dont repeat 
 	if (!emptyJSON)
 	{
+		contArr.push(contactInfo.ID);
 		//creat row 
 		let row = document.createElement("tr");
 		row.setAttribute("class","D-tr");
@@ -347,7 +352,7 @@ function display(jsonObject)
 		// *** MIGHT NOT WORK ***
 		cellEdit.setAttribute("class", "editButton");
 		cellEdit.setAttribute("id",globalCounter);
-		cellEdit.setAttribute("onclick","showEditModal();");
+		cellEdit.setAttribute("onclick","showEditModal(this.id);");
 		//    <li class="fas fa-user-edit"></li>
 		let cellLI1 = document.createElement("li");
 		cellLI1.setAttribute("class","fas fa-user-edit");
@@ -358,7 +363,7 @@ function display(jsonObject)
 		// *** MIGHT NOT WORK ***
 		cellDelete.setAttribute("class", "deleteButton");
 		cellDelete.setAttribute("id",globalCounter);
-		cellDelete.setAttribute("onclick","showDeleteModal();");
+		cellDelete.setAttribute("onclick","showDeleteModal(this.id);");
 		//    <li class="fas fa-trash-alt"></li>
 		let cellLI2 = document.createElement("li");
 		cellLI2.setAttribute("class","fas fa-trash-alt");
@@ -414,12 +419,15 @@ function loadContact(callback)
 	}
 }
 
-function editContact()
+function createEditContact(id)
 {
-	let id = document.getElementById("").value;
-	let Contact = createContact();
-	let tmp = {ID:id,Contact};
-	let jsonPayload = JSON.stringify( tmp );
+
+}
+
+function editContact(index)
+{
+	let contact = createEditContact(contArr[index]);
+	let jsonPayload = JSON.stringify( contact );
 
 	let url = urlBase + '/EditContact.' + extension;
 		
