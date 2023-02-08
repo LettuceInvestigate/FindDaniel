@@ -508,7 +508,11 @@ function searchContact()
 {
 	let contactList = "";
 	// drops all rows on table and all globals
-	document.getElementById("tbody").remove();
+	table = document.getElementById("tbody");
+	while(table.firstChild)
+	{
+		table.removeChild(table.lastChild);
+	}
 	globalCounter = 0;
 	contArr = new Array();
 
@@ -530,9 +534,17 @@ function searchContact()
 				
 				let jsonObject = JSON.parse( xhr.responseText );
 				let numResults = Object.keys(jsonObject).length;
-				for( let i=0; i<numResults; i++ )
+				console.log(jsonObject);
+				for( let i in jsonObject )
 				{
-					console.log("made it in here");
+					if (i == "error")
+					{
+						break
+					}
+					
+					let resultContact = {Image:i[0], Name:i[1], Email:i[2], Phone:i[3], Relation:i[4], Alive:i[5], ID:i[6]};
+					//console.log(resultContact);
+					display(resultContact);
 				}
 				
 			}

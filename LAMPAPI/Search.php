@@ -28,7 +28,7 @@ else
 				$searchResults .= "],";
 			}
 			$searchCount++;
-			$searchResults .= '"person'. $searchCount .'":["' . $row["Images"] . '","' . $row["Name"] . '","' . $row["Email"] . '","' . $row["Phone"] . '","' . $row["Relation"] . '","' . $row["Alive"] . '","' . $row["ID"] . '"';
+			$searchResults .= '"'. $searchCount .'":["' . $row["Images"] . '","' . $row["Name"] . '","' . $row["Email"] . '","' . $row["Phone"] . '","' . $row["Relation"] . '","' . $row["Alive"] . '","' . $row["ID"] . '"';
 		}
 
 		if( $searchCount == 0 )
