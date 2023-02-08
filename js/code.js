@@ -36,11 +36,10 @@ function saveAddModal(){
 function showEditModal(id){
 	tempID = id;
 	let editFields = contArr.filter(Object => Object.ID == tempID);
-
-	document.getElementById("editName").value = editFields["Name"];
-	document.getElementById("editNum").value = editFields["Phone"];
-	document.getElementById("editEmail").value = editFields["Email"];
-	document.getElementById("editRelation").value = editFields["Relation"];
+	document.getElementById("editName").value = editFields[0].Name;
+	document.getElementById("editNum").value = editFields[0].Num;
+	document.getElementById("editEmail").value = editFields[0].Email;
+	document.getElementById("editRelation").value = editFields[0].Relation;
     document.getElementById('editModal').showModal();
 }
 function cancelEditModal(){
