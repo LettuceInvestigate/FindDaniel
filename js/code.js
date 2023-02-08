@@ -24,7 +24,11 @@ function saveAddModal(){
 	setTimeout(function(){
 		loadOnTable();
 		contArr = new Array();
-		}, 250); 
+	}, 250); 
+	ocument.getElementById("addName").value = "";
+	document.getElementById("addNum").value = "";
+	document.getElementById("addEmail").value = "";
+	document.getElementById("addRelation").value = "";
 
     document.getElementById('addModal').close();
 }
