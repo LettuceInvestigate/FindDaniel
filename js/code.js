@@ -45,11 +45,8 @@ function showEditModal(id){
 function cancelEditModal(){
     document.getElementById('editModal').close();
 }
-function saveEditModal(){
-    //edit contact function call here needs to be connected with API
-	
+function saveEditModal(){	
     editContact( tempID );
-
     document.getElementById('editModal').close();
 }
 //Delete Contact
