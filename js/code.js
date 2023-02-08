@@ -422,11 +422,11 @@ function loadContact(callback)
 function createEditContact(id)
 {
 	console.log(id);
-	let name = document.getElementById("addName").value;
-	let phone = document.getElementById("addNum").value;
-	let email = document.getElementById("addEmail").value;
-	let alive = document.getElementById("addStatus").value;
-	let relation = document.getElementById("addRelation").value;
+	let name = document.getElementById("editName").value;
+	let phone = document.getElementById("editNum").value;
+	let email = document.getElementById("editEmail").value;
+	let alive = document.getElementById("editStatus").value;
+	let relation = document.getElementById("editRelation").value;
 	let image = "/images/person.png";
 	return newContact ={ Images: image, Name: name, Phone: phone, Email: email, Alive: alive, Relation: relation, UserID: userId };
 
