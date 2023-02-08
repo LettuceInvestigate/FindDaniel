@@ -37,7 +37,7 @@ function showEditModal(id){
 	tempID = id;
 	let editFields = contArr.filter(Object => Object.ID == tempID);
 	document.getElementById("editName").value = editFields[0].Name;
-	document.getElementById("editNum").value = editFields[0].Num;
+	document.getElementById("editNum").value = editFields[0].Phone;
 	document.getElementById("editEmail").value = editFields[0].Email;
 	document.getElementById("editRelation").value = editFields[0].Relation;
     document.getElementById('editModal').showModal();
