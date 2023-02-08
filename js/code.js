@@ -533,17 +533,15 @@ function searchContact()
 			{
 				
 				let jsonObject = JSON.parse( xhr.responseText );
-				let numResults = Object.keys(jsonObject).length;
-				console.log(jsonObject);
+
 				for( let i in jsonObject )
 				{
 					if (i == "error")
 					{
-						break
+						break;
 					}
-					
-					let resultContact = {Image:i[0], Name:i[1], Email:i[2], Phone:i[3], Relation:i[4], Alive:i[5], ID:i[6]};
-					//console.log(resultContact);
+					let resultContact = {Image:jsonObject[""+i][0], Name:jsonObject[""+i][1], Email:jsonObject[""+i][2], Phone:jsonObject[""+i][3], Relation:jsonObject[""+i][4], Alive:jsonObject[""+i][5], ID:jsonObject[""+i][6]};
+					console.log(resultContact);
 					display(resultContact);
 				}
 				
