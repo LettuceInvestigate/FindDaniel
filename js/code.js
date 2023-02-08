@@ -36,6 +36,7 @@ function saveAddModal(){
 function showEditModal(id){
 	tempID = id;
 	let editFields = contArr.filter(Object => Object.ID == tempID);
+	document.getElementById("editModalHeader").innerHTML = editFields[0].Name;
 	document.getElementById("editName").value = editFields[0].Name;
 	document.getElementById("editNum").value = editFields[0].Phone;
 	document.getElementById("editEmail").value = editFields[0].Email;
@@ -52,6 +53,8 @@ function saveEditModal(){
 //Delete Contact
 function showDeleteModal(id){
 	tempID = id;
+	let editFields = contArr.filter(Object => Object.ID == tempID);
+	document.getElementById("deleteModalHeader").innerHTML = editFields[0].Name;
     document.getElementById('deleteModal').showModal();
 }
 function cancelDeleteModal(){
