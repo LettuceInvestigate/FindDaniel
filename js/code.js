@@ -356,7 +356,7 @@ function display(jsonObject)
 		//  <a class="deleteButton" href="deleteContact()">
 		let cellDelete = document.createElement("a");
 		// *** MIGHT NOT WORK ***
-		cellDelete.setAttribute("class", "deleteButton");globalCounter
+		cellDelete.setAttribute("class", "deleteButton");
 		cellDelete.setAttribute("id",globalCounter);
 		cellDelete.setAttribute("onclick","showDeleteModal();");
 		//    <li class="fas fa-trash-alt"></li>
@@ -416,7 +416,7 @@ function loadContact(callback)
 
 function editContact()
 {
-	let id = document.getElementById("PUT THE CONTACTID HERE").value;
+	let id = document.getElementById("").value;
 	let Contact = createContact();
 	let tmp = {ID:id,Contact};
 	let jsonPayload = JSON.stringify( tmp );
