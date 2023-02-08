@@ -1,34 +1,63 @@
 <?php
 
 	$inData = getRequestInfo();
-	
-	$UserID = $inData["UserID"];
 
+	$UserID = $inData["UserID"];
+	
 	$conn = new mysqli("localhost", "TheBeast", "WeLoveCOP4331", "COP4331");
-	if ($conn->connect_error) 
+	if ($conn->connect_error)
 	{
 		returnWithError( $conn->connect_error );
-	} 
+	}
 	else
 	{
         // Gets the total number of contacts from specified user
 		$stmt = $conn->prepare("Select COUNT(*) from Contacts where UserID=?");
 		$stmt->bind_param("s", $UserID );
 		$stmt->execute();
-		$numContacts = $stmt->get_result();
+		$result = $stmt->get_result();
+
+		if( $row = $result->fetch_assoc()  )
+	  {
+	      $Output .= '{"numContacts":"' . $row["Count(*)"];
+	  }
+	  else
+	  {
+	    returnWithError("BAD BAD BAD");
+	  }
 
 		// Gets number of dead contacts from specified user
         $stmt = $conn->prepare("Select COUNT(*) from Contacts where UserID=? AND Alive='Dead'")
 		$stmt->bind_param("s", $UserID );
 		$stmt->execute();
-		$numSuspects = $stmt->get_result();
+		$result = $stmt->get_result();
+
+		if( $row = $result->fetch_assoc()  )
+	  {
+	      $Output .= '{"numDead":"' . $row["Count(*)"];
+	  }
+	  else
+	  {
+	    returnWithError("BAD BAD BAD");
+	  }
 
         // Gets number of dead contacts from specified user
         $stmt = $conn->prepare("Select COUNT(*) from Contacts where UserID=? AND Alive='Alive'")
 		$stmt->bind_param("s", $UserID );
 		$stmt->execute();
-		$numAlive = $stmt->get_result();
-		
+		$result = $stmt->get_result();
+
+		if( $row = $result->fetch_assoc()  )
+	  {
+	      $Output .= '{"numAlive":"' . $row["Count(*)"];
+	  }
+	  else
+	  {
+	    returnWithError("BAD BAD BAD");
+	  }
+
+		returnWithInfo($Output);
+
 		$stmt->close();
 		$conn->close();
 	}
@@ -43,17 +72,17 @@
 		header('Content-type: application/json');
 		echo $obj;
 	}
-	
+
 	function returnWithError( $err )
 	{
 		$retValue = '{"id":0,"firstName":"","lastName":"","error":"' . $err . '"}';
 		sendResultInfoAsJson( $retValue );
 	}
-	
-	function returnWithInfo( $numContacts, $numDead, $numAlive )
+
+	function returnWithInfo($Output)
 	{
-		$retValue = '{"numContacts":[' . $numContacts . '], "numContacts":[' . $numDead . '],"numAlive":[' . $numAlive . '],"error":""}';
+		$retValue = $Output. ',"error":""}';
 		sendResultInfoAsJson( $retValue );
 	}
-	
+
 ?>

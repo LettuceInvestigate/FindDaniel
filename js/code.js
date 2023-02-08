@@ -25,7 +25,7 @@ function saveAddModal(){
 		loadOnTable();
 		contArr = new Array();
 	}, 250); 
-	ocument.getElementById("addName").value = "";
+	document.getElementById("addName").value = "";
 	document.getElementById("addNum").value = "";
 	document.getElementById("addEmail").value = "";
 	document.getElementById("addRelation").value = "";
@@ -36,20 +36,17 @@ function saveAddModal(){
 function showEditModal(id){
 	tempID = id;
 	let editFields = contArr.filter(Object => Object.ID == tempID);
-	document.getElementById("editName").value = editFields.Name;
-	document.getElementById("editNum").value = editFields.Phone;
-	document.getElementById("editEmail").value = editFields.Email;
-	document.getElementById("editRelation").value = editFields.Relation
+	document.getElementById("editName").value = editFields[0].Name;
+	document.getElementById("editNum").value = editFields[0].Phone;
+	document.getElementById("editEmail").value = editFields[0].Email;
+	document.getElementById("editRelation").value = editFields[0].Relation;
     document.getElementById('editModal').showModal();
 }
 function cancelEditModal(){
     document.getElementById('editModal').close();
 }
-function saveEditModal(){
-    //edit contact function call here needs to be connected with API
-	
+function saveEditModal(){	
     editContact( tempID );
-
     document.getElementById('editModal').close();
 }
 //Delete Contact
@@ -60,7 +57,7 @@ function showDeleteModal(id){
 function cancelDeleteModal(){
     document.getElementById('deleteModal').close();
 }
-function savedeleteModal(){
+function saveDeleteModal(){
     deleteContact( tempID );
     document.getElementById('deleteModal').close();
 }
@@ -269,24 +266,21 @@ function addContact()
 		{
 			if (this.readyState == 4 && this.status == 200) 
 			{
-				console.log("I changed state!");
+				location.reload();
 			}
 		};
 		xhr.send(jsonPayload);
 	}
 	catch(err)
 	{
-		console.log("i have an error");
-		document.getElementById("contactAddResult").innerHTML = err.message;
+		document.getElementById("").innerHTML = err.message;
 	}
-	console.log("How did it get here!");
 }
 
 function wrapperDisplay() {
 
 	for (i=0; i<5; i++) {
 		loadContact(display);
-		console.log(globalCounter);
 		globalCounter += 1;
 	}
 }
@@ -463,7 +457,7 @@ function editContact(id)
 			{
 				let temp = JSON.stringify(xhr.responseText);
 				let jsonObject = JSON.parse(temp );
-
+				location.reload();
 				if(jsonObject.error == "")
 				{
 					// The object is updated I do not know what we need to do to redisplay it
@@ -496,7 +490,7 @@ function deleteContact(id)
 		{
 			if (this.readyState == 4 && this.status == 200) 
 			{
-
+				location.reload();
 			}
 		};
 		xhr.send(jsonPayload);
@@ -510,8 +504,16 @@ function deleteContact(id)
 
 function searchContact()
 {
-	
 	let contactList = "";
+	// drops all rows on table and all globals
+	table = document.getElementById("tbody");
+	while(table.firstChild)
+	{
+		table.removeChild(table.lastChild);
+	}
+	globalCounter = 0;
+	contArr = new Array();
+
 
 	let tmp = {Name:document.getElementById("searchText").value,UserID:userId};
 	let jsonPayload = JSON.stringify( tmp );
@@ -527,25 +529,27 @@ function searchContact()
 		{
 			if (this.readyState == 4 && this.status == 200) 
 			{
-				let jsonObject = JSON.parse( xhr.responseText );
 				
-				for( let i=0; i<jsonObject.results.length; i++ )
+				let jsonObject = JSON.parse( xhr.responseText );
+
+				for( let i in jsonObject )
 				{
-					contactList += jsonObject.results[i];
-					if( i < jsonObject.results.length - 1 )
+					if (i == "error")
 					{
-						contactList += "<br />\r\n";
+						break;
 					}
+					let resultContact = {Image:jsonObject[""+i][0], Name:jsonObject[""+i][1], Email:jsonObject[""+i][2], Phone:jsonObject[""+i][3], Relation:jsonObject[""+i][4], Alive:jsonObject[""+i][5], ID:jsonObject[""+i][6]};
+					console.log(resultContact);
+					display(resultContact);
 				}
 				
-				document.getElementsByTagName("p")[0].innerHTML = contactList;
 			}
 		};
 		xhr.send(jsonPayload);
 	}
 	catch(err)
 	{
-		document.getElementById("colorSearchResult").innerHTML = err.message;
+		document.getElementById("").innerHTML = err.message;
 	}
 
 }

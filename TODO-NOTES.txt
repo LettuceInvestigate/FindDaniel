@@ -6,15 +6,9 @@ Not working:
 
 Functionality:
 
-- EditContact API might not be Workings
-
 - Password validation
 - Password requirements in register
 - Login error notification class fix
-- Dashboard add button functionality
-- Dashboard add button API
-- Dashboard edit button functionality
-- Dashboard edit button API
 - Dashboard delete button functionality
 - Dashboard delete button API
 - Connect Dashboard searchbar to search API

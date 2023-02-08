@@ -3,6 +3,9 @@
 
 $inData = getRequestInfo();
 
+$searchResults = "";
+$searchCount = 0;
+
 $conn = new mysqli("localhost", "TheBeast", "WeLoveCOP4331", "COP4331");
 if( $conn->connect_error )
 {
@@ -10,19 +13,32 @@ if( $conn->connect_error )
 }
 else
 {
-    $stmt = $conn->prepare("SELECT Images,Name,Email,Phone,Relation,Alive,ID FROM Contacts WHERE UserID = ? AND Name = ?");
-    $stmt->bind_param("ss", $inData["UserID"], $inData["Name"]);
+    $stmt = $conn->prepare("SELECT Images,Name,Email,Phone,Relation,Alive,ID FROM Contacts WHERE UserID = ? AND Name LIKE ?");
+    $TheName = "%" . $inData["Name"] . "%";
+    $stmt->bind_param("ss", $inData["UserID"], $TheName);
     $stmt->execute();
     $result = $stmt->get_result();
 
-    if( $row = $result->fetch_assoc()  )
-    {
-      returnWithInfo($row['Images'],$row['Name'],$row['Email'],$row['Phone'],$row['Relation'],$row['Alive'],$row['ID']);
-    }
-    else
-    {
-      returnWithError("No Records Found");
-    }
+
+
+    while($row = $result->fetch_assoc())
+		{
+			if( $searchCount > 0 )
+			{
+				$searchResults .= "],";
+			}
+			$searchCount++;
+			$searchResults .= '"'. $searchCount .'":["' . $row["Images"] . '","' . $row["Name"] . '","' . $row["Email"] . '","' . $row["Phone"] . '","' . $row["Relation"] . '","' . $row["Alive"] . '","' . $row["ID"] . '"';
+		}
+
+		if( $searchCount == 0 )
+		{
+			returnWithError( "No Records Found" );
+		}
+		else
+		{
+			returnWithInfo( $searchResults );
+		}
 
     $stmt->close();
     $conn->close();
@@ -38,9 +54,9 @@ function sendResultInfoAsJson( $obj )
     header('Content-type: application/json');
     echo $obj;
 }
-function returnWithInfo( $images, $name, $email, $phone, $relation, $alive, $id)
+function returnWithInfo( $searchResults )
 {
-  $retValue = '{"Image":' . $images . ',"Name":' . $name . ',"Email": ' . $email . ',"Phone":' . $phone . ',"Relation":' . $relation . ',"Alive":' . $alive . ',"ID":' . $id . ',"error":""}';
+  $retValue ='{' . $searchResults . '],"error":""}';
   sendResultInfoAsJson( $retValue );
 }
 
