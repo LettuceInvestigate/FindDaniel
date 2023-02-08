@@ -19,6 +19,11 @@ function cancelAddModal(){
 function saveAddModal(){
     addContact();
 
+	globalCounter = 0;
+	setTimeout(function(){
+		loadOnTable();
+		}, 250); 
+
     document.getElementById('addModal').close();
 }
 //Edit Contact
@@ -218,18 +223,17 @@ function doRegister()
 function createContact()
 {
 	let name = document.getElementById("addName").value;
-	let phone = document.getElementById("addPhone").value;
+	let phone = document.getElementById("addNum").value;
 	let email = document.getElementById("addEmail").value;
-	let alive = document.getElementById("addAlive").value;
+	let alive = document.getElementById("addStatus").value;
 	let relation = document.getElementById("addRelation").value;
 	let image = "/images/person.png";
-	return newContact ={ Images: image, Name: name, Phone: phone, Email: email, Alive: alive, Relation: relation, userId: userId };
+	return newContact ={ Images: image, Name: name, Phone: phone, Email: email, Alive: alive, Relation: relation, UserID: userId };
 }
 
 function addContact()
 {
 	let newContact = createContact();
-	document.getElementById("contactAddResult").innerHTML = "";
 
 	let jsonPayload = JSON.stringify( newContact );
 
@@ -244,19 +248,17 @@ function addContact()
 		{
 			if (this.readyState == 4 && this.status == 200) 
 			{
-				document.getElementById("contactAddResult").innerHTML = "Contact has been added!";
+				console.log("I changed state!");
 			}
 		};
 		xhr.send(jsonPayload);
 	}
 	catch(err)
 	{
+		console.log("i have an error");
 		document.getElementById("contactAddResult").innerHTML = err.message;
 	}
-	globalCounter = 0;
-	setTimeout(function(){
-		loadOnTable();
-		}, 100); 
+	console.log("How did it get here!");
 }
 
 function wrapperDisplay() {
@@ -269,7 +271,7 @@ function wrapperDisplay() {
 
 function display(jsonObject)
 {
-	var contactInfo = jsonObject;
+	let contactInfo = jsonObject;
 	console.log(contactInfo);
 	// check we dont repeat 
 	if (!emptyJSON)
@@ -378,7 +380,7 @@ function display(jsonObject)
 
 function loadContact(callback)
 {
-	let tmp = {UserID:13,Counter:globalCounter,Counter2:1};
+	let tmp = {UserID:userId,Counter:globalCounter,Counter2:1};
 	let jsonPayload = JSON.stringify( tmp );
 	let url = urlBase + '/LoadContacts.' + extension;
 		
