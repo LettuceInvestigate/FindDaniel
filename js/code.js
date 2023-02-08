@@ -60,7 +60,7 @@ function showDeleteModal(id){
 function cancelDeleteModal(){
     document.getElementById('deleteModal').close();
 }
-function savedeleteModal(){
+function saveDeleteModal(){
     deleteContact( tempID );
     document.getElementById('deleteModal').close();
 }
