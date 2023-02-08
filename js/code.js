@@ -35,7 +35,6 @@ function showEditModal(id){
 	document.getElementById("editName").value = editFields.Name;
 	document.getElementById("editNum").value = editFields.Phone;
 	document.getElementById("editEmail").value = editFields.Email;
-	document.getElementById("editStatus").value = editFields.Alive;
 	document.getElementById("editRelation").value = editFields.Relation
     document.getElementById('editModal').showModal();
 }
