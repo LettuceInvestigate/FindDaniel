@@ -25,10 +25,10 @@ else
 		{
 			if( $searchCount > 0 )
 			{
-				$searchResults .= "},";
+				$searchResults .= "],";
 			}
 			$searchCount++;
-			$searchResults .= '{"Image":"' . $row["Images"] . '","Name":"' . $row["Name"] . '","Email": "' . $row["Email"] . '","Phone":"' . $row["Phone"] . '","Relation":"' . $row["Relation"] . '","Alive":"' . $row["Alive"] . '","ID":"' . $row["ID"] . '"';
+			$searchResults .= '"person'. $searchCount .'":["' . $row["Images"] . '","' . $row["Name"] . '","' . $row["Email"] . '","' . $row["Phone"] . '","' . $row["Relation"] . '","' . $row["Alive"] . '","' . $row["ID"] . '"';
 		}
 
 		if( $searchCount == 0 )
@@ -56,7 +56,7 @@ function sendResultInfoAsJson( $obj )
 }
 function returnWithInfo( $searchResults )
 {
-  $retValue = $searchResults . ',"error":""}';
+  $retValue ='{' . $searchResults . '],"error":""}';
   sendResultInfoAsJson( $retValue );
 }
 

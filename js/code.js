@@ -527,18 +527,14 @@ function searchContact()
 		{
 			if (this.readyState == 4 && this.status == 200) 
 			{
-				let jsonObject = JSON.parse( xhr.responseText );
 				
-				for( let i=0; i<jsonObject.results.length; i++ )
+				let jsonObject = JSON.parse( xhr.responseText );
+				let numResults = Object.keys(jsonObject).length;
+				for( let i=0; i<numResults; i++ )
 				{
-					contactList += jsonObject.results[i];
-					if( i < jsonObject.results.length - 1 )
-					{
-						contactList += "<br />\r\n";
-					}
+					console.log("made it in here");
 				}
 				
-				document.getElementsByTagName("p")[0].innerHTML = contactList;
 			}
 		};
 		xhr.send(jsonPayload);
