@@ -30,7 +30,7 @@ function saveAddModal(){
 }
 //Edit Contact
 function showEditModal(id){
-	tempIndex = id;
+	tempID = id;
     document.getElementById('editModal').showModal();
 }
 function cancelEditModal(){
@@ -38,8 +38,8 @@ function cancelEditModal(){
 }
 function saveEditModal(){
     //edit contact function call here needs to be connected with API
-	console.log(tempIndex);
-    editContact( tempIndex );
+	
+    editContact( tempID );
 
     document.getElementById('editModal').close();
 }
@@ -351,7 +351,7 @@ function display(jsonObject)
 		let cellEdit = document.createElement("a");
 		// *** MIGHT NOT WORK ***
 		cellEdit.setAttribute("class", "editButton");
-		cellEdit.setAttribute("id",globalCounter);
+		cellEdit.setAttribute("id",contactInfo.ID);
 		cellEdit.setAttribute("onclick","showEditModal(this.id);");
 		//    <li class="fas fa-user-edit"></li>
 		let cellLI1 = document.createElement("li");
@@ -362,7 +362,7 @@ function display(jsonObject)
 		let cellDelete = document.createElement("a");
 		// *** MIGHT NOT WORK ***
 		cellDelete.setAttribute("class", "deleteButton");
-		cellDelete.setAttribute("id",globalCounter);
+		cellDelete.setAttribute("id",contactInfo.ID);
 		cellDelete.setAttribute("onclick","showDeleteModal(this.id);");
 		//    <li class="fas fa-trash-alt"></li>
 		let cellLI2 = document.createElement("li");
@@ -421,12 +421,20 @@ function loadContact(callback)
 
 function createEditContact(id)
 {
+	console.log(id);
+	let name = document.getElementById("addName").value;
+	let phone = document.getElementById("addNum").value;
+	let email = document.getElementById("addEmail").value;
+	let alive = document.getElementById("addStatus").value;
+	let relation = document.getElementById("addRelation").value;
+	let image = "/images/person.png";
+	return newContact ={ Images: image, Name: name, Phone: phone, Email: email, Alive: alive, Relation: relation, UserID: userId };
 
 }
 
-function editContact(index)
+function editContact(id)
 {
-	let contact = createEditContact(contArr[index]);
+	let contact = createEditContact(id);
 	let jsonPayload = JSON.stringify( contact );
 
 	let url = urlBase + '/EditContact.' + extension;
