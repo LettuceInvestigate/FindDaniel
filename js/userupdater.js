@@ -70,7 +70,8 @@ function checkRequirements()
         else if (current == '!' || current == '@' || current == '#' || current == '$' || 
         current == '%' || current == '^' || current == '&' || 
         current == "?" || current == "&" || current == "*" || 
-        current == "+" || current == "=")
+        current == "+" || current == "=" || current == '_' || current == '-' || current == '~' ||
+        current == '.' || current == ',')
         {
             numSpecial++; 
         }
@@ -127,14 +128,14 @@ function checkRequirements()
     // Has at least one special character 
     if (numSpecial >= 1)
     {
-        special.textContent = "✓ At least one special character";
+        special.textContent = "✓ At least one special character\n!@#$%^&?&*+=_-~.,";
         special.style.color = 'green';
         requirementsMet = true;
     }
     // Has no special characters 
     else if (numSpecial < 1)
     {
-        special.textContent = "✗ At least one special character"; 
+        special.textContent = "✗ At least one special character\n!@#$%^&?&*+=_-~.,"; 
         special.style.color = '#bc1823'; 
         requirementsMet = false;
     }
@@ -143,7 +144,7 @@ function checkRequirements()
 function goodPassword() {
     if (requirementsMet == false)
     {
-        window.alert("The password does not meet the requirements."); 
+        document.getElementsById('bad-password').style.visibility= "visible"; 
     }
     else
     {

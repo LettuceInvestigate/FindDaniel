@@ -1,15 +1,12 @@
 Not working:
-- REMOVE POP UP WHEN WRONG REGISTER OR WE GET AN GRADES TAKEN OFF!!!!!!!!
 - "no files added" does not change when adding a file
 - maybe: adding a file does nothing??
 - wrong password & username error on login Page
 - no error shown if register passwords do not match
-- maybe add the following to 'special characters': "_" "-" "~" "." "," 
-- maybe specify what special characters are?
 
 Functionality:
 
-- EditContact API might not be Working
+- EditContact API might not be Workings
 
 - Password validation
 - Password requirements in register
@@ -23,7 +20,6 @@ Functionality:
 - Connect Dashboard searchbar to search API
 
 Additional:
-- Add our images
 - Email validation
 - when at end of dashboard.html table "at end" & disable view more button
 - check if username is taken when register
