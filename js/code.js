@@ -25,7 +25,7 @@ function saveAddModal(){
 		loadOnTable();
 		contArr = new Array();
 	}, 250); 
-	document.getElementById("addName").value = "";
+	ocument.getElementById("addName").value = "";
 	document.getElementById("addNum").value = "";
 	document.getElementById("addEmail").value = "";
 	document.getElementById("addRelation").value = "";
@@ -54,7 +54,15 @@ function saveEditModal(){
 }
 //Delete Contact
 function showDeleteModal(id){
-    tempID = id;
+	tempID = id;
+    document.getElementById('deleteModal').showModal();
+}
+function cancelDeleteModal(){
+    document.getElementById('deleteModal').close();
+}
+function savedeleteModal(){
+    deleteContact( tempID );
+    document.getElementById('deleteModal').close();
 }
 
 //API:
