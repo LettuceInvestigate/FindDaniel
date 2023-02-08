@@ -24,13 +24,22 @@ function saveAddModal(){
 	setTimeout(function(){
 		loadOnTable();
 		contArr = new Array();
-		}, 250); 
+	}, 250); 
+	ocument.getElementById("addName").value = "";
+	document.getElementById("addNum").value = "";
+	document.getElementById("addEmail").value = "";
+	document.getElementById("addRelation").value = "";
 
     document.getElementById('addModal').close();
 }
 //Edit Contact
 function showEditModal(id){
 	tempID = id;
+	let editFields = contArr.filter(Object => Object.ID == tempID);
+	document.getElementById("editName").value = editFields.Name;
+	document.getElementById("editNum").value = editFields.Phone;
+	document.getElementById("editEmail").value = editFields.Email;
+	document.getElementById("editRelation").value = editFields.Relation
     document.getElementById('editModal').showModal();
 }
 function cancelEditModal(){
@@ -44,8 +53,16 @@ function saveEditModal(){
     document.getElementById('editModal').close();
 }
 //Delete Contact
-function showDeleteModal(){
-    
+function showDeleteModal(id){
+	tempID = id;
+    document.getElementById('deleteModal').showModal();
+}
+function cancelDeleteModal(){
+    document.getElementById('deleteModal').close();
+}
+function savedeleteModal(){
+    deleteContact( tempID );
+    document.getElementById('deleteModal').close();
 }
 
 //API:
@@ -280,7 +297,7 @@ function display(jsonObject)
 	// check we dont repeat 
 	if (!emptyJSON)
 	{
-		contArr.push(contactInfo.ID);
+		contArr.push(contactInfo);
 		//creat row 
 		let row = document.createElement("tr");
 		row.setAttribute("class","D-tr");
@@ -399,14 +416,11 @@ function loadContact(callback)
 			if (this.readyState == 4 && this.status == 200) 
 			{
 				let jsonObject = JSON.parse(xhr.responseText);
-				console.log(jsonObject);
+
 				if (jsonObject.error !== "No Records Found") {
-					console.log(jsonObject);
 					callback(jsonObject);
-					console.log(jsonObject);
 				} else {
 					emptyJSON = true;
-					console.log(jsonObject);
 					callback("Error");
 				}
 			}
@@ -421,14 +435,13 @@ function loadContact(callback)
 
 function createEditContact(id)
 {
-	console.log(id);
-	let name = document.getElementById("addName").value;
-	let phone = document.getElementById("addNum").value;
-	let email = document.getElementById("addEmail").value;
-	let alive = document.getElementById("addStatus").value;
-	let relation = document.getElementById("addRelation").value;
+	let name = document.getElementById("editName").value;
+	let phone = document.getElementById("editNum").value;
+	let email = document.getElementById("editEmail").value;
+	let alive = document.getElementById("editStatus").value;
+	let relation = document.getElementById("editRelation").value;
 	let image = "/images/person.png";
-	return newContact ={ Images: image, Name: name, Phone: phone, Email: email, Alive: alive, Relation: relation, UserID: userId };
+	return newContact ={ Images: image, Name: name, Phone: phone, Email: email, Alive: alive, Relation: relation, ID: id };
 
 }
 
@@ -450,7 +463,7 @@ function editContact(id)
 			{
 				let temp = JSON.stringify(xhr.responseText);
 				let jsonObject = JSON.parse(temp );
-				
+
 				if(jsonObject.error == "")
 				{
 					// The object is updated I do not know what we need to do to redisplay it
@@ -466,11 +479,9 @@ function editContact(id)
 	}
 }
 
-function deleteContact()
+function deleteContact(id)
 {
-	let id = document.getElementById("PUT THE CONTACTID HERE").value;
 	let delContact = {ID: id};
-	document.getElementById("contactDeleteResult").innerHTML = "";
 
 	let jsonPayload = JSON.stringify( delContact );
 
@@ -485,28 +496,27 @@ function deleteContact()
 		{
 			if (this.readyState == 4 && this.status == 200) 
 			{
-				document.getElementById("contactDeleteResult").innerHTML = "Contact has been deleted!";
+
 			}
 		};
 		xhr.send(jsonPayload);
 	}
 	catch(err)
 	{
-		document.getElementById("contactDeleteResult").innerHTML = err.message;
+		document.getElementById("").innerHTML = err.message;
 	}
 	
 }
 
 function searchContact()
 {
-	document.getElementById("colorSearchResult").innerHTML = "";
 	
 	let contactList = "";
 
 	let tmp = {Name:document.getElementById("searchText").value,UserID:userId};
 	let jsonPayload = JSON.stringify( tmp );
 
-	let url = urlBase + '/SearchColors.' + extension;
+	let url = urlBase + '/Search.' + extension;
 	
 	let xhr = new XMLHttpRequest();
 	xhr.open("POST", url, true);
@@ -517,19 +527,18 @@ function searchContact()
 		{
 			if (this.readyState == 4 && this.status == 200) 
 			{
-				document.getElementById("colorSearchResult").innerHTML = "Color(s) has been retrieved";
 				let jsonObject = JSON.parse( xhr.responseText );
 				
 				for( let i=0; i<jsonObject.results.length; i++ )
 				{
-					colorList += jsonObject.results[i];
+					contactList += jsonObject.results[i];
 					if( i < jsonObject.results.length - 1 )
 					{
-						colorList += "<br />\r\n";
+						contactList += "<br />\r\n";
 					}
 				}
 				
-				document.getElementsByTagName("p")[0].innerHTML = colorList;
+				document.getElementsByTagName("p")[0].innerHTML = contactList;
 			}
 		};
 		xhr.send(jsonPayload);
