@@ -107,13 +107,13 @@
 
                 <!-- Password Visibility -->
                 <script>
-                    const pwInput = document.querySelector("#registerPassword1"); 
+                    const pwInput = document.querySelector("#registerPassword2"); 
                     const eye2 = document.querySelector("#eye2"); 
 
                     eye2.addEventListener("click", function(){
                     this.classList.toggle("fa-eye-slash")
                     const type = pwInput.getAttribute("type") === "password" ? "text" : "password"
-                    passwordInput.setAttribute("type", type)
+                    pwInput.setAttribute("type", type)
                     }); 
                 </script>
 
