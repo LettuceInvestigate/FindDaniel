@@ -12,7 +12,7 @@
 	else
 	{
         // Gets the total number of contacts from specified user
-		$stmt = $conn->prepare("Select COUNT(*) from Contacts where UserID=? AND Alive='missing'");
+		$stmt = $conn->prepare("Select COUNT(*) from Contacts where UserID=? AND Alive='injail'");
 		$stmt->bind_param("s", $UserID );
 		$stmt->execute();
 		$result = $stmt->get_result();
