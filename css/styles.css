@@ -391,13 +391,13 @@
 .D-tr #D-td-edit-delete .deleteButton{
   padding-right: 30px;
 }
-.inactive #login-error{
+#login-error a{
+  font-family: bobby;
+  color: #bc1823;
+}
+#login-error.inactive{
   font-size: 0rem;
 }
-.active #login-error{
-  margin-top: -15px;
-  margin-bottom: 20px;
-  font-family: bobby;
+#login-error.active{
   font-size: 1.5rem;
-  color: #bc1823;
 }

@@ -220,7 +220,7 @@ function createUser()
 	{
 		return newUser ={ Email: email, Username: username, Password: password1 };
 	}
-	document.getElementById("invalidPassword").innerHTML("Password Mismatch");
+	document.getElementById("login-error").innerHTML("active");
 	return newUser ={ }
 }
 
