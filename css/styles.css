@@ -223,7 +223,7 @@
   border: 4px solid #bc1823; 
   border-radius: 12px;
   cursor: pointer;
-  margin: 20px 20px 20px 150px;
+  margin: 20px 20px 20px 130px;
 }
 #deleteSaveButton:hover {
   cursor: pointer; 
@@ -240,7 +240,7 @@
   border: 4px solid #bc1823; 
   border-radius: 12px;
   cursor: pointer;
-  margin: 20px 150px 20px 20px;
+  margin: 20px 130px 20px 20px;
 }
 #deleteCancelButton:hover {
   cursor: pointer; 
