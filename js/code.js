@@ -469,8 +469,7 @@ function editContact(id)
 		document.getElementById("").innerHTML = err.message;
 	}
 }
-function getData()
-{
+function getData(){
 	let tmp = {UserID:userId};
 	let jsonPayload = JSON.stringify( tmp );
 	let url = urlBase + '/TotalContacts.' + extension;
@@ -485,7 +484,7 @@ function getData()
 			if (this.readyState == 4 && this.status == 200) 
 			{
 				let jsonObject = JSON.parse(xhr.responseText);
-
+				document.getElementById("headerBoxContacts").innerHTML = jsonObject.Count;
 			}
 		};
 		xhr.send(jsonPayload);
@@ -509,7 +508,7 @@ function getData()
 			if (this.readyState == 4 && this.status == 200) 
 			{
 				let jsonObject = JSON.parse(xhr.responseText);
-
+				document.getElementById("headerBoxDead").innerHTML = jsonObject.Count;
 			}
 		};
 		xhr.send(jsonPayload);
@@ -533,6 +532,7 @@ function getData()
 			if (this.readyState == 4 && this.status == 200) 
 			{
 				let jsonObject = JSON.parse(xhr.responseText);
+				document.getElementById("headerBoxInJail").innerHTML = jsonObject.Count;
 
 			}
 		};
@@ -557,7 +557,7 @@ function getData()
 			if (this.readyState == 4 && this.status == 200) 
 			{
 				let jsonObject = JSON.parse(xhr.responseText);
-
+				document.getElementById("headerBoxMissing").innerHTML = jsonObject.Count;
 			}
 		};
 		xhr.send(jsonPayload);
