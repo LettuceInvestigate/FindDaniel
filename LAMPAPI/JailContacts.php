@@ -29,39 +29,6 @@
 		$stmt->close();
 		$conn->close();
 
-		/*// Gets number of dead contacts from specified user
-
-		$stmt->bind_param("s", $UserID );
-		$stmt->execute();
-		$result = $stmt->get_result();
-
-		if( $row = $result->fetch_assoc()  )
-	  {
-	      $Output .= '{"numDead":"' . $row["Count(*)"];
-	  }
-	  else
-	  {
-	    returnWithError("BAD BAD BAD");
-	  }
-
-        // Gets number of dead contacts from specified user
-        $stmt = $conn->prepare("Select COUNT(*) from Contacts where UserID=? AND Alive='Alive'")
-		$stmt->bind_param("s", $UserID );
-		$stmt->execute();
-		$result = $stmt->get_result();
-
-		if( $row = $result->fetch_assoc()  )
-	  {
-	      $Output .= '{"numAlive":"' . $row["Count(*)"];
-	  }
-	  else
-	  {
-	    returnWithError("BAD BAD BAD");
-	  }
-		*/
-
-		$stmt->close();
-		$conn->close();
 	}
 
 	function getRequestInfo()
