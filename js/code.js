@@ -469,6 +469,109 @@ function editContact(id)
 		document.getElementById("").innerHTML = err.message;
 	}
 }
+function getData()
+{
+	let tmp = {UserID:userId};
+	let jsonPayload = JSON.stringify( tmp );
+	let url = urlBase + '/TotalContacts.' + extension;
+		
+	let xhr = new XMLHttpRequest();
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	try
+	{
+		xhr.onreadystatechange = function() 
+		{
+			if (this.readyState == 4 && this.status == 200) 
+			{
+				let jsonObject = JSON.parse(xhr.responseText);
+
+			}
+		};
+		xhr.send(jsonPayload);
+	}
+	catch(err)
+	{
+		document.getElementById("").innerHTML = err.message;
+	}
+
+	tmp = {UserID:userId};
+	jsonPayload = JSON.stringify( tmp );
+	url = urlBase + '/DeadContacts.' + extension;
+		
+	xhr = new XMLHttpRequest();
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	try
+	{
+		xhr.onreadystatechange = function() 
+		{
+			if (this.readyState == 4 && this.status == 200) 
+			{
+				let jsonObject = JSON.parse(xhr.responseText);
+
+			}
+		};
+		xhr.send(jsonPayload);
+	}
+	catch(err)
+	{
+		document.getElementById("").innerHTML = err.message;
+	}
+
+	tmp = {UserID:userId};
+	jsonPayload = JSON.stringify( tmp );
+	url = urlBase + '/AliveContacts.' + extension;
+	
+	xhr = new XMLHttpRequest();
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	try
+	{
+		xhr.onreadystatechange = function() 
+		{
+			if (this.readyState == 4 && this.status == 200) 
+			{
+				let jsonObject = JSON.parse(xhr.responseText);
+				
+			}
+		};
+		xhr.send(jsonPayload);
+	}
+	catch(err)
+	{
+		document.getElementById("").innerHTML = err.message;
+	}
+}
+
+function deleteContact(id)
+{
+	let delContact = {ID: id};
+
+	let jsonPayload = JSON.stringify( delContact );
+
+	let url = urlBase + '/RemoveContact.' + extension;
+	
+	let xhr = new XMLHttpRequest();
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	try
+	{
+		xhr.onreadystatechange = function() 
+		{
+			if (this.readyState == 4 && this.status == 200) 
+			{
+
+			}
+		};
+		xhr.send(jsonPayload);
+	}
+	catch(err)
+	{
+		document.getElementById("").innerHTML = err.message;
+	}
+	
+}
 
 function deleteContact(id)
 {
