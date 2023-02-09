@@ -120,8 +120,6 @@ function doLogin2()
 	
 	let login = document.getElementById("register-suspect-name").value;
 	let password = document.getElementById("registerPassword1").value;
-	console.log(login);
-	console.log(password);
  
 
 	//var hash = md5( password );
@@ -142,7 +140,6 @@ function doLogin2()
 			{
 				let jsonObject = JSON.parse( xhr.responseText );
 				userId = jsonObject.id;
-				console.log(userId);
 		
 				if( userId < 1 )
 				{		
@@ -537,7 +534,6 @@ function getData(){
 			if (this.readyState == 4 && this.status == 200) 
 			{
 				let jsonObject = JSON.parse(xhr.responseText);
-				console.log(jsonObject.Count);
 				document.getElementById("headerBoxContacts").innerHTML = jsonObject.Count;
 				getData2();
 			}
@@ -566,7 +562,6 @@ function getData2(){
 			if (this.readyState == 4 && this.status == 200) 
 			{
 				let jsonObject = JSON.parse(xhr.responseText);
-				console.log(jsonObject.Count);
 				document.getElementById("headerBoxDead").innerHTML = jsonObject.Count;
 				getData3();
 			}
@@ -594,7 +589,6 @@ function getData3(){
 			if (this.readyState == 4 && this.status == 200) 
 			{
 				let jsonObject = JSON.parse(xhr.responseText);
-				console.log(jsonObject.Count);
 				document.getElementById("headerBoxInJail").innerHTML = jsonObject.Count;
 				getData4();
 			}
@@ -727,7 +721,7 @@ function searchContact()
 						break;
 					}
 					let resultContact = {Image:jsonObject[""+i][0], Name:jsonObject[""+i][1], Email:jsonObject[""+i][2], Phone:jsonObject[""+i][3], Relation:jsonObject[""+i][4], Alive:jsonObject[""+i][5], ID:jsonObject[""+i][6]};
-					console.log(resultContact);
+					//console.log(resultContact);
 					display(resultContact);
 				}
 				
