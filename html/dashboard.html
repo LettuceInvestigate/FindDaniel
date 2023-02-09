@@ -21,7 +21,7 @@
   <script type="text/javascript" src="/./js/userupdater.js"></script>
   
   <script type="text/javascript">
-    if(readCookie() > 1){
+    if(readCookie() < 1){
       window.location.href = "warning.html";
     }
   </script>
@@ -80,10 +80,10 @@
       border-radius: 50%; color: 444a53; opacity: 90%; font-size: 76px; font-weight: 700;
       padding-top: 15px; align-items: center; display: flex; justify-content: center;'>
       <img class="star" src="/images/star.png" style="height: 80px; width: 140px;">
-      WANTED: <span id="user-name-title"></span>
+      Welcome Back!
       <img class="star" src="/images/star.png" style="height: 80px; width: 140px;">
     </div>
-    </center>  
+    </center>
 
     <!--Search Bar-->
     <div class="container rounded-5" id="box" style='background-color: #d9dfdb; 
@@ -182,12 +182,12 @@
           </tr>
         </thead>
         <tbody id="tbody">
-          <script>
-            setTimeout(function(){
-              loadOnTable();
-              }, 100); 
-          </script>
         </tbody>
+        <script>
+          setTimeout(function(){
+            loadOnTable();
+            }, 100); 
+        </script>
       </table>
       <!--load more button-->
       <center><button class="fas fa-angle-double-down" id="loadMore-button" onclick="wrapperDisplay();"
@@ -304,10 +304,10 @@
 
     <!--Delete Contact:-->
     <dialog class="container rounded-5" id="deleteModal">
-      <div style='text-align: center; font-family: fibre; color: #bc1823; font-size: 50px;'>
-        Are you sure you want to delete <span id="deleteModalHeader"></span>?
+      <div style='margin-top: 20px; text-align: center; font-family: fibre; color: #bc1823; font-size: 40px;'>
+        Are you sure you want to delete <span id="deleteModalHeader" style='color: #fff;'></span>?
       </div>
-      <div>
+      <div style='margin-bottom: 20px;'>
         <button id="deleteCancelButton" onclick="cancelDeleteModal();">CANCEL</button>
         <button id="deleteSaveButton" onclick="saveDeleteModal();">DELETE</button>
       </div>

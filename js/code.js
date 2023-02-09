@@ -6,7 +6,6 @@ let globalCounter = 0;
 let tempIndex = 0;
 let contArr = new Array();
 let emptyJSON = false;
-let frontendUsername = "";
 
 //FRONTEND:
 
@@ -64,11 +63,11 @@ function saveDeleteModal(){
     deleteContact( tempID );
     document.getElementById('deleteModal').close();
 }
+function displayUsername(username){
+	document.getElementById("user-name-title").innerHTML = username;
+}
 
 //API:
-function displayUser() {
-	document.getElementById('user-name-title').innerHTML = frontendUsername; 
-}
 
 function doLogin()
 {
@@ -102,8 +101,12 @@ function doLogin()
 					document.getElementById("register-error").className = "active";
 					return;
 				}
-		
-				username = jsonObject.Username;
+				let tempusername=jsonObject.Username;
+				console.log(tempusername);
+				setTimeout(function(){
+					displayUsername(tempusername);
+				}, 500); 
+
 				email = jsonObject.Email;
 
 				saveCookie();
@@ -117,7 +120,6 @@ function doLogin()
 	{
 		document.getElementById("register-error").className = "active";
 	}
-
 }
 
 function saveCookie()

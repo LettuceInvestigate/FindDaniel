@@ -4,3 +4,4 @@ For Leinecker:
 - how to get login name?
 - can we get an A? pls we did not sleep
 - how to get the contacts in order
+- you cannot pass textfeild value from on html file to another
