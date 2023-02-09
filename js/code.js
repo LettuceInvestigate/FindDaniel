@@ -494,6 +494,8 @@ function getData(){
 	{
 		document.getElementById("").innerHTML = err.message;
 	}
+}
+function getData2(){
 
 	tmp = {UserID:userId};
 	jsonPayload = JSON.stringify( tmp );
@@ -508,9 +510,9 @@ function getData(){
 		{
 			if (this.readyState == 4 && this.status == 200) 
 			{
-				let jsonObject = JSON.parse(xhr.responseText);
-				console.log(jsonObject.Count);
-				document.getElementById("headerBoxDead").innerHTML = jsonObject.Count;
+				let jsonObject2 = JSON.parse(xhr.responseText);
+				console.log(jsonObject2.Count);
+				document.getElementById("headerBoxDead").innerHTML = jsonObject2.Count;
 			}
 		};
 		xhr.send(jsonPayload);
@@ -519,7 +521,8 @@ function getData(){
 	{
 		document.getElementById("").innerHTML = err.message;
 	}
-
+}
+function getData3(){
 	tmp = {UserID:userId};
 	jsonPayload = JSON.stringify( tmp );
 	url = urlBase + '/JailContacts.' + extension;
@@ -533,9 +536,9 @@ function getData(){
 		{
 			if (this.readyState == 4 && this.status == 200) 
 			{
-				let jsonObject = JSON.parse(xhr.responseText);
-				console.log(jsonObject.Count);
-				document.getElementById("headerBoxInJail").innerHTML = jsonObject.Count;
+				let jsonObject3 = JSON.parse(xhr.responseText);
+				console.log(jsonObject3.Count);
+				document.getElementById("headerBoxInJail").innerHTML = jsonObject3.Count;
 
 			}
 		};
@@ -545,7 +548,8 @@ function getData(){
 	{
 		document.getElementById("").innerHTML = err.message;
 	}
-
+}
+function getData4(){
 	tmp = {UserID:userId};
 	jsonPayload = JSON.stringify( tmp );
 	url = urlBase + '/MissingContacts.' + extension;
@@ -559,9 +563,9 @@ function getData(){
 		{
 			if (this.readyState == 4 && this.status == 200) 
 			{
-				let jsonObject = JSON.parse(xhr.responseText);
-				console.log(jsonObject.Count);
-				document.getElementById("headerBoxMissing").innerHTML = jsonObject.Count;
+				let jsonObject4 = JSON.parse(xhr.responseText);
+				console.log(jsonObject4.Count);
+				document.getElementById("headerBoxMissing").innerHTML = jsonObject4.Count;
 			}
 		};
 		xhr.send(jsonPayload);
