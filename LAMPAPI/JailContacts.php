@@ -50,7 +50,7 @@
 
 	function returnWithInfo($count)
 	{
-		$retValue = '{"Count":"' . $count . '"}';
+		$retValue = '{"Count":' . $count . '}';
 		sendResultInfoAsJson( $retValue );
 	}
 

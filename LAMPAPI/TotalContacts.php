@@ -29,7 +29,7 @@
 		$stmt->close();
 		$conn->close();
 
-		
+
 	}
 
 	function getRequestInfo()
@@ -51,7 +51,7 @@
 
 	function returnWithInfo($count)
 	{
-		$retValue = '{"Count":"' . $count . '"}';
+		$retValue = '{"Count":' . $count . '}';
 		sendResultInfoAsJson( $retValue );
 	}
 
