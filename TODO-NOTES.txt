@@ -5,9 +5,7 @@ Not working:
 - no error shown if register passwords do not match
 
 Functionality:
-
 - Password validation
-- Password requirements in register
 - Login error notification class fix
 - Dashboard delete button functionality
 - Dashboard delete button API
