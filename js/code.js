@@ -486,6 +486,7 @@ function getData(){
 				let jsonObject = JSON.parse(xhr.responseText);
 				console.log(jsonObject.Count);
 				document.getElementById("headerBoxContacts").innerHTML = jsonObject.Count;
+				getData2();
 			}
 		};
 		xhr.send(jsonPayload);
@@ -514,6 +515,7 @@ function getData2(){
 				let jsonObject = JSON.parse(xhr.responseText);
 				console.log(jsonObject.Count);
 				document.getElementById("headerBoxDead").innerHTML = jsonObject.Count;
+				getData3();
 			}
 		};
 		xhr.send(jsonPayload);
@@ -541,7 +543,7 @@ function getData3(){
 				let jsonObject = JSON.parse(xhr.responseText);
 				console.log(jsonObject.Count);
 				document.getElementById("headerBoxInJail").innerHTML = jsonObject.Count;
-
+				getData4();
 			}
 		};
 		xhr.send(jsonPayload);
