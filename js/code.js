@@ -120,6 +120,8 @@ function doLogin2()
 	
 	let login = document.getElementById("register-suspect-name").value;
 	let password = document.getElementById("registerPassword1").value;
+	console.log(login);
+	console.log(password);
  
 
 	//var hash = md5( password );
@@ -140,6 +142,7 @@ function doLogin2()
 			{
 				let jsonObject = JSON.parse( xhr.responseText );
 				userId = jsonObject.id;
+				console.log(userId);
 		
 				if( userId < 1 )
 				{		
@@ -270,9 +273,10 @@ function doRegister()
 					return;
 				}
 
+				doLogin2();
 				saveCookie();
 	
-				window.location.href = "login.html";
+				//window.location.href = "dashboard.html";
 			}
 		};
 		xhr.send(jsonPayload);
