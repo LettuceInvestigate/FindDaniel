@@ -270,8 +270,8 @@ function doRegister()
 					return;
 				}
 
-				doLogin2();
 				saveCookie();
+				doLogin2();
 	
 				//window.location.href = "dashboard.html";
 			}
