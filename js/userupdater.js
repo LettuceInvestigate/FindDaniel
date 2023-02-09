@@ -144,7 +144,7 @@ function checkRequirements()
 function goodPassword() {
     if (requirementsMet == false)
     {
-        document.getElementsById('bad-password').style.visibility= "visible"; 
+        document.getElementById('bad-password').style.visibility = "visible"; 
     }
     else
     {
