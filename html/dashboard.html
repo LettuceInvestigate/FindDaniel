@@ -162,7 +162,10 @@
         </div>
       </div>
     </div>
-    <script>displayUsername();</script>
+    <script>
+      var textfieldValue = localStorage.getItem("textValue");
+      document.getElementById("user-name-title").innerHTML = textfieldValue;
+    </script>
 
     <!--Table-->
     <div id="contact-table" class="board"
