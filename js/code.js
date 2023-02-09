@@ -495,6 +495,7 @@ function getData(){
 		document.getElementById("").innerHTML = err.message;
 	}
 }
+
 function getData2(){
 
 	tmp = {UserID:userId};
@@ -510,9 +511,9 @@ function getData2(){
 		{
 			if (this.readyState == 4 && this.status == 200) 
 			{
-				let jsonObject2 = JSON.parse(xhr.responseText);
-				console.log(jsonObject2.Count);
-				document.getElementById("headerBoxDead").innerHTML = jsonObject2.Count;
+				let jsonObject = JSON.parse(xhr.responseText);
+				console.log(jsonObject.Count);
+				document.getElementById("headerBoxDead").innerHTML = jsonObject.Count;
 			}
 		};
 		xhr.send(jsonPayload);
@@ -522,6 +523,7 @@ function getData2(){
 		document.getElementById("").innerHTML = err.message;
 	}
 }
+
 function getData3(){
 	tmp = {UserID:userId};
 	jsonPayload = JSON.stringify( tmp );
@@ -536,9 +538,9 @@ function getData3(){
 		{
 			if (this.readyState == 4 && this.status == 200) 
 			{
-				let jsonObject3 = JSON.parse(xhr.responseText);
-				console.log(jsonObject3.Count);
-				document.getElementById("headerBoxInJail").innerHTML = jsonObject3.Count;
+				let jsonObject = JSON.parse(xhr.responseText);
+				console.log(jsonObject.Count);
+				document.getElementById("headerBoxInJail").innerHTML = jsonObject.Count;
 
 			}
 		};
@@ -563,9 +565,8 @@ function getData4(){
 		{
 			if (this.readyState == 4 && this.status == 200) 
 			{
-				let jsonObject4 = JSON.parse(xhr.responseText);
-				console.log(jsonObject4.Count);
-				document.getElementById("headerBoxMissing").innerHTML = jsonObject4.Count;
+				let jsonObject = JSON.parse(xhr.responseText);
+				document.getElementById("headerBoxMissing").innerHTML = jsonObject.Count;
 			}
 		};
 		xhr.send(jsonPayload);
