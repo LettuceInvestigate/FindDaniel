@@ -65,6 +65,11 @@ function saveDeleteModal(){
     document.getElementById('deleteModal').close();
 }
 
+function displayUsername()
+{
+	document.getElementById("user-name-title").innerHTML = frontendUsername;
+}
+
 //API:
 function displayUser() {
 	document.getElementById('user-name-title').innerHTML = frontendUsername; 
@@ -103,7 +108,7 @@ function doLogin()
 					return;
 				}
 		
-				username = jsonObject.Username;
+				frontendUsername = jsonObject.Username;
 				email = jsonObject.Email;
 
 				saveCookie();
@@ -117,7 +122,6 @@ function doLogin()
 	{
 		document.getElementById("register-error").className = "active";
 	}
-
 }
 
 function saveCookie()
