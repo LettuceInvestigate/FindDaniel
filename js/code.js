@@ -270,10 +270,9 @@ function doRegister()
 					return;
 				}
 
-				doLogin2();
 				saveCookie();
 	
-				//window.location.href = "dashboard.html";
+				window.location.href = "login.html";
 			}
 		};
 		xhr.send(jsonPayload);
