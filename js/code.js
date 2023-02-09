@@ -269,8 +269,8 @@ function doRegister()
 					return;
 				}
 
+				doLogin2(newUser.Username,newUser.Password);
 				saveCookie();
-				doLogin2(newUser.Username,newUser.Password)
 	
 				//window.location.href = "dashboard.html";
 			}
