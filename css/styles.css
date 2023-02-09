@@ -391,12 +391,10 @@
 .D-tr #D-td-edit-delete .deleteButton{
   padding-right: 30px;
 }
-.inactive #register-error{
-  font-family: bobby;
+.inactive #login-error{
   font-size: 0rem;
-  color: #bc1823;
 }
-.active #register-error{
+.active #login-error{
   margin-top: -15px;
   margin-bottom: 20px;
   font-family: bobby;
