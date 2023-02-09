@@ -114,12 +114,13 @@ function doLogin()
 	}
 }
 
-function doLogin2(username,password)
+function doLogin2()
 {
 	userId = 0;
 	
-	let login = username;
-	let password = password;
+	let login = document.getElementById("register-suspect-name").value;
+	let password = document.getElementById("registerPassword1").value;
+ 
 
 	//var hash = md5( password );
 
@@ -269,7 +270,7 @@ function doRegister()
 					return;
 				}
 
-				doLogin2(newUser.Username,newUser.Password);
+				doLogin2();
 				saveCookie();
 	
 				//window.location.href = "dashboard.html";
