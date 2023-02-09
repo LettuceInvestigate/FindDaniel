@@ -98,7 +98,7 @@ function doLogin()
 				if( userId < 1 )
 				{		
 					// ** FIX THIS WHEN FIND OUT HOW TO CHANGE **
-					document.getElementById("register-error").className = "active";
+					document.getElementById("login-error").className = "active";
 					return;
 				}
 				let tempusername=jsonObject.Username;
