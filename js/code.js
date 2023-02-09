@@ -484,6 +484,7 @@ function getData(){
 			if (this.readyState == 4 && this.status == 200) 
 			{
 				let jsonObject = JSON.parse(xhr.responseText);
+				console.log(jsonObject.Count);
 				document.getElementById("headerBoxContacts").innerHTML = jsonObject.Count;
 			}
 		};
@@ -508,6 +509,7 @@ function getData(){
 			if (this.readyState == 4 && this.status == 200) 
 			{
 				let jsonObject = JSON.parse(xhr.responseText);
+				console.log(jsonObject.Count);
 				document.getElementById("headerBoxDead").innerHTML = jsonObject.Count;
 			}
 		};
@@ -532,6 +534,7 @@ function getData(){
 			if (this.readyState == 4 && this.status == 200) 
 			{
 				let jsonObject = JSON.parse(xhr.responseText);
+				console.log(jsonObject.Count);
 				document.getElementById("headerBoxInJail").innerHTML = jsonObject.Count;
 
 			}
@@ -557,6 +560,7 @@ function getData(){
 			if (this.readyState == 4 && this.status == 200) 
 			{
 				let jsonObject = JSON.parse(xhr.responseText);
+				console.log(jsonObject.Count);
 				document.getElementById("headerBoxMissing").innerHTML = jsonObject.Count;
 			}
 		};
