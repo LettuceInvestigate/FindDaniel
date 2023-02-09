@@ -162,7 +162,8 @@
         </div>
       </div>
     </div>
-    
+    <script>displayUsername();</script>
+
     <!--Table-->
     <div id="contact-table" class="board"
       style='font-family: bobby; color: #212932; width: 95%; margin: 30px 0 30px 50px; overflow: auto; background-color: #d9dfdb; font-size: 18px; border-radius: 12px;'>
@@ -183,9 +184,7 @@
         </thead>
         <tbody id="tbody">
           <script>
-            setTimeout(function(){
-              loadOnTable();
-              }, 100); 
+            document.getElementById("user-name-title").innerHTML = document.getElementById("loginName").value;
           </script>
         </tbody>
       </table>
