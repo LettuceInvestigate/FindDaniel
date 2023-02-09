@@ -64,7 +64,9 @@ function saveDeleteModal(){
     deleteContact( tempID );
     document.getElementById('deleteModal').close();
 }
-document.getElementById("user-name-title").innerHTML = "hi";
+function displayUsername(){
+	document.getElementById("user-name-title").innerHTML = "hi";
+}
 
 //API:
 
