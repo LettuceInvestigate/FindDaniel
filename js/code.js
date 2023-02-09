@@ -114,6 +114,54 @@ function doLogin()
 	}
 }
 
+function doLogin2(username,password)
+{
+	userId = 0;
+	
+	let login = username;
+	let password = password;
+
+	//var hash = md5( password );
+
+	var tmp = {Username:login,Password:password};
+	let jsonPayload = JSON.stringify( tmp );
+	
+	let url = urlBase + '/Login.' + extension;
+
+	let xhr = new XMLHttpRequest();
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	try
+	{
+		xhr.onreadystatechange = function() 
+		{
+			if (this.readyState == 4 && this.status == 200) 
+			{
+				let jsonObject = JSON.parse( xhr.responseText );
+				userId = jsonObject.id;
+		
+				if( userId < 1 )
+				{		
+					// ** FIX THIS WHEN FIND OUT HOW TO CHANGE **
+					document.getElementById("login-error").className = "active";
+					return;
+				}
+
+				email = jsonObject.Email;
+
+				saveCookie();
+	
+				window.location.href = "dashboard.html";
+			}
+		};
+		xhr.send(jsonPayload);
+	}
+	catch(err)
+	{
+		document.getElementById("login-error").className = "active";
+	}
+}
+
 function saveCookie()
 {
 	let minutes = 20;
@@ -222,8 +270,9 @@ function doRegister()
 				}
 
 				saveCookie();
+				doLogin2(newUser.Username,newUser.Password)
 	
-				window.location.href = "dashboard.html";
+				//window.location.href = "dashboard.html";
 			}
 		};
 		xhr.send(jsonPayload);
