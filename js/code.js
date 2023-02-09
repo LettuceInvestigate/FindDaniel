@@ -63,9 +63,6 @@ function saveDeleteModal(){
     deleteContact( tempID );
     document.getElementById('deleteModal').close();
 }
-function displayUsername(username){
-	document.getElementById("user-name-title").innerHTML = username;
-}
 
 //API:
 
@@ -101,11 +98,6 @@ function doLogin()
 					document.getElementById("login-error").className = "active";
 					return;
 				}
-				let tempusername=jsonObject.Username;
-				console.log(tempusername);
-				setTimeout(function(){
-					displayUsername(tempusername);
-				}, 500); 
 
 				email = jsonObject.Email;
 
@@ -118,7 +110,7 @@ function doLogin()
 	}
 	catch(err)
 	{
-		document.getElementById("register-error").className = "active";
+		document.getElementById("login-error").className = "active";
 	}
 }
 
